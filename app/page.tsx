@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { getAllServices, getFaqs, getSite, getTestimonials } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
 import { getLogoSrc } from "@/lib/brand";
+import { PillarsBanner } from "@/components/sections/PillarsBanner";
 
 export default function HomePage() {
   const site = getSite();
@@ -47,6 +48,7 @@ export default function HomePage() {
             Astrology, Numerology, and Vastu — or the AstroVastu Combo for integrated guidance.
           </p>
         </div>
+        <PillarsBanner className="mb-8" priority />
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service.slug} service={service} dark />
