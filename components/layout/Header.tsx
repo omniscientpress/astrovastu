@@ -31,19 +31,19 @@ export function Header({ brandName, tagline, logoSrc }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200/80 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src={logoSrc}
             alt={`${brandName} logo`}
-            width={48}
-            height={48}
-            className="h-11 w-11 object-contain"
+            width={72}
+            height={72}
+            className="h-14 w-14 object-contain sm:h-16 sm:w-16"
             priority
           />
           <div className="leading-tight">
-            <div className="text-base font-bold text-primary-900">{brandName}</div>
-            <div className="hidden text-[10px] text-neutral-500 sm:block">{tagline}</div>
+            <div className="text-lg font-bold text-primary-900 sm:text-xl">{brandName}</div>
+            <div className="hidden text-[11px] text-neutral-500 sm:block">{tagline}</div>
           </div>
         </Link>
 
