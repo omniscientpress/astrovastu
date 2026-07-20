@@ -39,13 +39,6 @@ export function AdminDashboard() {
   const [data, setData] = useState<AdminData | null>(null);
   const [loading, setLoading] = useState(false);
 
-  async function checkAuth() {
-    const res = await fetch("/api/admin/auth/");
-    const json = await res.json();
-    setAuthed(Boolean(json.authed));
-    if (json.authed) await loadData();
-  }
-
   async function loadData() {
     const res = await fetch("/api/admin/data/");
     if (res.status === 401) {

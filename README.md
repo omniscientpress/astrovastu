@@ -23,7 +23,12 @@ npm run dev
 
 Open http://localhost:3000
 
-> Postgres is required only when booking/inquiry APIs come online in Phase 2. Static pages and content loaders work without a live DB.
+## Forms / admin
+
+- Booking (`/book/`) and inquiry (`/contact/`) work without Postgres — they still return a WhatsApp confirm link.
+- To persist clients/bookings: set `DATABASE_URL`, then `npx prisma migrate dev --name init`.
+- Optional email notifications: set `RESEND_API_KEY` and `RESEND_FROM_EMAIL`.
+- Admin dashboard: set `ADMIN_PASSWORD`, open `/admin/`.
 
 ## Content edits
 
@@ -42,7 +47,8 @@ Non-devs edit files under `/content` only. See [CONTENT-GUIDE.md](./CONTENT-GUID
 
 ## Phase status
 
-**Phase 1 complete:** scaffold, design tokens, layout shell, content loaders, seed JSON, Prisma schema, stub pages, Dockerfile.
+**Phase 1 complete:** scaffold, design tokens, layout shell, content loaders, Prisma schema, Docker, brand logos.
 
-**Next (Phase 2):** full pillar page copy/sections, booking form → DB, contact form → Resend, admin auth.
+**Phase 2 complete:** full pillar pages, booking → API/DB, contact inquiry API (Resend-ready), password-protected admin.
 
+**Next (Phase 3):** SEO/schema/GA4, then Dokploy deploy when domain is ready.
