@@ -7,6 +7,7 @@ import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { getSite } from "@/lib/content";
 import { buildWaLink, getPhoneTelHref } from "@/lib/whatsapp";
+import { getLogoSrc } from "@/lib/brand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,14 +35,15 @@ export default function RootLayout({
   const site = getSite();
   const waHome = buildWaLink({ page: "home" });
   const phoneHref = getPhoneTelHref();
+  const logoSrc = getLogoSrc();
 
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
         <div className="flex min-h-screen flex-col">
-          <Header brandName={site.brandName} tagline={site.tagline} />
+          <Header brandName={site.brandName} tagline={site.tagline} logoSrc={logoSrc} />
           <main className="flex-1">{children}</main>
-          <Footer site={site} />
+          <Footer site={site} logoSrc={logoSrc} />
         </div>
         <MobileStickyBar whatsappHref={waHome} phoneHref={phoneHref} />
         <FloatingWhatsApp href={waHome} />

@@ -4,6 +4,7 @@ import type { Site } from "@/lib/content";
 
 type FooterProps = {
   site: Site;
+  logoSrc: string;
 };
 
 const serviceLinks = [
@@ -27,13 +28,13 @@ const legalLinks = [
   { href: "/legal/refund/", label: "Refund" },
 ];
 
-export function Footer({ site }: FooterProps) {
+export function Footer({ site, logoSrc }: FooterProps) {
   return (
     <footer className="border-t border-primary-800 bg-primary-950 text-neutral-200">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <div className="mb-3 flex items-center gap-3">
-            <Image src="/images/logo.svg" alt="" width={44} height={44} className="h-11 w-11" />
+            <Image src={logoSrc} alt="" width={44} height={44} className="h-11 w-11 object-contain" />
             <div>
               <div className="text-lg font-bold text-white">{site.brandName}</div>
               <p className="text-xs text-accent-300">{site.tagline}</p>

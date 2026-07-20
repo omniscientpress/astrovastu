@@ -6,6 +6,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { Section } from "@/components/ui/Section";
 import { getAllServices, getFaqs, getSite, getTestimonials } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
+import { getLogoSrc } from "@/lib/brand";
 
 export default function HomePage() {
   const site = getSite();
@@ -13,6 +14,7 @@ export default function HomePage() {
   const featured = getTestimonials({ featuredOnly: true }).slice(0, 3);
   const faqs = getFaqs("general").slice(0, 4);
   const wa = buildWaLink({ page: "home" });
+  const logoSrc = getLogoSrc();
 
   return (
     <>
@@ -24,7 +26,7 @@ export default function HomePage() {
         whatsappHref={wa}
         secondaryHref="/pricing/"
         secondaryLabel="View pricing"
-        iconSrc="/images/logo.svg"
+        iconSrc={logoSrc}
       />
 
       <Section tone="muted">

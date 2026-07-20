@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { getSite } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
+import { getLogoSrc } from "@/lib/brand";
 import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const site = getSite();
   const wa = buildWaLink({ page: "about" });
+  const logoSrc = getLogoSrc();
 
   return (
     <>
@@ -36,11 +38,11 @@ export default function AboutPage() {
             </p>
           </div>
           <Image
-            src="/images/logo.svg"
+            src={logoSrc}
             alt=""
             width={160}
             height={160}
-            className="mx-auto h-36 w-36"
+            className="mx-auto h-36 w-36 object-contain"
           />
         </div>
       </Section>

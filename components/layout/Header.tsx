@@ -22,9 +22,10 @@ const nav = [
 type HeaderProps = {
   brandName: string;
   tagline: string;
+  logoSrc: string;
 };
 
-export function Header({ brandName, tagline }: HeaderProps) {
+export function Header({ brandName, tagline, logoSrc }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -33,11 +34,11 @@ export function Header({ brandName, tagline }: HeaderProps) {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo.svg"
+            src={logoSrc}
             alt={`${brandName} logo`}
             width={40}
             height={40}
-            className="h-10 w-10"
+            className="h-10 w-10 object-contain"
             priority
           />
           <div className="leading-tight">
