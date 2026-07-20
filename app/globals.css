@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9f6;
+  --foreground: #1f1c17;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --radius-default: var(--radius);
+
+  /* Primary — deep indigo night. Anchor: #1E1B4B */
+  --color-primary-50: #f1f0fa;
+  --color-primary-100: #e1dff4;
+  --color-primary-200: #c3c0e9;
+  --color-primary-300: #9e99d9;
+  --color-primary-400: #7168c2;
+  --color-primary-500: #4f47a6;
+  --color-primary-600: #3b3488;
+  --color-primary-700: #2c2668;
+  --color-primary-800: #201d50;
+  --color-primary-900: #1e1b4b;
+  --color-primary-950: #131029;
+
+  /* Accent — gold/saffron. Anchor: #D4A017 */
+  --color-accent-50: #fdf8ec;
+  --color-accent-100: #fbefce;
+  --color-accent-200: #f6de9d;
+  --color-accent-300: #f0ca65;
+  --color-accent-400: #e9b93b;
+  --color-accent-500: #d4a017;
+  --color-accent-600: #b27f12;
+  --color-accent-700: #8a6110;
+  --color-accent-800: #6b4b10;
+  --color-accent-900: #574011;
+
+  /* Warm neutrals — background & text */
+  --color-neutral-50: #fbf9f6;
+  --color-neutral-100: #f5f1ea;
+  --color-neutral-200: #e8e1d5;
+  --color-neutral-300: #d6ccbb;
+  --color-neutral-400: #b3a690;
+  --color-neutral-500: #8c7f68;
+  --color-neutral-600: #6b6152;
+  --color-neutral-700: #4f473c;
+  --color-neutral-800: #332e26;
+  --color-neutral-900: #1f1c17;
+
+  /* Semantic feedback colors */
+  --color-success-500: #2f9e5b;
+  --color-danger-500: #d94f4f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #131029;
+    --foreground: #f5f1ea;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Reserve space for the mobile sticky CTA bar so content never sits under it */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 4.5rem;
+  }
+}

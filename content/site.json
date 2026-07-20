@@ -1,0 +1,27 @@
+{
+  "brandName": "AstroVastu",
+  "tagline": "KP Astrology · Vastu · Numerology",
+  "consultantName": "AstroVastu Consultant",
+  "phone": "+91 98765 43210",
+  "whatsapp": "919876543210",
+  "email": "consult@astrovastu.com",
+  "address": "India (online consultations worldwide)",
+  "city": "India",
+  "serviceArea": "Online worldwide · Based in India",
+  "hours": "Mon–Sat, 9:00 AM – 9:00 PM IST",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "stats": [
+    { "value": "15+", "label": "Years Experience" },
+    { "value": "10,000+", "label": "Happy Clients" },
+    { "value": "50,000+", "label": "Consultations" },
+    { "value": "4.9★", "label": "Average Rating" }
+  ],
+  "geo": {
+    "lat": null,
+    "lng": null
+  }
+}

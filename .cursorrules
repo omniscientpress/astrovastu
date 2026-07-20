@@ -1,0 +1,23 @@
+You are building a production lead-generation website for AstroVastu, an Indian
+astrology (KP System), Vastu, and numerology consultation business.
+
+Stack: Next.js 15 App Router, TypeScript strict, Tailwind CSS v4, output:'standalone',
+trailingSlash:true. Deployed via Docker on Dokploy (Hostinger VPS).
+
+Hard rules:
+- Server Components by default; add "use client" only for interactivity (accordion,
+  form, mobile menu, analytics clicks).
+- All human-readable content comes from /content JSON (validated by Zod in
+  lib/content.ts) or page-level constants. NEVER hardcode business data
+  (phone, WhatsApp number, prices, stats) inside components — read from site.json.
+- All WhatsApp links via buildWaLink() in lib/whatsapp.ts (server-side). Pass href
+  strings into client components as props. All GA4 events via trackEvent() in
+  lib/analytics.ts.
+- No new dependencies without asking. No Framer Motion. CSS transitions only.
+- next/image for all images with explicit width/height. Inter via next/font.
+- Mobile-first. Sticky bottom bar exists on mobile — pad page bottom accordingly.
+- Tone of any copy: expert, warm, modern, credible. No mystical fluff,
+  no guaranteed outcomes, no fear-selling.
+- After multi-file changes, list every file touched and why, then run a mental
+  type-check for broken imports.
+- Client/booking data uses Prisma + Postgres (lib/db.ts). Do not store clients in git JSON.

@@ -1,0 +1,82 @@
+{
+  "slug": "kp-astrology",
+  "title": "KP Astrology Consultation",
+  "shortTitle": "KP Astrology",
+  "tagline": "Precise timing for life's most important decisions",
+  "description": "Krishnamurti Paddhati (KP) astrology uses Sub-Lord theory for remarkably accurate timing of events — career, marriage, childbirth, muhurtham, finance, health, and Prashna (horary).",
+  "forYou": [
+    "You want a clear timing window — not vague yearly forecasts",
+    "Generic astrology has disappointed you with unspecific answers",
+    "You need guidance on job, marriage, promotion, or a major decision",
+    "You want Prashna answers even without exact birth details"
+  ],
+  "youReceive": [
+    "Detailed KP chart analysis of relevant houses and Sub-Lords",
+    "Specific favorable and challenging periods for your question",
+    "Practical remedies aligned with your current Dasha",
+    "Written summary of findings after the consultation"
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Share birth details",
+      "description": "Date, time, and place of birth — exact time matters for KP precision."
+    },
+    {
+      "step": "02",
+      "title": "State your question",
+      "description": "One focused question gets the most accurate KP answer."
+    },
+    {
+      "step": "03",
+      "title": "Live consultation",
+      "description": "Video or phone session with Sub-Lord analysis explained in plain language."
+    },
+    {
+      "step": "04",
+      "title": "Remedies & next steps",
+      "description": "Personalized guidance and a written summary you can revisit."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-is-kp",
+      "title": "What is the KP System?",
+      "body": "The Krishnamurti Paddhati (KP) system was developed by K.S. Krishnamurti. Unlike traditional Vedic astrology that often gives broad windows, KP uses Sub-Lord theory — dividing each star into finer segments — to pinpoint when events are most likely to unfold. KP indicates favorable periods and tendencies; it does not guarantee outcomes."
+    },
+    {
+      "id": "career",
+      "title": "Career & Education",
+      "body": "Guidance for course selection, job predictions, promotion timing, government vs private roles, foreign career, and competitive exams — using the 4th, 6th, 9th, 10th, and 11th houses."
+    },
+    {
+      "id": "marriage",
+      "title": "Marriage & Relationships",
+      "body": "Kundali matching, marriage timing, delayed marriage analysis, post-marriage issues, and Kuja Dosha assessment using the 7th cusp Sub-Lord."
+    },
+    {
+      "id": "finance",
+      "title": "Finance & Business",
+      "body": "Property timing, financial pattern analysis, loan clearance windows, inheritance, and investment periods via the 2nd, 4th, 8th, and 11th houses."
+    },
+    {
+      "id": "health",
+      "title": "Health",
+      "body": "Health pattern insights and surgery timing using the 1st, 6th, 8th, and 12th houses — always as a complement to medical care, never a replacement."
+    },
+    {
+      "id": "childbirth",
+      "title": "Childbirth & Muhurtham",
+      "body": "Progeny analysis, conception windows, C-section muhurtham, and auspicious timing for marriage, Gruha Pravesham, business opening, and ceremonies."
+    },
+    {
+      "id": "prashna",
+      "title": "Prashna (Horary)",
+      "body": "Instant Yes/No answers using the KP 1–249 number system — no birth details required. Ideal for lost items, exam outcomes, interview results, and urgent decisions."
+    }
+  ],
+  "seo": {
+    "title": "KP Astrology Consultation | AstroVastu",
+    "description": "Expert KP (Krishnamurti Paddhati) astrology consultations for career, marriage, muhurtham, finance, health, and Prashna. Precise timing guidance."
+  }
+}

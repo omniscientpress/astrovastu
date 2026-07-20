@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ServiceType {
+  KP
+  VASTU
+  NUMEROLOGY
+  COMBO
+}
+
+enum InquiryStatus {
+  NEW
+  CONTACTED
+  CLOSED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+model Client {
+  id          String    @id @default(cuid())
+  name        String
+  phone       String    @unique
+  email       String?
+  dateOfBirth String?
+  birthTime   String?
+  birthPlace  String?
+  language    String    @default("en")
+  consent     Boolean   @default(false)
+  notes       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  inquiries   Inquiry[]
+  bookings    Booking[]
+}
+
+model Inquiry {
+  id         String        @id @default(cuid())
+  clientId   String?
+  client     Client?       @relation(fields: [clientId], references: [id])
+  name       String
+  phone      String
+  email      String?
+  sourcePage String
+  service    ServiceType?
+  message    String
+  status     InquiryStatus @default(NEW)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model Booking {
+  id          String        @id @default(cuid())
+  clientId    String
+  client      Client        @relation(fields: [clientId], references: [id])
+  service     ServiceType
+  packageId   String?
+  slotDate    DateTime
+  slotTime    String
+  status      BookingStatus @default(PENDING)
+  notes       String?
+  meetLink    String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([slotDate, status])
+  @@index([clientId])
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "numerology",
+  "title": "Numerology Consultation",
+  "shortTitle": "Numerology",
+  "tagline": "Name, numbers, and birth chart — aligned together",
+  "description": "Name analysis, baby names, business names, and mobile number guidance. We never suggest a name spelling that fights your birth chart — astrology + numerology together.",
+  "forYou": [
+    "You are considering a name spelling correction",
+    "You need a baby name or business/brand name",
+    "You want guidance on a lucky mobile number",
+    "You want numerology that respects your birth chart"
+  ],
+  "youReceive": [
+    "Mulank / Bhagyank breakdown explained simply",
+    "Name or number recommendations with rationale",
+    "Cross-check against your birth chart (AstroVastu method)",
+    "Clear do's and don'ts — no mystifying jargon"
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Share details",
+      "description": "Full name as used officially, date of birth, and the question (name / baby / business / mobile)."
+    },
+    {
+      "step": "02",
+      "title": "Number derivation",
+      "description": "We calculate core numbers and check compatibility with your chart."
+    },
+    {
+      "step": "03",
+      "title": "Consultation",
+      "description": "Plain-language explanation of what fits, what conflicts, and why."
+    },
+    {
+      "step": "04",
+      "title": "Recommendations",
+      "description": "Spelling options, number choices, or next steps — with a written summary."
+    }
+  ],
+  "sections": [
+    {
+      "id": "name",
+      "title": "Name Analysis & Correction",
+      "body": "Does your name vibration support your goals? We analyze spelling options and only suggest changes that align with your chart — not random lucky letters."
+    },
+    {
+      "id": "baby",
+      "title": "Baby Name Selection",
+      "body": "Names chosen for sound, meaning, and number harmony with the child's birth date — practical shortlists parents can actually use."
+    },
+    {
+      "id": "business",
+      "title": "Business & Brand Name",
+      "body": "Brand and firm name analysis for entrepreneurs who want numbers and chart alignment before printing letterheads and domains."
+    },
+    {
+      "id": "mobile",
+      "title": "Mobile Number Numerology",
+      "body": "Guidance on choosing or evaluating a mobile number. Method first, magic second — we explain the system we use and why."
+    }
+  ],
+  "seo": {
+    "title": "Numerology Consultation | Name & Numbers | AstroVastu",
+    "description": "Numerology for name correction, baby names, business names, and mobile numbers — cross-checked with your birth chart."
+  }
+}

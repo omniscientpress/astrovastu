@@ -1,0 +1,90 @@
+{
+  "note": "Payment via UPI after slot confirmation on WhatsApp. Prices below are draft placeholders — replace with final Phase 0 amounts before launch.",
+  "packages": [
+    {
+      "id": "kp-focused",
+      "name": "KP Focused Question",
+      "pillar": "kp",
+      "price": 2000,
+      "priceLabel": "₹2,000",
+      "duration": "30 min",
+      "inclusions": [
+        "One primary question",
+        "KP Sub-Lord timing analysis",
+        "Verbal remedies",
+        "Short written summary"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Same week (slot-based)",
+      "highlighted": false
+    },
+    {
+      "id": "kp-full",
+      "name": "KP Full Consultation",
+      "pillar": "kp",
+      "price": 4000,
+      "priceLabel": "₹4,000",
+      "duration": "45–60 min",
+      "inclusions": [
+        "Broader life-area review",
+        "Timing windows + remedies",
+        "Written summary",
+        "One follow-up clarification (7 days)"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "vastu-home",
+      "name": "Home / Office Vastu",
+      "pillar": "vastu",
+      "price": 3500,
+      "priceLabel": "₹3,500",
+      "duration": "45–60 min",
+      "inclusions": [
+        "Floor-plan analysis",
+        "Priority remedy list",
+        "Non-demolition options first",
+        "Written recommendations"
+      ],
+      "deliveryMode": "Video + floor plan review",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "numerology-name",
+      "name": "Numerology Name / Number",
+      "pillar": "numerology",
+      "price": 1500,
+      "priceLabel": "₹1,500",
+      "duration": "30 min",
+      "inclusions": [
+        "Mulank / Bhagyank breakdown",
+        "Name or mobile analysis",
+        "Chart cross-check",
+        "Written options list"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "combo",
+      "name": "AstroVastu Combo",
+      "pillar": "combo",
+      "price": 7500,
+      "priceLabel": "₹7,500",
+      "duration": "90 min",
+      "inclusions": [
+        "KP timing + Vastu space review + Numerology alignment",
+        "Integrated recommendations",
+        "Priority action plan",
+        "Written combined summary"
+      ],
+      "deliveryMode": "Video",
+      "turnaround": "Slot-based",
+      "highlighted": true
+    }
+  ]
+}

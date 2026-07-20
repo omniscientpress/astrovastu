@@ -1,0 +1,67 @@
+{
+  "slug": "vastu",
+  "title": "Vastu Consultation",
+  "shortTitle": "Vastu",
+  "tagline": "Align your home and workplace — often without demolition",
+  "description": "Practical Vastu guidance for homes, offices, shops, and plots. Floor-plan analysis, direction mapping, and remedy lists that respect how you actually live and work.",
+  "forYou": [
+    "You are buying, renting, or renovating a home or shop",
+    "Your space feels blocked for money, health, or peace",
+    "You want remedies that do not require breaking walls",
+    "You need plot or site evaluation before purchase"
+  ],
+  "youReceive": [
+    "Floor-plan / direction analysis of your space",
+    "Room-by-room recommendations prioritized by impact",
+    "A written remedy list (non-demolition first)",
+    "Clarity on on-site vs remote consultation options"
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Share your space",
+      "description": "Floor plan, video walkthrough, or photos — plus north direction if known."
+    },
+    {
+      "step": "02",
+      "title": "Define the concern",
+      "description": "Money flow, health, harmony, new purchase, or general alignment."
+    },
+    {
+      "step": "03",
+      "title": "Analysis session",
+      "description": "Direction mapping and room-by-room review with clear priorities."
+    },
+    {
+      "step": "04",
+      "title": "Remedy plan",
+      "description": "Practical adjustments first; structural changes only if truly needed."
+    }
+  ],
+  "sections": [
+    {
+      "id": "home",
+      "title": "Home Vastu",
+      "body": "Bedroom, kitchen, entrance, and living-space alignment for harmony and well-being — tailored to how your family actually uses the home."
+    },
+    {
+      "id": "office",
+      "title": "Office & Shop Vastu",
+      "body": "Cash counter, seating, entrance, and storage layout guidance for better workflow and business energy — without fear-based claims."
+    },
+    {
+      "id": "plot",
+      "title": "Plot & Site Selection",
+      "body": "Evaluate a plot before you buy: facing, shape, surroundings, and practical suitability for construction."
+    },
+    {
+      "id": "remedies",
+      "title": "Remedies Without Demolition",
+      "body": "Most Vastu imbalances can be improved with placement, color, mirrors, plants, and usage changes. Demolition is a last resort — not the default advice."
+    }
+  ],
+  "seo": {
+    "title": "Vastu Consultant | Home & Office | AstroVastu",
+    "description": "Vastu consultation for home, office, shop, and plot. Practical remedies without demolition. Remote floor-plan analysis available."
+  }
+}

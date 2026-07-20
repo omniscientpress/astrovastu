@@ -1,0 +1,56 @@
+[
+  {
+    "id": "f1",
+    "question": "How is KP astrology different from traditional Vedic astrology?",
+    "answer": "KP (Krishnamurti Paddhati) uses Sub-Lord theory for finer timing of events. Traditional systems often give broader periods; KP aims for more specific windows. Both are serious systems — KP is chosen when precise timing questions matter most.",
+    "category": "astrology"
+  },
+  {
+    "id": "f2",
+    "question": "What if my birth time is approximate?",
+    "answer": "Exact birth time improves KP accuracy. If time is approximate, we discuss birth-time rectification options or recommend Prashna (horary) for specific Yes/No questions that do not require birth details.",
+    "category": "astrology"
+  },
+  {
+    "id": "f3",
+    "question": "Can Vastu be fixed without construction or demolition?",
+    "answer": "In most cases, yes. We prioritize placement, usage, color, and simple remedies first. Structural changes are suggested only when they are truly necessary and practical for you.",
+    "category": "vastu"
+  },
+  {
+    "id": "f4",
+    "question": "Does remote Vastu consultation via floor plan work?",
+    "answer": "Yes — with a clear floor plan (or video walkthrough) and north direction. On-site visits are useful for complex properties but are not required for many homes and shops.",
+    "category": "vastu"
+  },
+  {
+    "id": "f5",
+    "question": "Which numerology system do you use?",
+    "answer": "We will confirm the exact system (Chaldean / Pythagorean / Vedic / blended) in the final content once you lock Phase 0 inputs. What never changes: we cross-check name and number suggestions against your birth chart.",
+    "category": "numerology"
+  },
+  {
+    "id": "f6",
+    "question": "Does changing name spelling really matter?",
+    "answer": "Spelling changes are optional tools, not magic. We only suggest adjustments when the numbers conflict with your chart goals — and we explain the reasoning so you can decide calmly.",
+    "category": "numerology"
+  },
+  {
+    "id": "f7",
+    "question": "How do I book and pay?",
+    "answer": "Book a slot on the website or message us on WhatsApp. After we confirm the slot, payment is via UPI. You receive confirmation once payment is verified.",
+    "category": "pricing"
+  },
+  {
+    "id": "f8",
+    "question": "What is your reschedule / refund policy?",
+    "answer": "Placeholder — finalize with your real policy in Phase 0. Typically: free reschedule with 24+ hours notice; refund rules stated clearly on the Refund page before launch.",
+    "category": "general"
+  },
+  {
+    "id": "f9",
+    "question": "Are consultations online or in person?",
+    "answer": "Primarily online (video/phone) for clients worldwide. In-person availability depends on your city decision in Phase 0 inputs.",
+    "category": "general"
+  }
+]
