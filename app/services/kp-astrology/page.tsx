@@ -1,5 +1,5 @@
 import { PillarPage } from "@/components/sections/PillarPage";
-import { getFaqs, getService, getTestimonials } from "@/lib/content";
+import { getAllSpecialties, getFaqs, getService, getTestimonials } from "@/lib/content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ export default function KpAstrologyPage() {
       service={getService("kp-astrology")}
       faqs={getFaqs()}
       testimonials={getTestimonials()}
+      specialties={getAllSpecialties()}
     />
   );
 }

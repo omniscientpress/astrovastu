@@ -8,6 +8,13 @@ export type WaContext = {
     | "kp-astrology"
     | "vastu"
     | "numerology"
+    | "career"
+    | "marriage"
+    | "childbirth"
+    | "finance"
+    | "health"
+    | "muhurtham"
+    | "prashna"
     | "pricing"
     | "testimonials"
     | "faq"
@@ -27,6 +34,13 @@ const PREFILLS: Record<WaContext["page"], string> = {
   "kp-astrology": "Hi, I'd like a KP Astrology consultation.",
   vastu: "Hi, I'd like a Vastu consultation for my home/office.",
   numerology: "Hi, I'd like a Numerology consultation.",
+  career: "Hi, I'd like a Career & Education consultation.",
+  marriage: "Hi, I'd like a Marriage & Relationships consultation.",
+  childbirth: "Hi, I'd like a Childbirth & Progeny consultation.",
+  finance: "Hi, I'd like a Finance & Property consultation.",
+  health: "Hi, I'd like a Health consultation.",
+  muhurtham: "Hi, I'd like a Muhurtham (auspicious timing) consultation.",
+  prashna: "Hi, I'd like a Prashna (horary) consultation.",
   pricing: "Hi, I'd like to book a consultation. Please share available slots.",
   testimonials: "Hi, I'd like to book a consultation after reading the reviews.",
   faq: "Hi, I have a question before booking a consultation.",

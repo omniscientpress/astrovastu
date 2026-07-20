@@ -5,10 +5,11 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
-import type { Faq, ServicePillar, Testimonial } from "@/lib/content";
+import type { Faq, ServicePillar, Specialty, Testimonial } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
-import { Check, MessageCircle } from "lucide-react";
+import { Check, MessageCircle, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const accentText: Record<ServicePillar["accent"], string> = {
   gold: "text-pillar-gold",
@@ -38,14 +39,16 @@ type PillarPageProps = {
   service: ServicePillar;
   faqs: Faq[];
   testimonials: Testimonial[];
+  specialties?: Specialty[];
 };
 
-export function PillarPage({ service, faqs, testimonials }: PillarPageProps) {
+export function PillarPage({ service, faqs, testimonials, specialties = [] }: PillarPageProps) {
   const wa = buildWaLink({ page: waPage[service.slug] });
   const pillarFaqs = faqs.filter((f) => f.category === faqCategory[service.slug]).slice(0, 6);
   const pillarTestimonials = testimonials
     .filter((t) => t.service === testimonialService[service.slug])
     .slice(0, 3);
+  const showSpecialties = service.slug === "kp-astrology" && specialties.length > 0;
 
   return (
     <>
@@ -94,33 +97,63 @@ export function PillarPage({ service, faqs, testimonials }: PillarPageProps) {
         steps={service.process}
       />
 
-      <Section tone="muted">
-        <h2 className="mb-8 text-3xl font-bold text-primary-900">What we cover</h2>
-        <div className="space-y-6">
-          {service.sections.map((section) => (
-            <article
-              key={section.id}
-              id={section.id}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8"
-            >
-              <h3 className="text-xl font-bold text-primary-900">{section.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600 md:text-base">
-                {section.body}
-              </p>
-              <Button
-                href={wa}
-                variant="ghost"
-                className="mt-5"
-                target="_blank"
-                rel="noopener noreferrer"
+      {showSpecialties ? (
+        <Section tone="muted">
+          <h2 className="mb-3 text-3xl font-bold text-primary-900">KP specialty consultations</h2>
+          <p className="mb-8 max-w-2xl text-neutral-600">
+            Choose a focused topic — same KP system, dedicated page for each life area.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {specialties.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/services/${s.slug}/`}
+                className="group rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-colors hover:border-accent-400"
               >
-                <MessageCircle className="h-4 w-4" />
-                Ask about {section.title}
-              </Button>
-            </article>
-          ))}
-        </div>
-      </Section>
+                <h3 className="text-lg font-bold text-primary-900 group-hover:text-accent-700">
+                  {s.shortTitle}
+                </h3>
+                <p className="mt-2 text-sm text-neutral-600">{s.tagline}</p>
+                <p className="mt-3 text-xs font-medium text-neutral-500">
+                  {s.priceLabel} · {s.duration}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent-700">
+                  Open page{" "}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      ) : (
+        <Section tone="muted">
+          <h2 className="mb-8 text-3xl font-bold text-primary-900">What we cover</h2>
+          <div className="space-y-6">
+            {service.sections.map((section) => (
+              <article
+                key={section.id}
+                id={section.id}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm md:p-8"
+              >
+                <h3 className="text-xl font-bold text-primary-900">{section.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-600 md:text-base">
+                  {section.body}
+                </p>
+                <Button
+                  href={wa}
+                  variant="ghost"
+                  className="mt-5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Ask about {section.title}
+                </Button>
+              </article>
+            ))}
+          </div>
+        </Section>
+      )}
 
       <Section>
         <div className="rounded-2xl border border-accent-300 bg-accent-50 p-8 text-center md:p-10">

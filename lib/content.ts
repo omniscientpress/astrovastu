@@ -76,6 +76,39 @@ export const servicePillarSchema = z.object({
   }),
 });
 
+export const specialtySlugSchema = z.enum([
+  "career",
+  "marriage",
+  "childbirth",
+  "finance",
+  "health",
+  "muhurtham",
+  "prashna",
+]);
+
+export const specialtySchema = z.object({
+  slug: specialtySlugSchema,
+  pillar: z.literal("kp-astrology"),
+  title: z.string(),
+  shortTitle: z.string(),
+  tagline: z.string(),
+  description: z.string(),
+  priceLabel: z.string(),
+  duration: z.string(),
+  features: z.array(z.string()),
+  topics: z.array(
+    z.object({
+      title: z.string(),
+      description: z.string(),
+    }),
+  ),
+  forYou: z.array(z.string()),
+  seo: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 export const testimonialSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -116,6 +149,8 @@ export const pricingSchema = z.object({
 
 export type Site = z.infer<typeof siteSchema>;
 export type ServicePillar = z.infer<typeof servicePillarSchema>;
+export type Specialty = z.infer<typeof specialtySchema>;
+export type SpecialtySlug = z.infer<typeof specialtySlugSchema>;
 export type Testimonial = z.infer<typeof testimonialSchema>;
 export type Faq = z.infer<typeof faqSchema>;
 export type Pricing = z.infer<typeof pricingSchema>;
@@ -137,6 +172,20 @@ export function getAllServices(): ServicePillar[] {
     getService("vastu"),
     getService("numerology"),
   ];
+}
+
+export function getAllSpecialties(): Specialty[] {
+  return loadJson("specialties.json", z.array(specialtySchema));
+}
+
+export function getSpecialty(slug: SpecialtySlug): Specialty {
+  const found = getAllSpecialties().find((s) => s.slug === slug);
+  if (!found) throw new Error(`Unknown specialty: ${slug}`);
+  return found;
+}
+
+export function isSpecialtySlug(value: string): value is SpecialtySlug {
+  return specialtySlugSchema.safeParse(value).success;
 }
 
 export function getTestimonials(opts?: {

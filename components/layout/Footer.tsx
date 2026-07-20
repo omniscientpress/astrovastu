@@ -11,6 +11,10 @@ const serviceLinks = [
   { href: "/services/kp-astrology/", label: "Astrology", icon: "/images/services/astrology.svg" },
   { href: "/services/vastu/", label: "Vastu", icon: "/images/services/vastu.svg" },
   { href: "/services/numerology/", label: "Numerology", icon: "/images/services/numerology.svg" },
+  { href: "/services/career/", label: "Career" },
+  { href: "/services/marriage/", label: "Marriage" },
+  { href: "/services/muhurtham/", label: "Muhurtham" },
+  { href: "/services/prashna/", label: "Prashna" },
   { href: "/pricing/", label: "Pricing" },
 ];
 
