@@ -84,11 +84,19 @@ export const specialtySlugSchema = z.enum([
   "health",
   "muhurtham",
   "prashna",
+  "home-vastu",
+  "office-vastu",
+  "plot-vastu",
+  "vastu-remedies",
+  "name-numerology",
+  "baby-name",
+  "business-name",
+  "mobile-numerology",
 ]);
 
 export const specialtySchema = z.object({
   slug: specialtySlugSchema,
-  pillar: z.literal("kp-astrology"),
+  pillar: z.enum(["kp-astrology", "vastu", "numerology"]),
   title: z.string(),
   shortTitle: z.string(),
   tagline: z.string(),
@@ -176,6 +184,12 @@ export function getAllServices(): ServicePillar[] {
 
 export function getAllSpecialties(): Specialty[] {
   return loadJson("specialties.json", z.array(specialtySchema));
+}
+
+export function getSpecialtiesByPillar(
+  pillar: ServicePillar["slug"],
+): Specialty[] {
+  return getAllSpecialties().filter((s) => s.pillar === pillar);
 }
 
 export function getSpecialty(slug: SpecialtySlug): Specialty {

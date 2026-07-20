@@ -48,7 +48,19 @@ export function PillarPage({ service, faqs, testimonials, specialties = [] }: Pi
   const pillarTestimonials = testimonials
     .filter((t) => t.service === testimonialService[service.slug])
     .slice(0, 3);
-  const showSpecialties = service.slug === "kp-astrology" && specialties.length > 0;
+  const showSpecialties = specialties.length > 0;
+  const specialtyHeading =
+    service.slug === "kp-astrology"
+      ? "KP specialty consultations"
+      : service.slug === "vastu"
+        ? "Vastu specialty consultations"
+        : "Numerology specialty consultations";
+  const specialtySub =
+    service.slug === "kp-astrology"
+      ? "Choose a focused topic — same KP system, dedicated page for each life area."
+      : service.slug === "vastu"
+        ? "Home, office, plot, and remedies — dedicated pages for each focus."
+        : "Name, baby name, business name, and mobile number — dedicated pages for each focus.";
 
   return (
     <>
@@ -99,10 +111,8 @@ export function PillarPage({ service, faqs, testimonials, specialties = [] }: Pi
 
       {showSpecialties ? (
         <Section tone="muted">
-          <h2 className="mb-3 text-3xl font-bold text-primary-900">KP specialty consultations</h2>
-          <p className="mb-8 max-w-2xl text-neutral-600">
-            Choose a focused topic — same KP system, dedicated page for each life area.
-          </p>
+          <h2 className="mb-3 text-3xl font-bold text-primary-900">{specialtyHeading}</h2>
+          <p className="mb-8 max-w-2xl text-neutral-600">{specialtySub}</p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {specialties.map((s) => (
               <Link

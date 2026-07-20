@@ -13,8 +13,8 @@ const serviceLinks = [
   { href: "/services/numerology/", label: "Numerology", icon: "/images/services/numerology.svg" },
   { href: "/services/career/", label: "Career" },
   { href: "/services/marriage/", label: "Marriage" },
-  { href: "/services/muhurtham/", label: "Muhurtham" },
-  { href: "/services/prashna/", label: "Prashna" },
+  { href: "/services/home-vastu/", label: "Home Vastu" },
+  { href: "/services/name-numerology/", label: "Name Numerology" },
   { href: "/pricing/", label: "Pricing" },
 ];
 

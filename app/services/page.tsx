@@ -5,19 +5,55 @@ import { Badge } from "@/components/ui/Badge";
 import { ServiceCard } from "@/components/sections/ServiceCard";
 import { PillarsBanner } from "@/components/sections/PillarsBanner";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { getAllServices, getAllSpecialties } from "@/lib/content";
+import { getAllServices, getSpecialtiesByPillar } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Astrology, Vastu, and Numerology consultations — plus KP specialty pages for career, marriage, muhurtham, and more.",
+    "Astrology, Vastu, and Numerology consultations — with specialty pages for each pillar.",
 };
+
+function SpecialtyGrid({
+  title,
+  subtitle,
+  pillar,
+}: {
+  title: string;
+  subtitle: string;
+  pillar: "kp-astrology" | "vastu" | "numerology";
+}) {
+  const specialties = getSpecialtiesByPillar(pillar);
+  return (
+    <div className="mb-14 last:mb-0">
+      <div className="mb-6 max-w-2xl">
+        <h2 className="text-2xl font-bold text-primary-900 sm:text-3xl">{title}</h2>
+        <p className="mt-2 text-neutral-600">{subtitle}</p>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {specialties.map((s) => (
+          <Link
+            key={s.slug}
+            href={`/services/${s.slug}/`}
+            className="group rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition-colors hover:border-accent-400"
+          >
+            <h3 className="font-bold text-primary-900 group-hover:text-accent-700">
+              {s.shortTitle}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-600">{s.tagline}</p>
+            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-700">
+              View <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function ServicesHubPage() {
   const services = getAllServices();
-  const specialties = getAllSpecialties();
   const wa = buildWaLink({ page: "services" });
 
   return (
@@ -28,8 +64,7 @@ export default function ServicesHubPage() {
         </Badge>
         <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Our Services</h1>
         <p className="mt-3 max-w-2xl text-neutral-300">
-          Three pillars — Astrology, Numerology, and Vastu — plus focused KP specialty pages for
-          career, marriage, muhurtham, and more.
+          Three pillars — Astrology, Vastu, and Numerology — each with focused specialty pages.
         </p>
       </Section>
 
@@ -43,33 +78,22 @@ export default function ServicesHubPage() {
       </Section>
 
       <Section tone="muted">
-        <div className="mb-8 max-w-2xl">
-          <h2 className="text-2xl font-bold text-primary-900 sm:text-3xl">
-            KP Astrology specialties
-          </h2>
-          <p className="mt-3 text-neutral-600">
-            Dedicated pages restored from the previous site — same URLs under{" "}
-            <code className="text-sm">/services/…</code>.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {specialties.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/services/${s.slug}/`}
-              className="group rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition-colors hover:border-accent-400"
-            >
-              <h3 className="font-bold text-primary-900 group-hover:text-accent-700">
-                {s.shortTitle}
-              </h3>
-              <p className="mt-1 text-sm text-neutral-600">{s.tagline}</p>
-              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent-700">
-                View <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </Link>
-          ))}
-        </div>
-        <p className="mt-10 text-center text-sm text-neutral-600">
+        <SpecialtyGrid
+          title="KP Astrology specialties"
+          subtitle="Career, marriage, muhurtham, finance, health, childbirth, and Prashna."
+          pillar="kp-astrology"
+        />
+        <SpecialtyGrid
+          title="Vastu specialties"
+          subtitle="Home, office/shop, plot selection, and remedies without demolition."
+          pillar="vastu"
+        />
+        <SpecialtyGrid
+          title="Numerology specialties"
+          subtitle="Name analysis, baby names, business names, and mobile numbers."
+          pillar="numerology"
+        />
+        <p className="mt-4 text-center text-sm text-neutral-600">
           Prefer a package? See{" "}
           <Link
             href="/pricing/"

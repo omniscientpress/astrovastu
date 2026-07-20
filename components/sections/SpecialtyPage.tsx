@@ -7,19 +7,46 @@ import { buildWaLink } from "@/lib/whatsapp";
 import { Check, Clock, IndianRupee, MessageCircle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+const pillarMeta = {
+  "kp-astrology": {
+    badge: "KP Astrology",
+    backLabel: "All KP Astrology services",
+    icon: "/images/services/astrology.svg",
+    accentCheck: "text-pillar-gold",
+    ctaHint: "Share birth details (or your Prashna question) — we'll confirm the slot next.",
+    moreLabel: "More KP services",
+  },
+  vastu: {
+    badge: "Vastu",
+    backLabel: "All Vastu services",
+    icon: "/images/services/vastu.svg",
+    accentCheck: "text-pillar-lime",
+    ctaHint: "Share floor plan or photos — we'll confirm the slot next.",
+    moreLabel: "More Vastu services",
+  },
+  numerology: {
+    badge: "Numerology",
+    backLabel: "All Numerology services",
+    icon: "/images/services/numerology.svg",
+    accentCheck: "text-pillar-teal",
+    ctaHint: "Share name / birth date / number details — we'll confirm the slot next.",
+    moreLabel: "More Numerology services",
+  },
+} as const;
+
 type SpecialtyPageProps = {
   specialty: Specialty;
 };
 
 export function SpecialtyPage({ specialty }: SpecialtyPageProps) {
-  const wa = buildWaLink({
-    page: specialty.slug,
-  });
+  const wa = buildWaLink({ page: specialty.slug });
+  const meta = pillarMeta[specialty.pillar];
+  const pillarHref = `/services/${specialty.pillar}/`;
 
   return (
     <>
       <PageHero
-        badge="KP Astrology"
+        badge={meta.badge}
         title={specialty.title}
         tagline={specialty.tagline}
         description={specialty.description}
@@ -27,16 +54,16 @@ export function SpecialtyPage({ specialty }: SpecialtyPageProps) {
         whatsappLabel={`Book ${specialty.shortTitle} on WhatsApp`}
         secondaryHref="/pricing/"
         secondaryLabel="View pricing"
-        iconSrc="/images/services/astrology.svg"
+        iconSrc={meta.icon}
       />
 
       <Section>
         <Link
-          href="/services/kp-astrology/"
+          href={pillarHref}
           className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary-800 hover:underline"
         >
           <ArrowLeft className="h-4 w-4" />
-          All KP Astrology services
+          {meta.backLabel}
         </Link>
 
         <div className="mb-10 flex flex-wrap gap-4">
@@ -56,7 +83,7 @@ export function SpecialtyPage({ specialty }: SpecialtyPageProps) {
             <ul className="mt-5 space-y-3">
               {specialty.forYou.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-neutral-700">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-pillar-gold" />
+                  <Check className={`mt-0.5 h-4 w-4 shrink-0 ${meta.accentCheck}`} />
                   <span>{item}</span>
                 </li>
               ))}
@@ -108,8 +135,8 @@ export function SpecialtyPage({ specialty }: SpecialtyPageProps) {
             <Button href="/book/" variant="primary">
               Use booking form
             </Button>
-            <Button href="/services/kp-astrology/" variant="ghost">
-              More KP services
+            <Button href={pillarHref} variant="ghost">
+              {meta.moreLabel}
             </Button>
           </div>
         </div>
@@ -117,7 +144,7 @@ export function SpecialtyPage({ specialty }: SpecialtyPageProps) {
 
       <CtaBanner
         title={`Ask about ${specialty.shortTitle}`}
-        description="Share birth details (or your Prashna question) — we'll confirm the slot next."
+        description={meta.ctaHint}
         whatsappHref={wa}
         secondaryHref="/book/"
         secondaryLabel="Book a slot"

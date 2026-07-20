@@ -1,4 +1,5 @@
 import { getSite } from "./content";
+import type { SpecialtySlug } from "./content";
 
 export type WaContext = {
   page:
@@ -8,13 +9,7 @@ export type WaContext = {
     | "kp-astrology"
     | "vastu"
     | "numerology"
-    | "career"
-    | "marriage"
-    | "childbirth"
-    | "finance"
-    | "health"
-    | "muhurtham"
-    | "prashna"
+    | SpecialtySlug
     | "pricing"
     | "testimonials"
     | "faq"
@@ -41,6 +36,14 @@ const PREFILLS: Record<WaContext["page"], string> = {
   health: "Hi, I'd like a Health consultation.",
   muhurtham: "Hi, I'd like a Muhurtham (auspicious timing) consultation.",
   prashna: "Hi, I'd like a Prashna (horary) consultation.",
+  "home-vastu": "Hi, I'd like a Home Vastu consultation.",
+  "office-vastu": "Hi, I'd like an Office / Shop Vastu consultation.",
+  "plot-vastu": "Hi, I'd like a Plot / Site Vastu consultation.",
+  "vastu-remedies": "Hi, I'd like Vastu remedies guidance (without demolition).",
+  "name-numerology": "Hi, I'd like a Name Numerology / correction consultation.",
+  "baby-name": "Hi, I'd like help choosing a baby name.",
+  "business-name": "Hi, I'd like a Business / Brand name numerology consultation.",
+  "mobile-numerology": "Hi, I'd like Mobile Number numerology guidance.",
   pricing: "Hi, I'd like to book a consultation. Please share available slots.",
   testimonials: "Hi, I'd like to book a consultation after reading the reviews.",
   faq: "Hi, I have a question before booking a consultation.",
