@@ -31,14 +31,14 @@ export function Header({ brandName, tagline, logoSrc }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200/80 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src={logoSrc}
             alt={`${brandName} logo`}
-            width={72}
-            height={72}
-            className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+            width={81}
+            height={81}
+            className="h-14 w-14 object-contain sm:h-[81px] sm:w-[81px]"
             priority
           />
           <div className="leading-tight">
