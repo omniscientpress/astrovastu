@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Numerology">
+  <defs>
+    <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7ee8df"/>
+      <stop offset="50%" stop-color="#4db6ac"/>
+      <stop offset="100%" stop-color="#2a8a82"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#0b0a14"/>
+  <path d="M100 22c40 0 72 28 72 62 0 22-14 40-36 50 28-4 48-28 48-56C184 40 146 10 100 10 54 10 16 40 16 78c0 28 20 52 48 56-22-10-36-28-36-50 0-34 32-62 72-62z"
+        fill="none" stroke="url(#ng)" stroke-width="4" opacity="0.9"/>
+  <path d="M42 95c18-30 50-48 82-42 28 5 48 28 48 55 0 18-10 34-26 44"
+        fill="none" stroke="url(#ng)" stroke-width="3" opacity="0.55"/>
+  <circle cx="100" cy="100" r="10" fill="url(#ng)"/>
+  <g fill="url(#ng)" font-family="Georgia, serif" font-size="18" font-weight="700" text-anchor="middle">
+    <text x="100" y="58">1</text>
+    <text x="138" y="78">8</text>
+    <text x="148" y="118">3</text>
+    <text x="128" y="150">2</text>
+    <text x="100" y="162">5</text>
+    <text x="72" y="150">9</text>
+    <text x="52" y="118">4</text>
+    <text x="62" y="78">6</text>
+  </g>
+</svg>

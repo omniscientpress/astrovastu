@@ -2,8 +2,10 @@
   "slug": "numerology",
   "title": "Numerology Consultation",
   "shortTitle": "Numerology",
-  "tagline": "Name, numbers, and birth chart — aligned together",
+  "tagline": "Decoding numbers, designing your destiny",
   "description": "Name analysis, baby names, business names, and mobile number guidance using a blended numerology approach. We never suggest a name spelling that fights your birth chart — astrology + numerology together.",
+  "icon": "/images/services/numerology.svg",
+  "accent": "teal",
   "forYou": [
     "You are considering a name spelling correction",
     "You need a baby name or business/brand name",

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Vastu">
+  <defs>
+    <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c5e86a"/>
+      <stop offset="50%" stop-color="#8bc34a"/>
+      <stop offset="100%" stop-color="#5e8f2e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#0b0a14"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="url(#vg)" stroke-width="3"/>
+  <rect x="48" y="48" width="104" height="104" fill="none" stroke="url(#vg)" stroke-width="2.5" rx="2"/>
+  <!-- house -->
+  <path d="M100 72 L132 98 L132 128 L68 128 L68 98 Z" fill="none" stroke="url(#vg)" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M88 128 V110 H112 V128" fill="none" stroke="url(#vg)" stroke-width="2.5"/>
+  <rect x="92" y="86" width="16" height="12" fill="none" stroke="url(#vg)" stroke-width="2"/>
+  <!-- cardinal directions -->
+  <g fill="url(#vg)" font-family="Georgia, serif" font-size="16" font-weight="700" text-anchor="middle">
+    <text x="100" y="28">N</text>
+    <text x="178" y="106">E</text>
+    <text x="100" y="188">S</text>
+    <text x="22" y="106">W</text>
+  </g>
+</svg>

@@ -2,8 +2,10 @@
   "slug": "vastu",
   "title": "Vastu Consultation",
   "shortTitle": "Vastu",
-  "tagline": "Align your home and workplace — often without demolition",
+  "tagline": "Balancing energies, harmonizing spaces",
   "description": "Practical Vastu guidance for homes, offices, shops, and plots. Floor-plan analysis, direction mapping, and remedy lists that respect how you actually live and work.",
+  "icon": "/images/services/vastu.svg",
+  "accent": "lime",
   "forYou": [
     "You are buying, renting, or renovating a home or shop",
     "Your space feels blocked for money, health, or peace",

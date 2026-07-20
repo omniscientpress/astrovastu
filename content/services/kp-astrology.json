@@ -1,9 +1,11 @@
 {
   "slug": "kp-astrology",
   "title": "KP Astrology Consultation",
-  "shortTitle": "KP Astrology",
-  "tagline": "Precise timing for life's most important decisions",
+  "shortTitle": "Astrology",
+  "tagline": "Guiding your path with cosmic wisdom",
   "description": "Krishnamurti Paddhati (KP) astrology uses Sub-Lord theory for remarkably accurate timing of events — career, marriage, childbirth, muhurtham, finance, health, and Prashna (horary).",
+  "icon": "/images/services/astrology.svg",
+  "accent": "gold",
   "forYou": [
     "You want a clear timing window — not vague yearly forecasts",
     "Generic astrology has disappointed you with unspecific answers",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Site } from "@/lib/content";
 
@@ -6,9 +7,9 @@ type FooterProps = {
 };
 
 const serviceLinks = [
-  { href: "/services/kp-astrology/", label: "KP Astrology" },
-  { href: "/services/vastu/", label: "Vastu" },
-  { href: "/services/numerology/", label: "Numerology" },
+  { href: "/services/kp-astrology/", label: "Astrology", icon: "/images/services/astrology.svg" },
+  { href: "/services/vastu/", label: "Vastu", icon: "/images/services/vastu.svg" },
+  { href: "/services/numerology/", label: "Numerology", icon: "/images/services/numerology.svg" },
   { href: "/pricing/", label: "Pricing" },
 ];
 
@@ -31,11 +32,16 @@ export function Footer({ site }: FooterProps) {
     <footer className="border-t border-primary-800 bg-primary-950 text-neutral-200">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
-          <div className="mb-3 text-lg font-bold text-white">{site.brandName}</div>
-          <p className="mb-4 text-sm text-accent-300">{site.tagline}</p>
+          <div className="mb-3 flex items-center gap-3">
+            <Image src="/images/logo.svg" alt="" width={44} height={44} className="h-11 w-11" />
+            <div>
+              <div className="text-lg font-bold text-white">{site.brandName}</div>
+              <p className="text-xs text-accent-300">{site.tagline}</p>
+            </div>
+          </div>
           <p className="text-sm leading-relaxed text-neutral-400">
-            Integrated consultations across KP Astrology, Vastu, and Numerology —
-            clear guidance for timing, space, and name alignment.
+            Integrated consultations with {site.consultantName} — KP Astrology, Vastu, and
+            Numerology for clear guidance on timing, space, and name alignment.
           </p>
         </div>
 
@@ -46,7 +52,13 @@ export function Footer({ site }: FooterProps) {
           <ul className="space-y-2 text-sm">
             {serviceLinks.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hover:text-white transition-colors">
+                <Link
+                  href={l.href}
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  {l.icon ? (
+                    <Image src={l.icon} alt="" width={18} height={18} className="h-[18px] w-[18px]" />
+                  ) : null}
                   {l.label}
                 </Link>
               </li>
@@ -84,7 +96,9 @@ export function Footer({ site }: FooterProps) {
 
       <div className="border-t border-primary-800">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} {site.brandName}. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {site.brandName}. All rights reserved.
+          </p>
           <div className="flex gap-4">
             {legalLinks.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-neutral-300">

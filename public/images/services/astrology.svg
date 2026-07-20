@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Astrology">
+  <defs>
+    <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d78c"/>
+      <stop offset="50%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#8a6a28"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#0b0a14"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#ag)" stroke-width="3"/>
+  <circle cx="100" cy="100" r="62" fill="none" stroke="url(#ag)" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="100" cy="100" r="28" fill="url(#ag)"/>
+  <g stroke="url(#ag)" stroke-width="1.5" fill="none">
+    <line x1="100" y1="12" x2="100" y2="188"/>
+    <line x1="12" y1="100" x2="188" y2="100"/>
+    <line x1="38" y1="38" x2="162" y2="162"/>
+    <line x1="162" y1="38" x2="38" y2="162"/>
+  </g>
+  <!-- sunburst rays -->
+  <g fill="url(#ag)">
+    <polygon points="100,40 104,70 96,70"/>
+    <polygon points="100,160 104,130 96,130"/>
+    <polygon points="40,100 70,104 70,96"/>
+    <polygon points="160,100 130,104 130,96"/>
+    <polygon points="58,58 78,78 72,82"/>
+    <polygon points="142,142 122,122 128,118"/>
+    <polygon points="142,58 122,78 128,82"/>
+    <polygon points="58,142 78,122 72,118"/>
+  </g>
+  <!-- small zodiac tick marks -->
+  <g stroke="url(#ag)" stroke-width="2">
+    <line x1="100" y1="14" x2="100" y2="24"/>
+    <line x1="143" y1="25" x2="138" y2="34"/>
+    <line x1="175" y1="57" x2="166" y2="62"/>
+    <line x1="186" y1="100" x2="176" y2="100"/>
+    <line x1="175" y1="143" x2="166" y2="138"/>
+    <line x1="143" y1="175" x2="138" y2="166"/>
+    <line x1="100" y1="186" x2="100" y2="176"/>
+    <line x1="57" y1="175" x2="62" y2="166"/>
+    <line x1="25" y1="143" x2="34" y2="138"/>
+    <line x1="14" y1="100" x2="24" y2="100"/>
+    <line x1="25" y1="57" x2="34" y2="62"/>
+    <line x1="57" y1="25" x2="62" y2="34"/>
+  </g>
+</svg>

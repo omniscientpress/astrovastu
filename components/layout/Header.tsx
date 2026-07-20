@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -31,9 +32,14 @@ export function Header({ brandName, tagline }: HeaderProps) {
     <header className="sticky top-0 z-40 border-b border-neutral-200/80 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-900 text-accent-400 font-bold">
-            A
-          </div>
+          <Image
+            src="/images/logo.svg"
+            alt={`${brandName} logo`}
+            width={40}
+            height={40}
+            className="h-10 w-10"
+            priority
+          />
           <div className="leading-tight">
             <div className="text-base font-bold text-primary-900">{brandName}</div>
             <div className="hidden text-[10px] text-neutral-500 sm:block">{tagline}</div>

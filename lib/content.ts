@@ -52,6 +52,8 @@ export const servicePillarSchema = z.object({
   shortTitle: z.string(),
   tagline: z.string(),
   description: z.string(),
+  icon: z.string(),
+  accent: z.enum(["gold", "teal", "lime"]),
   forYou: z.array(z.string()),
   youReceive: z.array(z.string()),
   process: z.array(
