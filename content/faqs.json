@@ -26,7 +26,7 @@
   {
     "id": "f5",
     "question": "Which numerology system do you use?",
-    "answer": "We will confirm the exact system (Chaldean / Pythagorean / Vedic / blended) in the final content once you lock Phase 0 inputs. What never changes: we cross-check name and number suggestions against your birth chart.",
+    "answer": "A blended approach (drawing from Chaldean, Pythagorean, and Vedic number traditions as relevant to the question). What never changes: we cross-check name and number suggestions against your birth chart so recommendations do not fight your planetary blueprint.",
     "category": "numerology"
   },
   {
@@ -44,13 +44,13 @@
   {
     "id": "f8",
     "question": "What is your reschedule / refund policy?",
-    "answer": "Placeholder — finalize with your real policy in Phase 0. Typically: free reschedule with 24+ hours notice; refund rules stated clearly on the Refund page before launch.",
+    "answer": "Free reschedule with at least 24 hours' notice. Full refund if you cancel 24 hours or more before the confirmed slot. Cancellations within 24 hours are non-refundable (we can still try to reschedule subject to availability).",
     "category": "general"
   },
   {
     "id": "f9",
     "question": "Are consultations online or in person?",
-    "answer": "Primarily online (video/phone) for clients worldwide. Based in Hyderabad — in-person sessions can be arranged when available.",
+    "answer": "Both. Online (video/phone) for clients worldwide, and in-person in Hyderabad by appointment only.",
     "category": "general"
   }
 ]

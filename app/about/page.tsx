@@ -21,8 +21,8 @@ export default function AboutPage() {
         integrated practice.
       </p>
       <p className="mt-4 leading-relaxed text-neutral-600">
-        Based in {site.city}, consulting clients online worldwide. Full credentials, photo, and
-        bio depth will expand in Phase 2 as you share more details.
+        Based in {site.city} — online consultations worldwide, and in-person sessions by
+        appointment only. Full credentials, photo, and bio depth will expand in Phase 2.
       </p>
       <div className="mt-8 grid grid-cols-2 gap-4">
         {site.stats.map((s) => (

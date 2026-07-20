@@ -3,7 +3,7 @@
   "title": "Numerology Consultation",
   "shortTitle": "Numerology",
   "tagline": "Name, numbers, and birth chart — aligned together",
-  "description": "Name analysis, baby names, business names, and mobile number guidance. We never suggest a name spelling that fights your birth chart — astrology + numerology together.",
+  "description": "Name analysis, baby names, business names, and mobile number guidance using a blended numerology approach. We never suggest a name spelling that fights your birth chart — astrology + numerology together."
   "forYou": [
     "You are considering a name spelling correction",
     "You need a baby name or business/brand name",
@@ -25,7 +25,7 @@
     {
       "step": "02",
       "title": "Number derivation",
-      "description": "We calculate core numbers and check compatibility with your chart."
+      "description": "We calculate core numbers using a blended system and check compatibility with your chart."
     },
     {
       "step": "03",
