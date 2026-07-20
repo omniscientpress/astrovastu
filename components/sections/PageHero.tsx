@@ -109,9 +109,14 @@ export function PageHero({
         </div>
         {iconSrc ? (
           <div className="mx-auto hidden lg:block">
-            <div className="flex h-56 w-56 items-center justify-center rounded-full bg-black/30 p-4 md:h-64 md:w-64">
-              <Image src={iconSrc} alt="" width={220} height={220} className="h-full w-full" priority />
-            </div>
+            <Image
+              src={iconSrc}
+              alt=""
+              width={280}
+              height={280}
+              className="h-56 w-56 object-contain drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] md:h-64 md:w-64"
+              priority
+            />
           </div>
         ) : null}
       </div>

@@ -3,9 +3,10 @@
 Chat image attachments do NOT save into this folder automatically.
 Copy the files into the repo (or upload them on GitHub), then commit.
 
-## 1) Main logo
+## 1) Main logo (prefer transparent PNG)
   public/images/logo.png
 
+Overwrite this exact filename when replacing the logo.
 Used in: header, home hero, about, footer.
 
 ## 2) Combined three-services image (Astrology | Numerology | Vastu)

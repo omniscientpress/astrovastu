@@ -36,9 +36,9 @@ export function Header({ brandName, tagline, logoSrc }: HeaderProps) {
           <Image
             src={logoSrc}
             alt={`${brandName} logo`}
-            width={40}
-            height={40}
-            className="h-10 w-10 object-contain"
+            width={48}
+            height={48}
+            className="h-11 w-11 object-contain"
             priority
           />
           <div className="leading-tight">
