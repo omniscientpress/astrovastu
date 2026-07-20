@@ -1,33 +1,37 @@
 import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { getSite } from "@/lib/content";
 import { buildWaLink, getPhoneTelHref } from "@/lib/whatsapp";
-import { MessageCircle, Phone, Mail, Clock } from "lucide-react";
+import { MessageCircle, Phone, Mail, Clock, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact AstroVastu via WhatsApp, phone, or email.",
+  description: "Contact AstroVastu in Hyderabad via WhatsApp, phone, or inquiry form.",
 };
 
 export default function ContactPage() {
   const site = getSite();
   const wa = buildWaLink({ page: "contact" });
+
   return (
     <Section>
       <Badge>Contact</Badge>
       <h1 className="mt-3 text-3xl font-bold text-primary-900">Get in touch</h1>
       <p className="mt-3 max-w-2xl text-neutral-600">
-        WhatsApp is the fastest way to reach us. Contact form → email (Resend) lands in Phase 2.
+        WhatsApp is the fastest way to reach {site.consultantName}. Use the form if you prefer
+        email follow-up — we&apos;ll still usually reply on WhatsApp.
       </p>
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <Card className="space-y-4">
+
+      <div className="mt-10 grid gap-8 lg:grid-cols-2">
+        <Card className="space-y-5">
           <div className="flex items-start gap-3">
             <Phone className="mt-0.5 h-5 w-5 text-accent-600" />
             <div>
-              <div className="font-semibold text-primary-900">Phone</div>
+              <div className="font-semibold text-primary-900">Phone / WhatsApp</div>
               <a href={getPhoneTelHref()} className="text-sm text-neutral-600 hover:text-primary-900">
                 {site.phone}
               </a>
@@ -45,6 +49,13 @@ export default function ContactPage() {
             <div>
               <div className="font-semibold text-primary-900">Hours</div>
               <div className="text-sm text-neutral-600">{site.hours}</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <MapPin className="mt-0.5 h-5 w-5 text-accent-600" />
+            <div>
+              <div className="font-semibold text-primary-900">Location</div>
+              <div className="text-sm text-neutral-600">{site.address}</div>
               <div className="text-sm text-neutral-500">{site.serviceArea}</div>
             </div>
           </div>
@@ -53,12 +64,10 @@ export default function ContactPage() {
             WhatsApp us
           </Button>
         </Card>
+
         <Card>
-          <h2 className="font-semibold text-primary-900">Inquiry form</h2>
-          <p className="mt-2 text-sm text-neutral-600">
-            Phase 2 will add a form posting to <code>/api/inquiry</code> (Resend email + DB log)
-            with redirect to <code>/thank-you/</code>.
-          </p>
+          <h2 className="mb-4 text-lg font-bold text-primary-900">Send an inquiry</h2>
+          <ContactForm whatsappHref={wa} />
         </Card>
       </div>
     </Section>

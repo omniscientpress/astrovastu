@@ -53,6 +53,9 @@
   --color-pillar-gold: #c5a059;
   --color-pillar-teal: #4db6ac;
   --color-pillar-lime: #8bc34a;
+
+  --color-success-500: #2f9e5b;
+  --color-danger-500: #d94f4f;
 }
 
 @media (prefers-color-scheme: dark) {
