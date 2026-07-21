@@ -1,0 +1,74 @@
+[
+  {
+    "id": "t1",
+    "name": "Ramesh K.",
+    "location": "Hyderabad",
+    "service": "kp",
+    "rating": 5,
+    "text": "The KP analysis for my government job query was precise. The timing window matched when I got selected.",
+    "resultSummary": "Career timing matched selection month",
+    "date": "2024-06-01",
+    "featured": true,
+    "approved": true
+  },
+  {
+    "id": "t2",
+    "name": "Lakshmi D.",
+    "location": "Vijayawada",
+    "service": "kp",
+    "rating": 5,
+    "text": "We were worried about Kuja Dosha. The matching explanation gave our family clarity before the wedding.",
+    "resultSummary": "Marriage matching clarity",
+    "date": "2024-05-15",
+    "featured": true,
+    "approved": true
+  },
+  {
+    "id": "t3",
+    "name": "Suresh R.",
+    "location": "Bangalore",
+    "service": "kp",
+    "rating": 5,
+    "text": "C-section muhurtham was calculated carefully. We felt confident about the chosen window.",
+    "resultSummary": "Childbirth muhurtham",
+    "date": "2024-04-20",
+    "featured": true,
+    "approved": true
+  },
+  {
+    "id": "t4",
+    "name": "Priya S.",
+    "location": "Chennai",
+    "service": "vastu",
+    "rating": 5,
+    "text": "Home Vastu suggestions were practical — no demolition. Small placement changes made the house feel calmer.",
+    "resultSummary": "Remedies without demolition",
+    "date": "2024-03-10",
+    "featured": true,
+    "approved": true
+  },
+  {
+    "id": "t5",
+    "name": "Anita M.",
+    "location": "Delhi",
+    "service": "numerology",
+    "rating": 5,
+    "text": "Business name options were checked against the chart. We picked a spelling we could actually use.",
+    "resultSummary": "Business name selection",
+    "date": "2024-02-18",
+    "featured": false,
+    "approved": true
+  },
+  {
+    "id": "t6",
+    "name": "Venkatesh R.",
+    "location": "Mumbai",
+    "service": "kp",
+    "rating": 5,
+    "text": "Prashna reading for a lost item was specific. Direction guidance helped us find it the next day.",
+    "resultSummary": "Prashna — lost item",
+    "date": "2024-01-22",
+    "featured": false,
+    "approved": true
+  }
+]

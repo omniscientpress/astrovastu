@@ -1,0 +1,125 @@
+{
+  "note": "Payment via UPI after slot confirmation on WhatsApp. Free reschedule with 24+ hours notice.",
+  "packages": [
+    {
+      "id": "kp-focused",
+      "name": "KP Focused Question",
+      "pillar": "kp",
+      "price": 2000,
+      "priceLabel": "₹2,000",
+      "duration": "30 min",
+      "bestFor": "One clear timing or Yes/No-style life question (career, marriage window, decision).",
+      "prepare": "Date, time, and place of birth; one primary question in writing.",
+      "followUp": "Short written summary after the session.",
+      "inclusions": [
+        "One primary question",
+        "KP Sub-Lord timing analysis",
+        "Verbal remedies",
+        "Short written summary"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Same week (slot-based)",
+      "highlighted": false
+    },
+    {
+      "id": "kp-full",
+      "name": "KP Full Consultation",
+      "pillar": "kp",
+      "price": 4000,
+      "priceLabel": "₹4,000",
+      "duration": "45–60 min",
+      "bestFor": "Broader life-area review — career path, marriage timing, or multiple related questions.",
+      "prepare": "Birth details; list of topics in priority order.",
+      "followUp": "Written summary + one clarification within 7 days.",
+      "inclusions": [
+        "Broader life-area review",
+        "Timing windows + remedies",
+        "Written summary",
+        "One follow-up clarification (7 days)"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "prashna",
+      "name": "Prashna (Horary)",
+      "pillar": "kp",
+      "price": 1000,
+      "priceLabel": "₹1,000",
+      "duration": "15 min",
+      "bestFor": "Urgent single questions when birth time is unknown or unreliable.",
+      "prepare": "One focused question; ask when you are ready to receive the answer.",
+      "followUp": "Verbal guidance; brief note on request.",
+      "inclusions": [
+        "One focused Prashna question",
+        "KP 1–249 number analysis",
+        "Clear Yes/No-style guidance",
+        "No birth details required"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Often same day",
+      "highlighted": false
+    },
+    {
+      "id": "vastu-home",
+      "name": "Home / Office Vastu",
+      "pillar": "vastu",
+      "price": 3500,
+      "priceLabel": "₹3,500",
+      "duration": "45–60 min",
+      "bestFor": "Home, shop, or office layout review with practical remedies.",
+      "prepare": "Floor plan or video walkthrough; north direction if known; main concern.",
+      "followUp": "Written remedy priority list.",
+      "inclusions": [
+        "Floor-plan analysis",
+        "Priority remedy list",
+        "Non-demolition options first",
+        "Written recommendations"
+      ],
+      "deliveryMode": "Video + floor plan review",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "numerology-name",
+      "name": "Numerology Name / Number",
+      "pillar": "numerology",
+      "price": 1500,
+      "priceLabel": "₹1,500",
+      "duration": "30 min",
+      "bestFor": "Name spelling, baby/business name, or mobile number alignment.",
+      "prepare": "Full name as used; date of birth; options under consideration.",
+      "followUp": "Written options list with rationale.",
+      "inclusions": [
+        "Mulank / Bhagyank breakdown",
+        "Name or mobile analysis",
+        "Birth-chart cross-check",
+        "Written options list"
+      ],
+      "deliveryMode": "Video / phone",
+      "turnaround": "Slot-based",
+      "highlighted": false
+    },
+    {
+      "id": "combo",
+      "name": "Divine Jyothi Audit",
+      "pillar": "combo",
+      "price": 7500,
+      "priceLabel": "₹7,500",
+      "duration": "90 min",
+      "bestFor": "Integrated decisions where timing, space, and name all matter — major moves, home + career, brand launch.",
+      "prepare": "Birth details, floor plan or address context, and names/numbers under review.",
+      "followUp": "Combined written summary and priority action plan.",
+      "inclusions": [
+        "KP timing + Vastu space review + Numerology alignment",
+        "Integrated recommendations",
+        "Priority action plan",
+        "Written combined summary"
+      ],
+      "deliveryMode": "Video",
+      "turnaround": "Slot-based",
+      "highlighted": true
+    }
+  ]
+}

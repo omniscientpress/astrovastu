@@ -1,0 +1,92 @@
+[
+  {
+    "id": "f1",
+    "question": "How is KP astrology different from traditional Vedic astrology?",
+    "answer": "KP (Krishnamurti Paddhati) uses Sub-Lord theory for finer timing of events. Traditional systems often give broader periods; KP aims for more specific windows. Both are serious systems — KP is chosen when precise timing questions matter most.",
+    "category": "astrology"
+  },
+  {
+    "id": "f2",
+    "question": "What if my birth time is approximate?",
+    "answer": "Exact birth time improves KP accuracy. If time is approximate, we discuss birth-time rectification options or recommend Prashna (horary) for specific questions that do not require birth details.",
+    "category": "astrology"
+  },
+  {
+    "id": "f3",
+    "question": "When is Prashna suitable?",
+    "answer": "Use Prashna for one focused, urgent question — especially when birth time is unknown. It is not a substitute for a full natal consultation when you need a broader life-area review.",
+    "category": "astrology"
+  },
+  {
+    "id": "f4",
+    "question": "Can Vastu be fixed without construction or demolition?",
+    "answer": "In most cases, yes. We prioritize placement, usage, color, and simple remedies first. Structural changes are suggested only when they are truly necessary and practical for you.",
+    "category": "vastu"
+  },
+  {
+    "id": "f5",
+    "question": "Does remote Vastu consultation via floor plan work?",
+    "answer": "Yes — with a clear floor plan (or video walkthrough) and north direction. On-site visits in Hyderabad are useful for complex properties but are not required for many homes and shops.",
+    "category": "vastu"
+  },
+  {
+    "id": "f6",
+    "question": "Which numerology system do you use?",
+    "answer": "A blended approach (drawing from Chaldean, Pythagorean, and Vedic number traditions as relevant). What never changes: we cross-check name and number suggestions against your birth chart so recommendations do not fight your planetary blueprint.",
+    "category": "numerology"
+  },
+  {
+    "id": "f7",
+    "question": "Does changing name spelling really matter?",
+    "answer": "Spelling changes are optional tools, not magic. We only suggest adjustments when the numbers conflict with your chart goals — and we explain the reasoning so you can decide calmly.",
+    "category": "numerology"
+  },
+  {
+    "id": "f8",
+    "question": "When is a combined consultation better than a single service?",
+    "answer": "Choose the Divine Jyothi Audit when timing, space, and name all affect the same decision — for example moving home while changing job, launching a brand, or planning marriage alongside house selection. A single-service session is enough when your question fits one pillar clearly.",
+    "category": "general"
+  },
+  {
+    "id": "f9",
+    "question": "Are outcomes guaranteed?",
+    "answer": "No. Consultations indicate favorable periods, tendencies, and practical recommendations. They do not guarantee results. We set expectations clearly and avoid fear-based claims.",
+    "category": "general"
+  },
+  {
+    "id": "f10",
+    "question": "Is my information confidential?",
+    "answer": "Yes. Birth details, floor plans, and personal questions are used only to deliver your consultation and related follow-up. We do not sell or publish client data.",
+    "category": "general"
+  },
+  {
+    "id": "f11",
+    "question": "How should I prepare for a consultation?",
+    "answer": "For KP: date, time, and place of birth plus your main question. For Vastu: floor plan or walkthrough video and north if known. For Numerology: full name as used and date of birth. Write your question in one or two clear sentences.",
+    "category": "general"
+  },
+  {
+    "id": "f12",
+    "question": "How do I book and pay?",
+    "answer": "Book a slot on the website or message us on WhatsApp. After we confirm the slot, payment is via UPI. You receive confirmation once payment is verified.",
+    "category": "pricing"
+  },
+  {
+    "id": "f13",
+    "question": "What is your reschedule / refund policy?",
+    "answer": "Free reschedule with at least 24 hours' notice. Full refund if you cancel 24 hours or more before the confirmed slot. Cancellations within 24 hours are non-refundable (we can still try to reschedule subject to availability).",
+    "category": "pricing"
+  },
+  {
+    "id": "f14",
+    "question": "Are consultations online or in person?",
+    "answer": "Both. Online (video/phone) for clients worldwide, and in-person in Hyderabad by appointment only.",
+    "category": "general"
+  },
+  {
+    "id": "f15",
+    "question": "Which languages do you support?",
+    "answer": "Consultations are available in English, Telugu, and Hindi. Mention your preference when booking.",
+    "category": "general"
+  }
+]
