@@ -8,7 +8,7 @@ const SERVICES = [
   { id: "KP", label: "Astrology (KP)" },
   { id: "VASTU", label: "Vastu" },
   { id: "NUMEROLOGY", label: "Numerology" },
-  { id: "COMBO", label: "AstroVastu Combo" },
+  { id: "COMBO", label: "Divine Jyothi Combo" },
 ] as const;
 
 const TIMES = [
@@ -244,7 +244,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
               onChange={(e) => update("consent", e.target.checked)}
               className="mt-1"
             />
-            I consent to AstroVastu storing my details (including birth data if provided) to
+            I consent to Divine Jyothi storing my details (including birth data if provided) to
             schedule and deliver this consultation.
           </label>
           {error ? <p className="text-sm text-danger-500">{error}</p> : null}

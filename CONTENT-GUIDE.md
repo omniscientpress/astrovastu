@@ -1,4 +1,4 @@
-# Content Guide (AstroVastu)
+# Content Guide (Divine Jyothi)
 
 Edit **only** files inside `/content`. After editing in the GitHub web editor, commit to `main` — Dokploy redeploys in a few minutes.
 

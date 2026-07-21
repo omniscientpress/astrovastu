@@ -45,7 +45,7 @@ export default function HomePage() {
         <div className="mb-10 max-w-2xl">
           <h2 className="text-3xl font-bold text-white">Three pillars. One brand.</h2>
           <p className="mt-3 text-neutral-300">
-            Astrology, Numerology, and Vastu — or the AstroVastu Combo for integrated guidance.
+            Astrology, Numerology, and Vastu — or the {site.brandName} Combo for integrated guidance.
           </p>
         </div>
         <PillarsBanner className="mb-8" priority />

@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 export const runtime = "nodejs";
 
-const COOKIE = "astrovastu_admin";
+const COOKIE = "divinejyothi_admin";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));

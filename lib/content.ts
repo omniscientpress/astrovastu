@@ -25,6 +25,7 @@ export const siteSchema = z.object({
   phone: z.string(),
   whatsapp: z.string().regex(/^\d+$/, "WhatsApp must be digits only, country code included"),
   email: z.string().email(),
+  domain: z.string(),
   address: z.string(),
   city: z.string(),
   serviceArea: z.string(),

@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact AstroVastu in Hyderabad via WhatsApp, phone, or inquiry form.",
+  description: "Contact Divine Jyothi in Hyderabad via WhatsApp, phone, or inquiry form.",
 };
 
 export default function ContactPage() {

@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 
 async function requireAdmin() {
   const jar = await cookies();
-  return jar.get("astrovastu_admin")?.value === "1";
+  return jar.get("divinejyothi_admin")?.value === "1";
 }
 
 export async function GET() {

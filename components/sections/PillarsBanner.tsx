@@ -21,7 +21,7 @@ export function PillarsBanner({ className, priority = false }: PillarsBannerProp
     >
       <Image
         src={src}
-        alt="Astrology, Numerology, and Vastu — three pillars of AstroVastu"
+        alt="Astrology, Numerology, and Vastu — three pillars of Divine Jyothi"
         width={1600}
         height={600}
         className="h-auto w-full object-cover"

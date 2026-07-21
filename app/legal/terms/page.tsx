@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for AstroVastu.",
+  description: "Terms of Service for Divine Jyothi.",
 };
 
 export default function TermsPage() {

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "Client experiences with AstroVastu consultations.",
+  description: "Client experiences with Divine Jyothi consultations.",
 };
 
 export default function TestimonialsPage() {

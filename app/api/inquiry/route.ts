@@ -73,7 +73,7 @@ export async function POST(request: Request) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL || "AstroVastu <onboarding@resend.dev>",
+          from: process.env.RESEND_FROM_EMAIL || "Divine Jyothi <onboarding@resend.dev>",
           to: site.email,
           subject: `New inquiry from ${data.name}`,
           text: [

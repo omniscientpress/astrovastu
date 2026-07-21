@@ -13,7 +13,7 @@ export function BrandLogo({
   size = 40,
   className,
   priority = false,
-  alt = "AstroVastu logo",
+  alt = "Divine Jyothi logo",
 }: BrandLogoProps) {
   return (
     <Image

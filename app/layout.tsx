@@ -17,13 +17,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "AstroVastu — KP Astrology · Vastu · Numerology",
-    template: "%s | AstroVastu",
+    default: "Divine Jyothi — Illuminate Your Destiny",
+    template: "%s | Divine Jyothi",
   },
   description:
-    "AstroVastu offers integrated KP Astrology, Vastu, and Numerology consultations. Book via WhatsApp.",
+    "Divine Jyothi offers integrated KP Astrology, Vastu, and Numerology consultations. Book via WhatsApp.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://divinejyothi.com",
   ),
 };
 

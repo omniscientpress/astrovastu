@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Frequently asked questions about AstroVastu consultations.",
+  description: "Frequently asked questions about Divine Jyothi consultations.",
 };
 
 export default function FaqPage() {

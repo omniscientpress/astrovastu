@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
-  description: "Refund and reschedule policy for AstroVastu consultations.",
+  description: "Refund and reschedule policy for Divine Jyothi consultations.",
 };
 
 export default function RefundPage() {
@@ -12,7 +12,7 @@ export default function RefundPage() {
       <h1 className="text-3xl font-bold text-primary-900">Refund &amp; Reschedule Policy</h1>
       <div className="mt-6 space-y-4 text-neutral-600 leading-relaxed">
         <p>
-          We understand plans change. Here is how rescheduling and refunds work for AstroVastu
+          We understand plans change. Here is how rescheduling and refunds work for Divine Jyothi
           consultations:
         </p>
         <ul className="list-disc space-y-2 pl-5">

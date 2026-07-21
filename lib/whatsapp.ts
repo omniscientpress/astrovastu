@@ -24,7 +24,7 @@ export type WaContext = {
 
 const PREFILLS: Record<WaContext["page"], string> = {
   home: "Hi, I'd like to book a consultation.",
-  about: "Hi, I'd like to know more about AstroVastu consultations.",
+  about: "Hi, I'd like to know more about Divine Jyothi consultations.",
   services: "Hi, I'd like help choosing the right consultation.",
   "kp-astrology": "Hi, I'd like a KP Astrology consultation.",
   vastu: "Hi, I'd like a Vastu consultation for my home/office.",

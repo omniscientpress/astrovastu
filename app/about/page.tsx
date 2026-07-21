@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About AstroVastu and Siva Kola — KP Astrology, Vastu, and blended Numerology consultations from Hyderabad.",
+    "About Divine Jyothi and Siva Kola — KP Astrology, Vastu, and blended Numerology consultations from Hyderabad.",
 };
 
 export default function AboutPage() {

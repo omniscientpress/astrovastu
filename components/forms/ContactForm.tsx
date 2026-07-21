@@ -93,7 +93,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
           <option value="KP">Astrology (KP)</option>
           <option value="VASTU">Vastu</option>
           <option value="NUMEROLOGY">Numerology</option>
-          <option value="COMBO">AstroVastu Combo</option>
+          <option value="COMBO">Divine Jyothi Combo</option>
         </select>
       </div>
       <div>
@@ -114,7 +114,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
           className="mt-1"
           required
         />
-        I consent to AstroVastu storing my contact details to respond to this inquiry.
+        I consent to Divine Jyothi storing my contact details to respond to this inquiry.
       </label>
       {error ? <p className="text-sm text-danger-500">{error}</p> : null}
       <div className="flex flex-wrap gap-3">
