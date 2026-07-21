@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getSite } from "@/lib/content";
 import { buildWaLink, getPhoneTelHref } from "@/lib/whatsapp";
 import { getLogoSrc } from "@/lib/brand";
@@ -15,16 +16,40 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://divinejyothi.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Divine Jyothi — Illuminate Your Destiny",
+    default: "Divine Jyothi — KP Astrology · Vastu · Numerology",
     template: "%s | Divine Jyothi",
   },
   description:
-    "Divine Jyothi offers integrated KP Astrology, Vastu, and Numerology consultations. Book via WhatsApp.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://divinejyothi.com",
-  ),
+    "Divine Jyothi offers integrated KP Astrology, Vastu, and Numerology consultations in Hyderabad and online. Clear guidance for timing, space, and name decisions.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteUrl,
+    siteName: "Divine Jyothi",
+    title: "Divine Jyothi — Illuminate Your Destiny",
+    description:
+      "KP Astrology · Vastu · Numerology. Clear guidance for timing, space, and name decisions with Siva Kola.",
+    images: [{ url: "/images/logo.png", width: 1024, height: 1024, alt: "Divine Jyothi" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Divine Jyothi — Illuminate Your Destiny",
+    description:
+      "KP Astrology · Vastu · Numerology consultations. Hyderabad-based, online worldwide.",
+    images: ["/images/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -40,8 +65,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <JsonLd />
         <div className="flex min-h-screen flex-col">
-          <Header brandName={site.brandName} tagline={site.tagline} logoSrc={logoSrc} />
+          <Header
+            brandName={site.brandName}
+            tagline={site.tagline}
+            serviceDescriptor={site.serviceDescriptor}
+            logoSrc={logoSrc}
+          />
           <main className="flex-1">{children}</main>
           <Footer site={site} logoSrc={logoSrc} />
         </div>

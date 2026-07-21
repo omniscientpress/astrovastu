@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import type { Faq, ServicePillar, Specialty, Testimonial } from "@/lib/content";
+import { getSite } from "@/lib/content";
 import { buildWaLink } from "@/lib/whatsapp";
 import { Check, MessageCircle, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -43,6 +44,7 @@ type PillarPageProps = {
 };
 
 export function PillarPage({ service, faqs, testimonials, specialties = [] }: PillarPageProps) {
+  const site = getSite();
   const wa = buildWaLink({ page: waPage[service.slug] });
   const pillarFaqs = faqs.filter((f) => f.category === faqCategory[service.slug]).slice(0, 6);
   const pillarTestimonials = testimonials
@@ -187,11 +189,12 @@ export function PillarPage({ service, faqs, testimonials, specialties = [] }: Pi
         </div>
       </Section>
 
-      <TestimonialGrid
-        title={`${service.shortTitle} client experiences`}
-        subtitle="Placeholder quotes until permission-cleared reviews replace them."
-        testimonials={pillarTestimonials.length ? pillarTestimonials : testimonials.slice(0, 3)}
-      />
+      {site.showTestimonials && pillarTestimonials.length > 0 ? (
+        <TestimonialGrid
+          title={`${service.shortTitle} client experiences`}
+          testimonials={pillarTestimonials}
+        />
+      ) : null}
 
       <FaqSection faqs={pillarFaqs} />
 

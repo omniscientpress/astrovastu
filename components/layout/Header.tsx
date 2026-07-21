@@ -14,7 +14,6 @@ const nav = [
   { href: "/services/", label: "Services" },
   { href: "/pricing/", label: "Pricing" },
   { href: "/about/", label: "About" },
-  { href: "/testimonials/", label: "Testimonials" },
   { href: "/faq/", label: "FAQ" },
   { href: "/contact/", label: "Contact" },
 ];
@@ -22,28 +21,32 @@ const nav = [
 type HeaderProps = {
   brandName: string;
   tagline: string;
+  serviceDescriptor: string;
   logoSrc: string;
 };
 
-export function Header({ brandName, tagline, logoSrc }: HeaderProps) {
+export function Header({ brandName, tagline, serviceDescriptor, logoSrc }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-200/80 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src={logoSrc}
             alt={`${brandName} logo`}
             width={81}
             height={81}
-            className="h-14 w-14 object-contain sm:h-[81px] sm:w-[81px]"
+            className="h-14 w-14 shrink-0 object-contain sm:h-[81px] sm:w-[81px]"
             priority
           />
-          <div className="leading-tight">
-            <div className="text-lg font-bold text-primary-900 sm:text-xl">{brandName}</div>
-            <div className="hidden text-[11px] text-neutral-500 sm:block">{tagline}</div>
+          <div className="min-w-0 leading-tight">
+            <div className="truncate text-lg font-bold text-primary-900 sm:text-xl">{brandName}</div>
+            <div className="hidden truncate text-[11px] font-medium text-neutral-600 sm:block">
+              {serviceDescriptor}
+            </div>
+            <div className="hidden truncate text-[10px] text-neutral-500 md:block">{tagline}</div>
           </div>
         </Link>
 

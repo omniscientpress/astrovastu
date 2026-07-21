@@ -18,6 +18,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
     phone: "",
     email: "",
     service: "",
+    language: "",
     message: "",
     consent: false,
   });
@@ -27,12 +28,19 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
     setError(null);
     setLoading(true);
     try {
+      const message = form.language
+        ? `${form.message}\n\nPreferred language: ${form.language}`
+        : form.message;
       const res = await fetch("/api/inquiry/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...form,
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
           service: form.service || undefined,
+          message,
+          consent: form.consent,
           sourcePage: "contact",
         }),
       });
@@ -93,7 +101,22 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
           <option value="KP">Astrology (KP)</option>
           <option value="VASTU">Vastu</option>
           <option value="NUMEROLOGY">Numerology</option>
-          <option value="COMBO">Divine Jyothi Combo</option>
+          <option value="COMBO">Divine Jyothi Audit (combined)</option>
+        </select>
+      </div>
+      <div>
+        <label className="mb-1 block text-sm font-medium text-primary-900">
+          Preferred language
+        </label>
+        <select
+          value={form.language}
+          onChange={(e) => setForm((f) => ({ ...f, language: e.target.value }))}
+          className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-accent-500/40"
+        >
+          <option value="">Select…</option>
+          <option value="English">English</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Hindi">Hindi</option>
         </select>
       </div>
       <div>

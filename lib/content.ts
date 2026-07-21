@@ -21,7 +21,13 @@ function loadJson<T>(relativePath: string, schema: z.ZodType<T>): T {
 export const siteSchema = z.object({
   brandName: z.string(),
   tagline: z.string(),
+  serviceDescriptor: z.string(),
+  differentiator: z.string(),
   consultantName: z.string(),
+  founderTitle: z.string(),
+  languages: z.array(z.string()),
+  responseTime: z.string(),
+  philosophy: z.string(),
   phone: z.string(),
   whatsapp: z.string().regex(/^\d+$/, "WhatsApp must be digits only, country code included"),
   email: z.string().email(),
@@ -30,6 +36,7 @@ export const siteSchema = z.object({
   city: z.string(),
   serviceArea: z.string(),
   hours: z.string(),
+  showTestimonials: z.boolean().default(false),
   social: z.object({
     facebook: z.string().url().or(z.literal("")),
     instagram: z.string().url().or(z.literal("")),
@@ -145,6 +152,9 @@ export const pricingPackageSchema = z.object({
   price: z.number(),
   priceLabel: z.string(),
   duration: z.string(),
+  bestFor: z.string(),
+  prepare: z.string(),
+  followUp: z.string(),
   inclusions: z.array(z.string()),
   deliveryMode: z.string(),
   turnaround: z.string(),
@@ -156,6 +166,14 @@ export const pricingSchema = z.object({
   packages: z.array(pricingPackageSchema),
 });
 
+export const useCaseSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  href: z.string(),
+  pillars: z.array(z.string()),
+});
+
 export type Site = z.infer<typeof siteSchema>;
 export type ServicePillar = z.infer<typeof servicePillarSchema>;
 export type Specialty = z.infer<typeof specialtySchema>;
@@ -164,6 +182,7 @@ export type Testimonial = z.infer<typeof testimonialSchema>;
 export type Faq = z.infer<typeof faqSchema>;
 export type Pricing = z.infer<typeof pricingSchema>;
 export type PricingPackage = z.infer<typeof pricingPackageSchema>;
+export type UseCase = z.infer<typeof useCaseSchema>;
 
 /* ---------- loaders ---------- */
 
@@ -221,4 +240,8 @@ export function getFaqs(category?: Faq["category"]): Faq[] {
 
 export function getPricing(): Pricing {
   return loadJson("pricing.json", pricingSchema);
+}
+
+export function getUseCases(): UseCase[] {
+  return loadJson("use-cases.json", z.array(useCaseSchema));
 }

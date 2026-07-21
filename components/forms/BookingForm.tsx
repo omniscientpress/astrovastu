@@ -8,7 +8,7 @@ const SERVICES = [
   { id: "KP", label: "Astrology (KP)" },
   { id: "VASTU", label: "Vastu" },
   { id: "NUMEROLOGY", label: "Numerology" },
-  { id: "COMBO", label: "Divine Jyothi Combo" },
+  { id: "COMBO", label: "Divine Jyothi Audit" },
 ] as const;
 
 const TIMES = [

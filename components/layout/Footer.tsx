@@ -20,7 +20,6 @@ const serviceLinks = [
 
 const companyLinks = [
   { href: "/about/", label: "About" },
-  { href: "/testimonials/", label: "Testimonials" },
   { href: "/faq/", label: "FAQ" },
   { href: "/contact/", label: "Contact" },
   { href: "/book/", label: "Book" },
@@ -41,6 +40,7 @@ export function Footer({ site, logoSrc }: FooterProps) {
             <Image src={logoSrc} alt="" width={44} height={44} className="h-11 w-11 object-contain" />
             <div>
               <div className="text-lg font-bold text-white">{site.brandName}</div>
+              <p className="text-xs text-neutral-400">{site.serviceDescriptor}</p>
               <p className="text-xs text-accent-300">{site.tagline}</p>
             </div>
           </div>

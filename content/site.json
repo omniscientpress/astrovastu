@@ -1,7 +1,13 @@
 {
   "brandName": "Divine Jyothi",
   "tagline": "Illuminate Your Destiny",
+  "serviceDescriptor": "KP Astrology · Vastu · Numerology",
+  "differentiator": "Timing. Space. Name.",
   "consultantName": "Siva Kola",
+  "founderTitle": "Founder & Consultant",
+  "languages": ["English", "Telugu", "Hindi"],
+  "responseTime": "Usually within a few hours during business hours (IST)",
+  "philosophy": "Clear guidance for real decisions — practical timing, space, and name recommendations without fear-based claims or guaranteed outcomes.",
   "phone": "+91 98850 99448",
   "whatsapp": "919885099448",
   "email": "consult@divinejyothi.com",
@@ -10,6 +16,7 @@
   "city": "Hyderabad",
   "serviceArea": "Hyderabad (in-person by appointment) · Online consultations worldwide",
   "hours": "Mon–Sat, 9:00 AM – 9:00 PM IST",
+  "showTestimonials": false,
   "social": {
     "facebook": "",
     "instagram": "",

@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Divine Jyothi and Siva Kola — KP Astrology, Vastu, and blended Numerology consultations from Hyderabad.",
+    "About Divine Jyothi and Siva Kola — KP Astrology, Vastu, and Numerology consultations from Hyderabad. Practical guidance for timing, space, and name.",
 };
 
 export default function AboutPage() {
@@ -30,16 +30,17 @@ export default function AboutPage() {
             <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
               About {site.brandName}
             </h1>
+            <p className="mt-2 text-accent-300">{site.serviceDescriptor}</p>
             <p className="mt-4 max-w-2xl text-neutral-300 leading-relaxed">
               Guided by <strong className="text-white">{site.consultantName}</strong>,{" "}
-              {site.brandName} bridges your birth chart, your name, and your living space — KP
+              {site.brandName} bridges your birth chart, your living space, and your name — KP
               Astrology&apos;s timing precision, Vastu&apos;s spatial wisdom, and blended
               Numerology in one integrated practice.
             </p>
           </div>
           <Image
             src={logoSrc}
-            alt=""
+            alt={`${site.brandName} logo`}
             width={160}
             height={160}
             className="mx-auto h-36 w-36 object-contain"
@@ -48,27 +49,59 @@ export default function AboutPage() {
       </Section>
 
       <Section narrow>
-        <h2 className="text-2xl font-bold text-primary-900">Our mission</h2>
+        <h2 className="text-2xl font-bold text-primary-900">Meet {site.consultantName}</h2>
+        <p className="mt-1 text-sm font-medium text-neutral-500">{site.founderTitle}</p>
         <p className="mt-4 leading-relaxed text-neutral-600">
-          We help individuals navigate life&apos;s decisions with clarity — not fear, and not
-          vague yearly forecasts. Every consultation aims for practical timing, spatial, or
-          name guidance you can act on.
+          With {site.stats[0]?.value ?? "9+"} years of consultation practice from {site.city},{" "}
+          {site.consultantName} works with clients online worldwide and in person by appointment.
+          Sessions are conducted in {site.languages.join(", ")}.
+        </p>
+        <p className="mt-4 leading-relaxed text-neutral-600">{site.philosophy}</p>
+
+        <h2 className="mt-12 text-2xl font-bold text-primary-900">Why {site.brandName} exists</h2>
+        <p className="mt-4 leading-relaxed text-neutral-600">
+          Many people receive timing advice from one place, Vastu from another, and name suggestions
+          from a third — sometimes conflicting. {site.brandName} was built so Timing, Space, and
+          Name are reviewed together: {site.differentiator}
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-primary-900">What is the KP System?</h2>
+        <h2 className="mt-12 text-2xl font-bold text-primary-900">Our approach</h2>
+        <ul className="mt-4 space-y-3 text-neutral-600">
+          <li>
+            <strong className="text-primary-900">Practical over theatrical.</strong> Clear
+            recommendations you can act on — not vague yearly forecasts or fear-selling.
+          </li>
+          <li>
+            <strong className="text-primary-900">No guaranteed outcomes.</strong> Charts and
+            assessments indicate tendencies and favorable windows; they do not promise results.
+          </li>
+          <li>
+            <strong className="text-primary-900">Integrated when it matters.</strong> Single-pillar
+            sessions when one question is enough; combined Audit when timing, space, and name all
+            affect the same decision.
+          </li>
+          <li>
+            <strong className="text-primary-900">Confidential by default.</strong> Birth details and
+            floor plans stay private.
+          </li>
+        </ul>
+
+        <h2 className="mt-12 text-2xl font-bold text-primary-900">What is the KP System?</h2>
         <p className="mt-4 leading-relaxed text-neutral-600">
           The Krishnamurti Paddhati (KP) system was developed by K.S. Krishnamurti. Unlike
           traditional Vedic astrology that often gives broad windows, KP uses Sub-Lord theory —
           dividing each star into finer segments — to pinpoint when events are most likely to
-          unfold. KP indicates favorable periods and tendencies; it does not guarantee outcomes.
+          unfold.
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-primary-900">How we work</h2>
+        <h2 className="mt-12 text-2xl font-bold text-primary-900">How we work</h2>
         <ul className="mt-4 space-y-2 text-neutral-600">
           <li>• Based in {site.city} — online worldwide, in-person by appointment only</li>
           <li>• {site.hours}</li>
+          <li>• Languages: {site.languages.join(" · ")}</li>
           <li>• Payment via UPI after slot confirmation on WhatsApp</li>
           <li>• Free reschedule with 24+ hours notice</li>
+          <li>• Typical reply time: {site.responseTime}</li>
         </ul>
 
         <div className="mt-10 grid grid-cols-2 gap-4">

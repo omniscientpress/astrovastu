@@ -1,0 +1,58 @@
+[
+  {
+    "id": "career",
+    "title": "Career & education",
+    "description": "Course choice, job timing, promotions, foreign career, business vs job.",
+    "href": "/services/career/",
+    "pillars": ["KP Astrology"]
+  },
+  {
+    "id": "marriage",
+    "title": "Marriage & relationships",
+    "description": "Matching, timing, delayed marriage, and family harmony guidance.",
+    "href": "/services/marriage/",
+    "pillars": ["KP Astrology"]
+  },
+  {
+    "id": "childbirth",
+    "title": "Childbirth & family",
+    "description": "Progeny timing, conception windows, and C-section muhurtham support.",
+    "href": "/services/childbirth/",
+    "pillars": ["KP Astrology"]
+  },
+  {
+    "id": "property",
+    "title": "Property & house planning",
+    "description": "Purchase timing, plot checks, and home Vastu before you commit.",
+    "href": "/services/home-vastu/",
+    "pillars": ["KP Astrology", "Vastu"]
+  },
+  {
+    "id": "business",
+    "title": "Business & office",
+    "description": "Shop/office layout, brand naming, and launch timing.",
+    "href": "/services/office-vastu/",
+    "pillars": ["Vastu", "Numerology", "KP Astrology"]
+  },
+  {
+    "id": "naming",
+    "title": "Naming & number alignment",
+    "description": "Name correction, baby names, business names, and mobile numbers.",
+    "href": "/services/name-numerology/",
+    "pillars": ["Numerology"]
+  },
+  {
+    "id": "muhurtham",
+    "title": "Muhurtham & auspicious timing",
+    "description": "Marriage, Gruha Pravesham, business opening, and ceremonies.",
+    "href": "/services/muhurtham/",
+    "pillars": ["KP Astrology"]
+  },
+  {
+    "id": "prashna",
+    "title": "Urgent Prashna question",
+    "description": "Focused Yes/No-style guidance when birth details are missing.",
+    "href": "/services/prashna/",
+    "pillars": ["KP Astrology"]
+  }
+]
