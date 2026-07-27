@@ -65,7 +65,7 @@ export function Navbar() {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl lg:text-2xl font-bold text-gradient leading-tight">
-                KP Jyotish
+                Divine Jyothi
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
                 {lang === "te" ? "కేపీ జ్యోతిషం" : "Authentic Astrology"}

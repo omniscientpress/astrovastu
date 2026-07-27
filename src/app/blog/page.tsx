@@ -3,7 +3,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog - KP Jyotish",
+  title: "Blog - Divine Jyothi",
   description: "Articles and insights on KP astrology, Muhurtham, and Vedic wisdom.",
 };
 

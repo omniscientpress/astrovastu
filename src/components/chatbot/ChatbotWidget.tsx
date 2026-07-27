@@ -82,7 +82,7 @@ export function ChatbotWidget() {
     setCurrentStep("welcome");
     setSelectedService(null);
     setTimeout(() => {
-      addMessage("🙏 నమస్కారం! Welcome to KP Jyotish.\n\nI'm your astrology assistant. I'll help you book the right consultation and collect all necessary details.\n\nWhat is your name? (మీ పేరు ఏమిటి?)");
+      addMessage("🙏 నమస్కారం! Welcome to Divine Jyothi.\n\nI'm your astrology assistant. I'll help you book the right consultation and collect all necessary details.\n\nWhat is your name? (మీ పేరు ఏమిటి?)");
     }, 300);
   };
 
@@ -216,7 +216,7 @@ export function ChatbotWidget() {
                 <Bot className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">KP Jyotish Assistant</h3>
+                <h3 className="text-white font-semibold">Divine Jyothi Assistant</h3>
                 <p className="text-white/80 text-xs">Usually responds instantly</p>
               </div>
             </div>

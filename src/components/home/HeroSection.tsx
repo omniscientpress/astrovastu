@@ -117,7 +117,7 @@ export function HeroSection() {
                   <div className="w-64 h-64 rounded-full bg-gradient-to-br from-saffron-500/30 to-gold-500/30 backdrop-blur-sm flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-8xl font-bold text-white/90 mb-2">ॐ</div>
-                      <div className="text-white/70 text-sm tracking-widest">KP JYOTISH</div>
+                      <div className="text-white/70 text-sm tracking-widest">DIVINE JYOTHI</div>
                     </div>
                   </div>
                 </div>

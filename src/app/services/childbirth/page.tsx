@@ -100,7 +100,7 @@ export default function ChildbirthPage() {
         <div className="max-w-6xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Couples Trust <span className="text-gradient">KP Jyotish</span> for Progeny
+              Why Couples Trust <span className="text-gradient">Divine Jyothi</span> for Progeny
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               We understand the emotional weight of this journey. Our approach is scientific, compassionate, and proven.

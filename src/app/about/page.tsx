@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Award, Users, BookOpen, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us - KP Jyotish",
-  description: "Learn about KP Jyotish and our expertise in Krishnamurti Paddhati astrology system.",
+  title: "About Us - Divine Jyothi",
+  description: "Learn about Divine Jyothi and our expertise in Krishnamurti Paddhati astrology system.",
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-deepblue-900 to-deepblue-800 py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            About <span className="text-gold-400">KP Jyotish</span>
+            About <span className="text-gold-400">Divine Jyothi</span>
           </h1>
           <p className="text-lg text-white/80">
             Dedicated to providing authentic and accurate KP astrology consultations.
@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="prose dark:prose-invert max-w-none">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
-            At KP Jyotish, we are dedicated to providing authentic and accurate astrology consultations 
+            At Divine Jyothi, we are dedicated to providing authentic and accurate astrology consultations
             using the Krishnamurti Paddhati (KP) system. Our mission is to help individuals navigate 
             life's challenges with clarity and confidence through precise astrological guidance.
           </p>

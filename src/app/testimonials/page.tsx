@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Testimonials - KP Jyotish",
+  title: "Testimonials - Divine Jyothi",
   description: "Read what our clients say about their KP astrology consultation experience.",
 };
 
@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
             Client <span className="text-gold-400">Testimonials</span>
           </h1>
           <p className="text-lg text-white/80">
-            Real experiences from real clients who trusted KP Jyotish.
+            Real experiences from real clients who trusted Divine Jyothi.
           </p>
         </div>
       </section>

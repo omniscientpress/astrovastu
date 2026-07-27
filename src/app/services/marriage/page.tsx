@@ -178,7 +178,7 @@ export default function MarriagePage() {
         <div className="max-w-6xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-400 text-sm font-semibold mb-4">
-              <Users className="w-4 h-4" /> Exclusive to KP Jyotish — India's First
+              <Users className="w-4 h-4" /> Exclusive to Divine Jyothi — India's First
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Family Compatibility — <span className="text-gradient">The Missing Piece</span>
@@ -233,7 +233,7 @@ export default function MarriagePage() {
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Studies show that <strong>over 60% of marital conflicts stem from family interference</strong>, not couple incompatibility. 
-            Yet no traditional astrology service addresses this. At KP Jyotish, we believe marriage is not just between two people—
+            Yet no traditional astrology service addresses this. At Divine Jyothi, we believe marriage is not just between two people—
             it is between two families. Our Family Compatibility Analysis ensures both Pelli Koothuru and Pelli Koduku enter their new family with eyes wide open, 
             armed with knowledge, remedies, and strategies for lifelong harmony.
           </p>

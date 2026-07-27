@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { SITE_CONFIG, buildWhatsAppLink } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Contact Us - KP Jyotish",
-  description: "Get in touch with KP Jyotish for astrology consultations and queries.",
+  title: "Contact Us - Divine Jyothi",
+  description: "Get in touch with Divine Jyothi for astrology consultations and queries.",
 };
 
 export default function ContactPage() {
@@ -27,7 +28,7 @@ export default function ContactPage() {
               <Phone className="w-6 h-6 text-saffron-500 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">Phone</h3>
-                <p className="text-gray-600 dark:text-gray-400">+91 98765 43210</p>
+                <p className="text-gray-600 dark:text-gray-400">{SITE_CONFIG.whatsappNumberDisplay}</p>
                 <p className="text-sm text-gray-500">Mon-Sat, 9AM - 9PM IST</p>
               </div>
             </div>
@@ -35,14 +36,21 @@ export default function ContactPage() {
               <Mail className="w-6 h-6 text-saffron-500 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                <p className="text-gray-600 dark:text-gray-400">consult@kpjyotish.com</p>
+                <p className="text-gray-600 dark:text-gray-400">consult@divinejyothi.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
               <MessageCircle className="w-6 h-6 text-saffron-500 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">WhatsApp</h3>
-                <p className="text-gray-600 dark:text-gray-400">+91 98765 43210</p>
+                <a
+                  href={buildWhatsAppLink("Hi Divine Jyothi, I'd like to know more about your astrology consultations.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-saffron-600 dark:hover:text-saffron-400 transition-colors"
+                >
+                  {SITE_CONFIG.whatsappNumberDisplay}
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { ServicesGrid } from "@/components/services/ServicesGrid";
 
 export const metadata: Metadata = {
-  title: "Our Services - KP Jyotish",
+  title: "Our Services - Divine Jyothi",
   description: "Explore our comprehensive KP astrology services including Muhurtham, Career, Marriage, Childbirth, Finance, Health, and Horary consultations.",
 };
 

@@ -17,7 +17,7 @@ const steps = [
     number: "02",
     title: "Make Payment",
     titleTe: "చెల్లింపు చేయండి",
-    description: "Secure payment via UPI, Card, or Net Banking. Full refund available if cancelled 24+ hours before.",
+    description: "Secure payment directly via UPI. Full refund available if cancelled 24+ hours before.",
     color: "from-green-500 to-emerald-500",
   },
   {

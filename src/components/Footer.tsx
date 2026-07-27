@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, MessageCircle } from "lucide-react";
+import { SITE_CONFIG, buildWhatsAppLink } from "@/lib/config";
 
 const footerLinks = {
   services: [
@@ -37,7 +38,7 @@ export function Footer() {
                 <span className="text-white font-bold text-xl">ॐ</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">KP Jyotish</h3>
+                <h3 className="text-xl font-bold text-white">Divine Jyothi</h3>
                 <p className="text-xs text-gray-400">Authentic KP Astrology</p>
               </div>
             </div>
@@ -55,7 +56,12 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-saffron-500 flex items-center justify-center transition-colors">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-saffron-500 flex items-center justify-center transition-colors">
+              <a
+                href={buildWhatsAppLink("Hi Divine Jyothi, I'd like to know more about your astrology consultations.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-saffron-500 flex items-center justify-center transition-colors"
+              >
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
@@ -96,13 +102,13 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-saffron-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-white">+91 98765 43210</p>
+                  <p className="text-sm text-white">{SITE_CONFIG.whatsappNumberDisplay}</p>
                   <p className="text-xs text-gray-500">Mon-Sat, 9AM - 9PM IST</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-saffron-500 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-white">consult@kpjyotish.com</p>
+                <p className="text-sm text-white">consult@divinejyothi.com</p>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-saffron-500 mt-0.5 flex-shrink-0" />
@@ -116,7 +122,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              © 2024 KP Jyotish. All rights reserved.
+              © 2026 Divine Jyothi. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {footerLinks.legal.map((link) => (
