@@ -35,7 +35,7 @@ export function PillarPage({ info }: { info: PillarInfo }) {
       </Section>
 
       {/* Specialty grid */}
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading title={`${info.name} services`} />
         <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {list.map((s) => (
@@ -53,7 +53,7 @@ export function PillarPage({ info }: { info: PillarInfo }) {
       </Section>
 
       {/* How this pillar works here */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <SectionHeading title={info.explainer.heading} />
         <div className="mt-6 max-w-3xl space-y-4">
           {info.explainer.paragraphs.map((p) => (

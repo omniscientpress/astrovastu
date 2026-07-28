@@ -54,7 +54,7 @@ export default function PricingPage() {
       </Section>
 
       {marriage?.tiers && (
-        <Section tone="cream">
+        <Section deferOffscreen tone="cream">
           <SectionHeading title={en.pricing.marriageHeading} lead={en.pricing.marriageLead} />
           <ul className="mt-10 grid gap-6 lg:grid-cols-3">
             {marriage.tiers.map((tier) => (
@@ -82,7 +82,7 @@ export default function PricingPage() {
         </Section>
       )}
 
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading title={en.pricing.packagesHeading} />
         <ul className="mt-10 grid gap-6 lg:grid-cols-4">
           {packages.map((pkg) => (
@@ -100,7 +100,7 @@ export default function PricingPage() {
         </ul>
       </Section>
 
-      <Section tone="cream" className="py-10 lg:py-12">
+      <Section deferOffscreen tone="cream" className="py-10 lg:py-12">
         <ul className="mx-auto flex max-w-3xl flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-navy-600">
           {PAYMENT_NOTES.map((note) => (
             <li key={note}>{note}</li>

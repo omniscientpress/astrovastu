@@ -46,7 +46,7 @@ export default function HomePage() {
       </Section>
 
       {/* The Divine Jyothi method — the only pillar presentation on this page */}
-      <Section tone="navy">
+      <Section deferOffscreen tone="navy">
         <SectionHeading
           tone="navy"
           title={en.home.method.heading}
@@ -81,12 +81,12 @@ export default function HomePage() {
       </Section>
 
       {/* Family Compatibility — headline differentiator */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <FamilyCompatibilityBlock />
       </Section>
 
       {/* How consultation works */}
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading
           title={en.home.howItWorks.heading}
           lead={en.home.howItWorks.lead}
@@ -119,7 +119,7 @@ export default function HomePage() {
       </Section>
 
       {/* Founder */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <div className="grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
           <Logo
             variant="mark"
@@ -152,7 +152,7 @@ export default function HomePage() {
 
       {/* Testimonials — rendered only when real reviews exist */}
       {featuredTestimonials.length > 0 && (
-        <Section tone="white">
+        <Section deferOffscreen tone="white">
           <SectionHeading
             title={en.home.testimonials.heading}
             lead={en.home.testimonials.lead}
@@ -178,7 +178,7 @@ export default function HomePage() {
       )}
 
       {/* Packages preview */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <SectionHeading
           title={en.home.packagesPreview.heading}
           lead={en.home.packagesPreview.lead}
@@ -210,7 +210,7 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ preview */}
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading title={en.home.faq.heading} lead={en.home.faq.lead} />
         <FaqAccordion items={faqs} className="mt-10" />
         <Link

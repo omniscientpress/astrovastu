@@ -7,17 +7,22 @@ import { FloatingWhatsApp } from '@/components/WhatsAppButton'
 import { SITE } from '@/lib/config'
 import { en } from '@/locales/en'
 
+// Only the weights the UI actually uses — every extra weight is a separate
+// font file on the critical path.
 const inter = Inter({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 })
 
+// Telugu is used only for a handful of kinship labels, always at normal weight.
 const notoSansTelugu = Noto_Sans_Telugu({
   subsets: ['telugu'],
-  weight: ['400', '500', '600'],
+  weight: ['400'],
   variable: '--font-telugu',
   display: 'swap',
+  preload: false,
 })
 
 export const metadata: Metadata = {

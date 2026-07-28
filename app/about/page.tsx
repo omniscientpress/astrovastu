@@ -46,7 +46,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Our approach */}
-      <Section tone="navy">
+      <Section deferOffscreen tone="navy">
         <SectionHeading tone="navy" title={a.approachHeading} />
         <ul className="mt-10 grid gap-6 sm:grid-cols-2">
           {a.approach.map((item) => (
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </Section>
 
       {/* What is the KP System? */}
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading title={a.kpHeading} />
         <div className="mt-6 max-w-3xl space-y-4">
           {a.kpBody.map((p) => (
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </Section>
 
       {/* How we work */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <SectionHeading title={a.howHeading} />
         <ol className="mt-8 max-w-2xl space-y-4">
           {a.how.map((step, i) => (

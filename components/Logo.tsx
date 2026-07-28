@@ -22,7 +22,7 @@ interface LogoProps {
   priority?: boolean
 }
 
-const MARK_RATIO = 620 / 529 // intrinsic w/h of logo-mark
+const MARK_RATIO = 440 / 375 // intrinsic w/h of logo-mark
 
 export function Logo({
   variant = 'full',

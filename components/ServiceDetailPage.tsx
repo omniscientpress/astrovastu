@@ -72,7 +72,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
       </Section>
 
       {/* 3 — Is this for you? | What's included */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">
@@ -109,7 +109,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
       </Section>
 
       {/* 4 — What we cover */}
-      <Section tone="white">
+      <Section deferOffscreen tone="white">
         <SectionHeading title={en.sections.whatWeCover} />
         <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {service.covered.map((topic) => (
@@ -135,7 +135,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
       {/* Marriage flagship: what we analyse (§8.5) */}
       {isMarriage && (
-        <Section tone="navy">
+        <Section deferOffscreen tone="navy">
           <SectionHeading
             tone="navy"
             title="What we analyse"
@@ -162,7 +162,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
       {/* Marriage flagship: Family Compatibility (§6) */}
       {isMarriage && (
-        <Section tone="cream">
+        <Section deferOffscreen tone="cream">
           <SectionHeading
             eyebrow="Preparation, not prediction"
             title="Family Compatibility"
@@ -194,7 +194,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
       {/* Marriage flagship: tier table (§9) */}
       {isMarriage && service.tiers && (
-        <Section tone="white">
+        <Section deferOffscreen tone="white">
           <SectionHeading
             title="Choose your scope"
             lead="Fixed prices per session — no ranges, no negotiation, no hidden extras."
@@ -228,7 +228,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
       {/* Health disclaimer, rendered verbatim where required */}
       {service.disclaimer && (
-        <Section tone="white" className="py-8 lg:py-10">
+        <Section deferOffscreen tone="white" className="py-8 lg:py-10">
           <p className="flex gap-3 rounded-2xl border border-navy-200 bg-cream-100 p-5 text-navy-700">
             <Stethoscope
               className="mt-0.5 h-5 w-5 shrink-0 text-navy-500"
@@ -243,12 +243,12 @@ export function ServiceDetailPage({ service }: { service: Service }) {
       )}
 
       {/* 5 — Deliverables (required on every page) */}
-      <Section tone="cream">
+      <Section deferOffscreen tone="cream">
         <DeliverablesList items={service.deliverables} className="mx-auto max-w-3xl" />
       </Section>
 
       {/* 6 — Booking card: exactly one green + one secondary */}
-      <Section tone="navy">
+      <Section deferOffscreen tone="navy">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold text-cream-50 sm:text-4xl">
             Book {service.title}
@@ -271,7 +271,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
       {/* 7 — Related services */}
       {related.length > 0 && (
-        <Section tone="white">
+        <Section deferOffscreen tone="white">
           <SectionHeading title={en.sections.related} />
           <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (

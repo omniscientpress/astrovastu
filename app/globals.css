@@ -21,6 +21,20 @@
   }
 }
 
+@layer utilities {
+  /**
+   * Defers style/layout/paint for off-screen sections until they are scrolled
+   * near the viewport. Content stays in the DOM and remains findable and
+   * accessible — this only moves *when* the browser does the layout work.
+   * contain-intrinsic-size: auto lets the browser remember the real size after
+   * first render, so scrollbar position stays stable.
+   */
+  .defer-offscreen {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

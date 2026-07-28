@@ -9,6 +9,11 @@ interface SectionProps {
   innerClassName?: string
   children: React.ReactNode
   id?: string
+  /**
+   * Defer layout/paint until the section nears the viewport. Use on sections
+   * below the fold; never on the hero, which is the LCP candidate.
+   */
+  deferOffscreen?: boolean
 }
 
 const TONES: Record<Tone, string> = {
@@ -25,9 +30,18 @@ export function Section({
   innerClassName,
   children,
   id,
+  deferOffscreen = false,
 }: SectionProps) {
   return (
-    <Tag id={id} className={cn(TONES[tone], 'px-4 py-16 sm:px-6 lg:px-8 lg:py-24', className)}>
+    <Tag
+      id={id}
+      className={cn(
+        TONES[tone],
+        'px-4 py-16 sm:px-6 lg:px-8 lg:py-24',
+        deferOffscreen && 'defer-offscreen',
+        className
+      )}
+    >
       <div className={cn('mx-auto w-full max-w-content', innerClassName)}>{children}</div>
     </Tag>
   )
