@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-navy-800 antialiased;
+  }
+
+  /* Visible focus states everywhere — accessibility requirement */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-500 ring-offset-2 ring-offset-cream-50;
+  }
+
+  .on-navy :focus-visible {
+    @apply ring-gold-300 ring-offset-navy-700;
+  }
+}
+
+@layer utilities {
+  /**
+   * Defers style/layout/paint for off-screen sections until they are scrolled
+   * near the viewport. Content stays in the DOM and remains findable and
+   * accessible — this only moves *when* the browser does the layout work.
+   * contain-intrinsic-size: auto lets the browser remember the real size after
+   * first render, so scrollbar position stays stable.
+   */
+  .defer-offscreen {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
