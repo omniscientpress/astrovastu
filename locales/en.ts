@@ -347,6 +347,19 @@ export const en = {
     },
   },
 
+  servicesHub: {
+    title: 'Services',
+    metaDescription:
+      'All Divine Jyothi services across KP Astrology, Vastu, and Numerology — fixed prices, session durations, and what each consultation covers.',
+    intro:
+      "Start from your situation. We'll recommend KP Astrology, Vastu, Numerology, or the Divine Jyothi Audit when all three matter together.",
+    pillarsHeading: 'Three disciplines, one method',
+    closing: {
+      title: 'Not sure which service fits?',
+      lead: "Message us with your question — we'll suggest the right starting point.",
+    },
+  },
+
   footer: {
     blurb:
       'Integrated KP Astrology, Vastu, and Numerology guidance from Hyderabad — practical recommendations for timing, space, and name decisions.',
