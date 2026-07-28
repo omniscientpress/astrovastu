@@ -347,6 +347,126 @@ export const en = {
     },
   },
 
+  pricing: {
+    title: 'Pricing',
+    metaDescription:
+      'Fixed prices for every Divine Jyothi consultation — KP Astrology, Vastu, and Numerology sessions, marriage tiers, and packages. No ranges, no hidden fees.',
+    heading: 'Pricing',
+    lead: 'Every price on this page is a single fixed figure. No ranges, no quotes, no surprises at the end of a call.',
+    perSessionHeading: 'Per-session pricing',
+    marriageHeading: 'Marriage tiers',
+    marriageLead: 'Choose the scope that matches your situation.',
+    packagesHeading: 'Packages',
+  },
+
+  about: {
+    title: 'About',
+    metaDescription:
+      'Meet Siva Kola, founder of Divine Jyothi — a Hyderabad-based KP Astrology, Vastu, and Numerology practice built on practical guidance over fear-based prediction.',
+    heading: 'About Divine Jyothi',
+    meetHeading: 'Siva Kola',
+    meetRole: 'Founder & Consultant, Hyderabad',
+    meetBody:
+      'Siva Kola practises Krishnamurti Paddhati (KP) astrology alongside Vastu and Numerology, consulting in English, Telugu, and Hindi. Sessions run online worldwide, or in person in Hyderabad by appointment.',
+    whyHeading: 'Why Divine Jyothi exists',
+    whyBody: [
+      'Clients kept arriving having already spoken to an astrologer, a Vastu consultant, and a numerologist separately — and coming away with three sets of advice that quietly contradicted each other. A name changed to suit one reading sat against the timing recommended by another.',
+      'Divine Jyothi exists to review Timing, Space, and Name together when a decision genuinely touches all three, so the guidance you leave with is coherent rather than three unrelated opinions.',
+    ],
+    approachHeading: 'Our approach',
+    approach: [
+      {
+        title: 'Practical over theatrical',
+        description:
+          'Recommendations you can act on this week, stated in plain language — not vague forecasts or dramatic framing.',
+      },
+      {
+        title: 'No promised outcomes',
+        description:
+          'A chart or assessment indicates tendencies and favourable windows. It does not promise results, and we say so plainly.',
+      },
+      {
+        title: 'Integrated when it matters',
+        description:
+          'Single-pillar sessions when one question is enough. The combined Audit only when timing, space, and name genuinely affect the same decision.',
+      },
+      {
+        title: 'Confidential by default',
+        description:
+          'Birth details and floor plans stay private. Recordings only on request.',
+      },
+    ],
+    kpHeading: 'What is the KP System?',
+    kpBody: [
+      'Krishnamurti Paddhati was developed by the astrologer K.S. Krishnamurti. Its central idea is Sub-Lord theory: instead of reading a birth chart through broad planetary periods that can run for years, KP subdivides each period into much finer segments.',
+      'That precision is the whole point. A finer segment gives a window you can actually plan around, and it can be checked against what happened — a specific window either holds or it does not.',
+    ],
+    howHeading: 'How we work',
+    how: [
+      'You share your question and, where relevant, birth details or a floor plan.',
+      'We review the chart, plan, or name against that specific question — not a generic reading.',
+      'You receive a plain-language answer, a written summary, and — where useful — proportionate remedies.',
+      'Nothing is sold beyond the consultation itself.',
+    ],
+    wontHeading: "What we won't do",
+    wont: [
+      'Frame a period as dangerous to sell a remedy for it',
+      'Promise a specific outcome or result',
+      'Predict death or catastrophic events',
+      'Push remedies you do not need',
+      'Deliver a verdict about a person who is not in the room',
+    ],
+    cta: { label: 'Message Siva Kola', },
+  },
+
+  faqPage: {
+    title: 'FAQ',
+    metaDescription:
+      'Answers to the questions worth asking before you book an astrology, Vastu, or numerology consultation — booking, honesty, Family Compatibility, privacy, and method.',
+    heading: 'Common questions',
+    lead: 'Grouped by what you actually want to know before you book anyone.',
+  },
+
+  testimonialsPage: {
+    title: 'Testimonials',
+    metaDescription: 'Reviews from Divine Jyothi clients across KP Astrology, Vastu, and Numerology consultations.',
+    heading: 'What clients say',
+    lead: 'Reviews from people we have worked with.',
+    empty:
+      'We are collecting reviews from recent clients. In the meantime, message us on WhatsApp and we can put you in touch with someone who has used a similar service.',
+    filterAll: 'All',
+  },
+
+  contactPage: {
+    title: 'Contact',
+    metaDescription:
+      'Contact Divine Jyothi — WhatsApp, phone, and email for KP Astrology, Vastu, and Numerology consultations in Hyderabad and worldwide.',
+    heading: 'Contact',
+    lead: 'We are here to help. Reach out for a consultation or any question.',
+    replyTime: 'We typically reply within a few hours during working hours.',
+    whatsappLabel: 'WhatsApp',
+    phoneLabel: 'Phone',
+    emailLabel: 'Email',
+    hoursLabel: 'Hours',
+    locationLabel: 'Location',
+  },
+
+  bookPage: {
+    title: 'Book Consultation',
+    metaDescription:
+      'Book a Divine Jyothi consultation. Share your details on this form and we will confirm a slot on WhatsApp — no card details, no account needed.',
+    heading: 'Book Your Consultation',
+    lead: 'Fill in your details below. We will confirm a slot on WhatsApp and share UPI payment details once your time is set.',
+    servicePillarLabel: 'Which area is this about?',
+  },
+
+  blogPage: {
+    title: 'Blog',
+    metaDescription: 'Notes on KP Astrology, Vastu, and Numerology from Divine Jyothi.',
+    heading: 'Blog',
+    lead: 'Short, practical notes on the methods behind our consultations.',
+  },
+
   servicesHub: {
     title: 'Services',
     metaDescription:
