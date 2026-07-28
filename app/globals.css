@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-navy-800 antialiased;
+  }
+
+  /* Visible focus states everywhere — accessibility requirement */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-500 ring-offset-2 ring-offset-cream-50;
+  }
+
+  .on-navy :focus-visible {
+    @apply ring-gold-300 ring-offset-navy-700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

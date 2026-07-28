@@ -1,100 +1,63 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: [
-    './src/pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './data/**/*.{ts,tsx}',
+    './locales/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+        // Deep navy/indigo — hero and dark bands
+        navy: {
+          50: '#eeedf7',
+          100: '#d5d3ec',
+          200: '#aaa6d8',
+          300: '#7f7ac4',
+          400: '#544db0',
+          500: '#3b3492',
+          600: '#2e2871',
+          700: '#1e1b4b',
+          800: '#161334',
+          900: '#0e0c20',
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        // Warm cream — alternating light sections
+        cream: {
+          50: '#fefdfb',
+          100: '#faf7f2',
+          200: '#f3ece1',
+          300: '#e8ddcb',
+          400: '#d9c8ac',
+          500: '#c4ac86',
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        saffron: {
-          50: '#FFF5EB',
-          100: '#FFE6D1',
-          200: '#FFC9A3',
-          300: '#FFA575',
-          400: '#FF8547',
-          500: '#FF6B35',
-          600: '#E55A2B',
-          700: '#CC4A22',
-          800: '#A33B1C',
-          900: '#7A2D15',
-        },
-        deepblue: {
-          50: '#E8EAF6',
-          100: '#C5CAE9',
-          200: '#9FA8DA',
-          300: '#7986CB',
-          400: '#5C6BC0',
-          500: '#3F51B5',
-          600: '#3949AB',
-          700: '#303F9F',
-          800: '#283593',
-          900: '#1A237E',
-        },
+        // Gold/amber — CTAs and highlights
         gold: {
-          50: '#FFFDE7',
-          100: '#FFF9C4',
-          200: '#FFF59D',
-          300: '#FFF176',
-          400: '#FFEE58',
-          500: '#FFD700',
-          600: '#FBC02D',
-          700: '#F9A825',
-          800: '#F57F17',
-          900: '#E65100',
+          50: '#fdf8ec',
+          100: '#f9edcd',
+          200: '#f2d998',
+          300: '#e9c163',
+          400: '#dfa93c',
+          500: '#c8912a',
+          600: '#a67322',
+          700: '#82581e',
+          800: '#5c3e17',
+          900: '#3a2710',
+        },
+        // Reserved exclusively for WhatsApp actions
+        whatsapp: {
+          DEFAULT: '#25D366',
+          dark: '#1da851',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'Noto Sans Telugu', 'system-ui', 'sans-serif'],
-        telugu: ['Noto Sans Telugu', 'Inter', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        telugu: ['var(--font-telugu)', 'var(--font-inter)', 'sans-serif'],
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      maxWidth: {
+        content: '72rem',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        }
-      }
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/typography')],
 }
