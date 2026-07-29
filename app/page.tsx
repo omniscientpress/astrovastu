@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, FileText, Mic, Sparkles } from 'lucide-react'
 import { HeroCarousel } from '@/components/HeroCarousel'
 import { Section, SectionHeading } from '@/components/Section'
@@ -9,7 +10,6 @@ import { TestimonialCard } from '@/components/TestimonialCard'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import { PriceChip } from '@/components/PriceChip'
 import { BookingBand } from '@/components/BookingBand'
-import { Logo } from '@/components/Logo'
 import { testimonials } from '@/data/testimonials'
 import { featuredFaqs } from '@/data/faqs'
 import { packages } from '@/data/packages'
@@ -121,9 +121,12 @@ export default function HomePage() {
       {/* Founder */}
       <Section deferOffscreen tone="cream">
         <div className="grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
-          <Logo
-            variant="mark"
-            className="justify-self-center [--logo-size:150px] lg:[--logo-size:180px]"
+          <Image
+            src="/photos/siva-kola.webp"
+            alt="Siva Kola, founder of Divine Jyothi"
+            width={640}
+            height={640}
+            className="h-44 w-44 justify-self-center rounded-full object-cover ring-2 ring-gold-400/70 ring-offset-4 ring-offset-cream-100 lg:h-52 lg:w-52"
           />
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-gold-700">

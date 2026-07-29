@@ -321,7 +321,7 @@ export const en = {
       eyebrow: 'Who you will be speaking with',
       heading: 'Siva Kola',
       role: 'Founder & Consultant, Hyderabad',
-      body: 'Siva Kola practises Krishnamurti Paddhati alongside Vastu and Numerology, and consults in English, Telugu, and Hindi. Sessions are online worldwide, or in person in Hyderabad by appointment.',
+      body: 'A software engineer before he was a full-time practitioner, Siva Kola was drawn to Krishnamurti Paddhati for the same reason he liked engineering: it makes specific, checkable claims. He is certified in KP Astrology, Numerology, and Vastu, and consults in English, Telugu, and Hindi — online worldwide, or in person in Hyderabad by appointment.',
       cta: { label: 'About Divine Jyothi', href: '/about' },
     },
 
@@ -367,7 +367,26 @@ export const en = {
     meetHeading: 'Siva Kola',
     meetRole: 'Founder & Consultant, Hyderabad',
     meetBody:
-      'Siva Kola practises Krishnamurti Paddhati (KP) astrology alongside Vastu and Numerology, consulting in English, Telugu, and Hindi. Sessions run online worldwide, or in person in Hyderabad by appointment.',
+      'Siva Kola came to this work from software engineering, and it shows in how he practises: Krishnamurti Paddhati appealed to him precisely because it makes specific, checkable claims rather than vague ones. He is certified in KP Astrology, Numerology, and Vastu, and beyond the consulting room he is a Reiki Grand Master and a certified trainer of Kundalini and Kayakalpa yoga. He is currently building KP astrology software — the calculations behind this practice are ones he has implemented himself. Consultations run in English, Telugu, and Hindi, online worldwide or in person in Hyderabad by appointment.',
+    credentialsHeading: 'Background & training',
+    credentials: [
+      {
+        title: 'KP Astrology · Numerology · Vastu',
+        detail: 'Certified across all three disciplines of the practice',
+      },
+      {
+        title: 'Reiki Grand Master',
+        detail: 'Advanced certification in the Reiki lineage',
+      },
+      {
+        title: 'Kundalini & Kayakalpa yoga',
+        detail: 'Certified trainer in both traditions',
+      },
+      {
+        title: 'Software engineer by training',
+        detail: 'Now building KP astrology software — the calculations of this practice, implemented by hand',
+      },
+    ],
     whyHeading: 'Why Divine Jyothi exists',
     whyBody: [
       'Clients kept arriving having already spoken to an astrologer, a Vastu consultant, and a numerologist separately — and coming away with three sets of advice that quietly contradicted each other. A name changed to suit one reading sat against the timing recommended by another.',

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { X as XIcon } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/Section'
 import { TrustStrip } from '@/components/TrustStrip'
-import { Logo } from '@/components/Logo'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { en } from '@/locales/en'
 
@@ -24,13 +24,32 @@ export default function AboutPage() {
       {/* Meet Siva Kola */}
       <Section tone="white">
         <div className="grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
-          <Logo variant="mark" className="justify-self-center [--logo-size:150px] lg:[--logo-size:180px]" />
+          <Image
+            src="/photos/siva-kola.webp"
+            alt="Siva Kola, founder of Divine Jyothi"
+            width={640}
+            height={640}
+            priority
+            className="h-48 w-48 justify-self-center rounded-full object-cover ring-2 ring-gold-400/70 ring-offset-4 ring-offset-cream-50 lg:h-60 lg:w-60"
+          />
           <div>
             <h2 className="text-3xl font-semibold text-navy-700">{a.meetHeading}</h2>
             <p className="mt-1 text-navy-500">{a.meetRole}</p>
             <p className="mt-5 text-lg leading-relaxed text-navy-600">{a.meetBody}</p>
           </div>
         </div>
+
+        <h3 className="mt-14 text-sm font-semibold uppercase tracking-widest text-gold-700">
+          {a.credentialsHeading}
+        </h3>
+        <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+          {a.credentials.map((c) => (
+            <li key={c.title} className="border-l-2 border-gold-400 py-1 pl-4">
+              <p className="font-semibold text-navy-700">{c.title}</p>
+              <p className="mt-1 text-sm leading-relaxed text-navy-600">{c.detail}</p>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       {/* Why Divine Jyothi exists */}
