@@ -94,7 +94,7 @@ export function HeroCarousel() {
                 isActive ? 'visible opacity-100' : 'invisible opacity-0'
               )}
             >
-              <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+              <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(23rem,31rem)] lg:gap-12">
                 <div
                   className={cn(
                     'max-w-2xl transition-transform duration-500 motion-reduce:transition-none',
