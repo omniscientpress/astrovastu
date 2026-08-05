@@ -49,6 +49,11 @@ module.exports = {
           DEFAULT: '#25D366',
           dark: '#1da851',
         },
+        pillar: {
+          timing: '#e9c163',
+          space: '#7f9e8b',
+          name: '#c4ac86',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

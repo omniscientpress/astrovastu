@@ -3,7 +3,8 @@
 import { useMemo, useState } from 'react'
 import { ShieldCheck } from 'lucide-react'
 import { services } from '@/data/services'
-import { SITE } from '@/lib/config'
+import { SITE, buildWhatsAppLink } from '@/lib/config'
+import { canSendIntake, type IntakeFormData } from '@/lib/intake'
 import { en } from '@/locales/en'
 
 const PILLAR_LABEL = {
@@ -15,10 +16,9 @@ const PILLAR_LABEL = {
 const PILLARS = ['astrology', 'vastu', 'numerology'] as const
 
 /**
- * Server-rendered form (this component's initial JSX renders fully in server
- * HTML — the pillar-conditional fields are shown/hidden by client state that
- * starts populated, never empty-until-mount). On submit, composes a pre-filled
- * WhatsApp message from every field and opens wa.me — no backend (spec §8.10).
+ * Booking form with dual submit: POST structured intake to /api/intake (when birth
+ * details are complete for astrology) and always open WhatsApp for slot confirmation.
+ * Intake is optional — if n8n is not configured or geocoding fails, WhatsApp still works.
  */
 export function BookForm() {
   const [slug, setSlug] = useState(services[0].slug)
@@ -32,6 +32,8 @@ export function BookForm() {
   const [birthPlace, setBirthPlace] = useState('')
   const [propertyType, setPropertyType] = useState('')
   const [namesToCheck, setNamesToCheck] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [statusNote, setStatusNote] = useState('')
 
   const service = useMemo(() => services.find((s) => s.slug === slug) ?? services[0], [slug])
   const pillar = service.pillar
@@ -58,17 +60,61 @@ export function BookForm() {
     if (pillar === 'numerology' && namesToCheck) lines.push(`Name(s) to check: ${namesToCheck}`)
     if (question) lines.push(``, `Question: ${question}`)
     return lines.join('\n')
-  }, [service, tier, name, phone, preferredTime, pillar, birthDate, birthTime, birthPlace, propertyType, namesToCheck])
+  }, [service, tier, name, phone, preferredTime, pillar, birthDate, birthTime, birthPlace, propertyType, namesToCheck, question])
 
-  const href = `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`
+  const whatsAppHref = buildWhatsAppLink(message)
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setSubmitting(true)
+    setStatusNote('')
+
+    const formData: IntakeFormData = {
+      name,
+      phone,
+      service: slug,
+      serviceTitle: service.title,
+      pillar,
+      tier: tier || undefined,
+      preferredTime: preferredTime || undefined,
+      question: question || undefined,
+      birthDate: birthDate || undefined,
+      birthTime: birthTime || undefined,
+      birthPlace: birthPlace || undefined,
+      propertyType: propertyType || undefined,
+      namesToCheck: namesToCheck || undefined,
+    }
+
+    if (canSendIntake(formData)) {
+      try {
+        const res = await fetch('/api/intake/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        })
+        if (res.ok) {
+          const data = (await res.json()) as { sent?: boolean; skipped?: boolean }
+          setStatusNote(
+            data.sent ? en.form.intakeReceived : en.form.intakeSkipped
+          )
+        } else {
+          setStatusNote(en.form.intakeSkipped)
+        }
+      } catch {
+        setStatusNote(en.form.intakeSkipped)
+      }
+    } else {
+      setStatusNote(en.form.intakeSkipped)
+    }
+
+    window.open(whatsAppHref, '_blank', 'noopener,noreferrer')
+    setSubmitting(false)
+  }
 
   return (
     <form
       className="space-y-6 rounded-2xl border border-cream-300 bg-cream-50 p-6 sm:p-8"
-      // Real navigation to wa.me is the "submit" — no backend, no page reload to handle.
-      action={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      onSubmit={handleSubmit}
     >
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-navy-700">
@@ -181,7 +227,6 @@ export function BookForm() {
         />
       </div>
 
-      {/* Privacy note sits directly above the conditional detail block (spec §8.10). */}
       <p className="flex gap-3 rounded-xl border border-gold-200 bg-gold-50 p-4 text-sm text-navy-700">
         <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" aria-hidden="true" />
         {en.booking.privacyNote}
@@ -272,11 +317,14 @@ export function BookForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-lg bg-whatsapp px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-whatsapp-dark"
+        disabled={submitting}
+        className="inline-flex w-full items-center justify-center rounded-lg bg-whatsapp px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-whatsapp-dark disabled:opacity-70"
       >
-        {en.form.submit}
+        {submitting ? en.form.submitting : en.form.submit}
       </button>
-      <p className="text-center text-sm text-navy-500">{en.booking.afterSubmit}</p>
+      <p className="text-center text-sm text-navy-500">
+        {statusNote || en.booking.afterSubmit}
+      </p>
     </form>
   )
 }

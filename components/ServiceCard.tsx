@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { pillarAccentClass } from '@/components/graphics'
 import { PriceChip } from './PriceChip'
 import type { Pillar } from '@/data/types'
 import { en } from '@/locales/en'
@@ -35,7 +36,8 @@ export function ServiceCard({
     <Link
       href={href}
       className={cn(
-        'group flex h-full flex-col rounded-2xl border border-cream-300 bg-cream-50 p-6 transition-colors hover:border-gold-400',
+        'group flex h-full flex-col rounded-2xl border border-cream-300 border-l-4 bg-cream-50 p-6 transition-colors hover:border-gold-400',
+        pillar && pillarAccentClass[pillar],
         className
       )}
     >

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, FileText, Mic, Sparkles } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { HeroCarousel } from '@/components/HeroCarousel'
 import { Section, SectionHeading } from '@/components/Section'
 import { SituationCards } from '@/components/SituationCards'
@@ -10,10 +11,18 @@ import { TestimonialCard } from '@/components/TestimonialCard'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import { PriceChip } from '@/components/PriceChip'
 import { BookingBand } from '@/components/BookingBand'
+import { OrnamentDivider, PillarIcon, StepIcon } from '@/components/graphics'
+import type { PillarKey, StepKey } from '@/components/graphics/types'
 import { testimonials } from '@/data/testimonials'
 import { featuredFaqs } from '@/data/faqs'
 import { packages } from '@/data/packages'
 import { en } from '@/locales/en'
+
+const METHOD_ACCENT: Record<PillarKey, string> = {
+  timing: 'border-l-pillar-timing',
+  space: 'border-l-pillar-space',
+  name: 'border-l-pillar-name',
+}
 
 const RIBBON = [
   { icon: FileText, label: 'Written summary (PDF)' },
@@ -29,6 +38,8 @@ export default function HomePage() {
   return (
     <>
       <HeroCarousel />
+
+      <OrnamentDivider theme="light" className="bg-cream-100" />
 
       {/* Trust strip — verifiable items only */}
       <Section tone="cream" className="py-10 lg:py-12">
@@ -56,9 +67,17 @@ export default function HomePage() {
           {en.home.method.items.map((item) => (
             <li
               key={item.key}
-              className="rounded-2xl border border-navy-500 bg-navy-600/40 p-7"
+              className={cn(
+                'rounded-2xl border border-navy-500 border-l-4 bg-navy-600/40 p-7',
+                METHOD_ACCENT[item.key as PillarKey]
+              )}
             >
-              <p className="text-sm font-semibold uppercase tracking-widest text-gold-300">
+              <PillarIcon
+                id={item.key as PillarKey}
+                theme="dark"
+                className="h-12 w-12 text-gold-300"
+              />
+              <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-gold-300">
                 {item.label}
               </p>
               <h3 className="mt-2 text-xl font-semibold text-cream-50">
@@ -94,12 +113,19 @@ export default function HomePage() {
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {en.home.howItWorks.steps.map((step, i) => (
             <li
-              key={step.title}
+              key={step.key}
               className="rounded-2xl border border-cream-300 bg-cream-50 p-6"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold-400 font-semibold text-navy-800">
-                {i + 1}
-              </span>
+              <div className="flex items-start gap-4">
+                <StepIcon
+                  id={step.key as StepKey}
+                  theme="light"
+                  className="h-11 w-11 shrink-0 text-gold-600"
+                />
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-400 font-semibold text-navy-800">
+                  {i + 1}
+                </span>
+              </div>
               <h3 className="mt-4 font-semibold text-navy-700">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-600">
                 {step.description}

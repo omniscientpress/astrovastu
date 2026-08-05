@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { en } from '@/locales/en'
-import { Logo } from './Logo'
+import { HeroVisual } from '@/components/graphics/HeroVisual'
+import { YantraWatermark } from '@/components/graphics/YantraWatermark'
 import { WhatsAppButton } from './WhatsAppButton'
 
 const SLIDES = en.home.slides
@@ -70,11 +71,13 @@ export function HeroCarousel() {
         if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1))
         touchStartX.current = null
       }}
-      className="on-navy relative bg-navy-700 px-4 py-14 text-cream-100 sm:px-6 lg:px-8 lg:py-20"
+      className="on-navy relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_#2e2871_0%,_#1e1b4b_70%)] px-4 py-14 text-cream-100 sm:px-6 lg:px-8 lg:py-20"
     >
+      <YantraWatermark />
+
       {/* Slides share one grid cell, so the container is as tall as the tallest
           slide and rotation never shifts layout. */}
-      <div className="mx-auto grid max-w-content">
+      <div className="relative mx-auto grid max-w-content">
         {SLIDES.map((slide, i) => {
           const isActive = i === active
           return (
@@ -92,7 +95,13 @@ export function HeroCarousel() {
               )}
             >
               <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
-                <div className="max-w-2xl">
+                <div
+                  className={cn(
+                    'max-w-2xl transition-transform duration-500 motion-reduce:transition-none',
+                    isActive && !reducedMotion && 'translate-y-0',
+                    !isActive && !reducedMotion && 'translate-y-2'
+                  )}
+                >
                   <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
                     {slide.badge}
                   </p>
@@ -116,13 +125,11 @@ export function HeroCarousel() {
                   </div>
                 </div>
 
-                {/* Centred above the H1 on mobile, right-hand brand element on
-                    desktop (spec §4). */}
-                <Logo
-                  variant="mark"
-                  theme="dark"
+                <HeroVisual
+                  slideId={slide.id}
+                  visualAlt={slide.visualAlt}
                   priority={i === 0}
-                  className="order-first justify-self-center [--logo-size:120px] sm:[--logo-size:150px] lg:order-none lg:[--logo-size:200px]"
+                  className="order-first justify-self-center lg:order-none"
                 />
               </div>
             </div>
@@ -131,7 +138,7 @@ export function HeroCarousel() {
       </div>
 
       {/* Controls */}
-      <div className="mx-auto mt-10 flex max-w-content items-center gap-4">
+      <div className="relative mx-auto mt-10 flex max-w-content items-center gap-4">
         <button
           type="button"
           onClick={() => go(active - 1)}

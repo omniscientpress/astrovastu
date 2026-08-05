@@ -114,6 +114,9 @@ export const en = {
     propertyType: 'Property type',
     namesToCheck: 'Name(s) to check',
     submit: 'Send on WhatsApp',
+    submitting: 'Sending…',
+    intakeReceived: 'Details received — opening WhatsApp to confirm your slot.',
+    intakeSkipped: 'Opening WhatsApp — add birth details there if you have not already.',
     required: 'required',
     optional: 'optional',
   },
@@ -123,6 +126,7 @@ export const en = {
     slides: [
       {
         id: 'brand',
+        visualAlt: 'Three disciplines — timing, space, and name — reviewed together',
         badge: 'KP Astrology · Vastu · Numerology',
         title: 'Clear guidance for timing, space, and name decisions.',
         subtitle:
@@ -134,6 +138,7 @@ export const en = {
       },
       {
         id: 'marriage',
+        visualAlt: 'Family compatibility — couple and household roles',
         badge: 'Marriage · Family Compatibility',
         title: 'Marriage matching that looks at the whole family.',
         subtitle:
@@ -144,6 +149,7 @@ export const en = {
       },
       {
         id: 'vastu',
+        visualAlt: 'Floor plan layout for home or office Vastu assessment',
         badge: 'Vastu',
         title: 'Space that works — without breaking walls.',
         subtitle:
@@ -154,6 +160,7 @@ export const en = {
       },
       {
         id: 'numerology',
+        visualAlt: 'Name and number alignment checked against your chart',
         badge: 'Numerology',
         title: 'Names and numbers checked against your chart.',
         subtitle:
@@ -178,48 +185,56 @@ export const en = {
       lead: 'Start from the decision in front of you. Each one leads to the service that answers it.',
       items: [
         {
+          id: 'career',
           title: 'Career & education',
           description: 'Course choice, job timing, promotions, or a move between government and private roles.',
           pillar: 'astrology' as const,
           href: '/services/astrology/career',
         },
         {
+          id: 'marriage',
           title: 'Marriage & relationships',
           description: 'Matching, marriage timing, delayed marriage, and preparing for the family you join.',
           pillar: 'astrology' as const,
           href: '/services/astrology/marriage',
         },
         {
+          id: 'childbirth',
           title: 'Childbirth & family',
           description: 'Progeny timing, conception windows, and muhurtham support for a planned delivery.',
           pillar: 'astrology' as const,
           href: '/services/astrology/childbirth',
         },
         {
+          id: 'property',
           title: 'Property & house planning',
           description: 'Room-by-room assessment for the home you live in, or a plot you are considering.',
           pillar: 'vastu' as const,
           href: '/services/vastu/home-vastu',
         },
         {
+          id: 'business',
           title: 'Business & office',
           description: 'Layout guidance for workspaces, seating, and the flow of a working premises.',
           pillar: 'vastu' as const,
           href: '/services/vastu/office-vastu',
         },
         {
+          id: 'naming',
           title: 'Naming & number alignment',
           description: 'Name spelling, a baby name, a business name, or a mobile number worth keeping.',
           pillar: 'numerology' as const,
           href: '/services/numerology/name-analysis',
         },
         {
+          id: 'muhurtham',
           title: 'Muhurtham & auspicious timing',
           description: 'Dates for marriage, Gruha Pravesham, a business opening, or a vehicle purchase.',
           pillar: 'astrology' as const,
           href: '/services/astrology/muhurtham',
         },
         {
+          id: 'prashna',
           title: 'An urgent question',
           description: 'A focused Prashna answer when you do not have birth details to hand.',
           pillar: 'astrology' as const,
@@ -299,18 +314,22 @@ export const en = {
       lead: 'Four steps, no account to create, and no card details entered on this site.',
       steps: [
         {
+          key: 'share',
           title: 'Share your question',
           description: 'Message us on WhatsApp or send the booking form with your details.',
         },
         {
+          key: 'confirm',
           title: 'Confirm a slot',
           description: 'We propose times in IST and confirm one that suits you.',
         },
         {
+          key: 'pay',
           title: 'Pay via UPI',
           description: 'Payment details are shared after your slot is confirmed.',
         },
         {
+          key: 'consult',
           title: 'Consultation',
           description: 'Google Meet, Zoom, phone, or in person in Hyderabad.',
         },

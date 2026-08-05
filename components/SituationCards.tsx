@@ -2,7 +2,9 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { en } from '@/locales/en'
+import { SituationIcon, pillarAccentClass, pillarIconClass } from '@/components/graphics'
 import type { Pillar } from '@/data/types'
+import type { SituationKey } from '@/components/graphics/types'
 
 const PILLAR_LABEL: Record<Pillar, string> = {
   astrology: en.pillars.astrology,
@@ -15,12 +17,20 @@ export function SituationCards({ className }: { className?: string }) {
   return (
     <ul className={cn('grid gap-4 sm:grid-cols-2 lg:grid-cols-4', className)}>
       {en.home.situations.items.map((item) => (
-        <li key={item.title} className="h-full">
+        <li key={item.id} className="h-full">
           <Link
             href={item.href}
-            className="group flex h-full flex-col rounded-2xl border border-cream-300 bg-cream-50 p-5 transition-colors hover:border-gold-400"
+            className={cn(
+              'group flex h-full flex-col rounded-2xl border border-cream-300 border-l-4 bg-cream-50 p-5 transition-colors hover:border-gold-400',
+              pillarAccentClass[item.pillar]
+            )}
           >
-            <span className="text-xs font-semibold uppercase tracking-wide text-gold-700">
+            <SituationIcon
+              id={item.id as SituationKey}
+              className={cn('h-12 w-12', pillarIconClass[item.pillar])}
+              theme="light"
+            />
+            <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-gold-700">
               {PILLAR_LABEL[item.pillar]}
             </span>
             <h3 className="mt-2 font-semibold text-navy-700">{item.title}</h3>
