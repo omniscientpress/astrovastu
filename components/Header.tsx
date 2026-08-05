@@ -26,9 +26,8 @@ export function Header() {
         <Logo
           href="/"
           variant="full"
-          showPillars
           priority
-          className="[--logo-size:36px] sm:[--logo-size:40px] lg:[--logo-size:44px]"
+          className="[--logo-size:40px] sm:[--logo-size:44px] lg:[--logo-size:52px]"
         />
 
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">

@@ -181,8 +181,8 @@ export const en = {
     },
 
     situations: {
-      heading: 'I need help with…',
-      lead: 'Start from the decision in front of you. Each one leads to the service that answers it.',
+      heading: 'Are you looking for a solution to your problem?',
+      lead: 'Pick the decision in front of you — career, marriage, property, naming, or timing — and we will point you to the consultation that fits.',
       items: [
         {
           id: 'career',

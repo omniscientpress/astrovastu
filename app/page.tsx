@@ -30,6 +30,12 @@ const RIBBON = [
   { icon: Mic, label: 'Session recording on request' },
 ]
 
+const METHOD_LINKS: Record<string, { href: string; label: string }> = {
+  timing: { href: '/services/astrology', label: 'How KP Astrology works here' },
+  space: { href: '/services/vastu', label: 'How Vastu works here' },
+  name: { href: '/services/numerology', label: 'How Numerology works here' },
+}
+
 export default function HomePage() {
   const faqs = featuredFaqs()
   const featuredPackages = packages.slice(0, 3)
@@ -42,9 +48,8 @@ export default function HomePage() {
       <OrnamentDivider theme="light" className="bg-cream-100" />
 
       {/* Trust strip — verifiable items only */}
-      <Section tone="cream" className="py-10 lg:py-12">
+      <Section tone="cream" className="py-10 lg:py-14">
         <TrustStrip />
-        <p className="mt-6 text-center text-sm text-navy-500">{en.trust.microline}</p>
       </Section>
 
       {/* I need help with… */}
@@ -94,6 +99,16 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href={METHOD_LINKS[item.key].href}
+                className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-300 transition-colors hover:text-gold-200"
+              >
+                {METHOD_LINKS[item.key].label}
+                <ArrowRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </Link>
             </li>
           ))}
         </ul>

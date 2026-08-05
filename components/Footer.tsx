@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { SITE, isPlaceholder } from '@/lib/config'
 import { en } from '@/locales/en'
 import { Logo } from './Logo'
+import { BrandText } from './BrandText'
 
 const SERVICE_LINKS = [
   { href: '/services/astrology', label: en.pillars.astrology },
@@ -36,7 +37,7 @@ export function Footer() {
     <footer className="on-navy bg-navy-700 px-4 py-14 text-cream-200 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-content gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo variant="full" theme="dark" size={48} showPillars />
+          <Logo variant="full" theme="dark" size={52} />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-300/80">
             {en.footer.blurb}
           </p>
@@ -115,7 +116,11 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-content flex-col items-center justify-between gap-4 border-t border-navy-500 pt-6 text-sm text-cream-300/70 sm:flex-row">
-        <p>{en.footer.rights(new Date().getFullYear())}</p>
+        <p>
+          <BrandText brandClassName="text-cream-100">
+            {en.footer.rights(new Date().getFullYear())}
+          </BrandText>
+        </p>
         <ul className="flex gap-6">
           {LEGAL_LINKS.map((l) => (
             <li key={l.href}>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Noto_Sans_Telugu } from 'next/font/google'
+import { Cinzel, Inter, Noto_Sans_Telugu } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -9,6 +9,13 @@ import { en } from '@/locales/en'
 
 // Only the weights the UI actually uses — every extra weight is a separate
 // font file on the critical path.
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-cinzel',
+  display: 'swap',
+})
+
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
@@ -51,7 +58,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${notoSansTelugu.variable}`}>
+    <html lang="en" className={`${inter.variable} ${notoSansTelugu.variable} ${cinzel.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
         <a
           href="#main"

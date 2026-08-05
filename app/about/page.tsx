@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { X as XIcon } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { TrustStrip } from '@/components/TrustStrip'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { en } from '@/locales/en'
@@ -17,7 +18,7 @@ export default function AboutPage() {
     <>
       <Section tone="navy">
         <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
-          {a.heading}
+          <BrandText>{a.heading}</BrandText>
         </h1>
       </Section>
 
@@ -58,7 +59,7 @@ export default function AboutPage() {
         <div className="mt-6 max-w-3xl space-y-4">
           {a.whyBody.map((p) => (
             <p key={p.slice(0, 24)} className="text-lg leading-relaxed text-navy-600">
-              {p}
+              <BrandText>{p}</BrandText>
             </p>
           ))}
         </div>

@@ -3,17 +3,14 @@ import { SITE, isPlaceholder } from '@/lib/config'
 import { en } from '@/locales/en'
 
 /**
- * Verifiable items ONLY (spec §8.1.2). No client counts, consultation counts,
- * outcome percentages, or satisfaction figures — all banned sitewide.
- *
- * Items backed by an owner-supplied value that is still unset are omitted
- * rather than rendered as a placeholder or a dead link.
+ * Verifiable trust items — languages, availability, and location guidance.
+ * No client counts, consultation counts, or outcome percentages.
  */
 export function TrustStrip({ className }: { className?: string }) {
-  const items: React.ReactNode[] = []
+  const extras: React.ReactNode[] = []
 
   if (!isPlaceholder(SITE.yearsExperience)) {
-    items.push(
+    extras.push(
       <span key="years">
         {SITE.yearsExperience}
         {en.trust.yearsSuffix}
@@ -22,34 +19,46 @@ export function TrustStrip({ className }: { className?: string }) {
   }
 
   if (!isPlaceholder(SITE.googleBusinessUrl)) {
-    items.push(
+    extras.push(
       <a
         key="rating"
         href={SITE.googleBusinessUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="font-semibold text-gold-700 underline-offset-4 hover:underline"
+        className="text-gold-700 underline-offset-4 hover:underline"
       >
         {en.trust.googleRating}
       </a>
     )
   }
 
-  items.push(<span key="languages">{en.trust.languages}</span>)
-  items.push(<span key="availability">{en.trust.availability}</span>)
+  const lines = [en.trust.languages, en.trust.availability, en.trust.microline]
 
   return (
-    <ul
+    <div
       className={cn(
-        'flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-navy-600',
+        'rounded-2xl border-2 border-gold-400/45 bg-white px-6 py-8 shadow-sm sm:px-10 sm:py-10',
         className
       )}
     >
-      {items.map((item, i) => (
-        <li key={i} className="flex items-center gap-8">
-          {item}
-        </li>
-      ))}
-    </ul>
+      <ul className="space-y-4 text-center">
+        {lines.map((line) => (
+          <li
+            key={line}
+            className="text-lg font-bold tracking-tight text-navy-800 sm:text-xl"
+          >
+            {line}
+          </li>
+        ))}
+      </ul>
+
+      {extras.length > 0 && (
+        <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-base font-semibold text-navy-700">
+          {extras.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
   )
 }

@@ -1,4 +1,9 @@
 import { cn } from '@/lib/utils'
+import { BrandText } from './BrandText'
+
+function withBrand(node: React.ReactNode): React.ReactNode {
+  return typeof node === 'string' ? <BrandText>{node}</BrandText> : node
+}
 
 type Tone = 'navy' | 'cream' | 'white'
 
@@ -89,7 +94,7 @@ export function SectionHeading({
           onNavy ? 'text-cream-50' : 'text-navy-700'
         )}
       >
-        {title}
+        {withBrand(title)}
       </h2>
       {lead && (
         <p
@@ -98,7 +103,7 @@ export function SectionHeading({
             onNavy ? 'text-cream-200/90' : 'text-navy-600'
           )}
         >
-          {lead}
+          {withBrand(lead)}
         </p>
       )}
     </div>

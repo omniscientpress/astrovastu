@@ -58,6 +58,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         telugu: ['var(--font-telugu)', 'var(--font-inter)', 'sans-serif'],
+        brand: ['var(--font-cinzel)', 'Georgia', 'serif'],
       },
       maxWidth: {
         content: '72rem',

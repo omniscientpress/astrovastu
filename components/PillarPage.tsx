@@ -1,13 +1,16 @@
-import { Check } from 'lucide-react'
+import Link from 'next/link'
+import { Check, ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
 import { ServiceCard } from './ServiceCard'
 import { BookingBand } from './BookingBand'
 import { servicesByPillar } from '@/data/services'
+import { getPillarHistory } from '@/data/pillar-history'
 import type { PillarInfo } from '@/data/pillars'
 
 /** Template for the three pillar pages (spec §8.3). */
 export function PillarPage({ info }: { info: PillarInfo }) {
   const list = servicesByPillar(info.pillar)
+  const history = getPillarHistory(info.path)
 
   return (
     <>
@@ -62,6 +65,20 @@ export function PillarPage({ info }: { info: PillarInfo }) {
             </p>
           ))}
         </div>
+        {history && (
+          <div className="mt-8 max-w-3xl text-right">
+            <Link
+              href={`/services/${info.path}/history`}
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-gold-700 hover:text-gold-800"
+            >
+              {history.linkLabel}
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          </div>
+        )}
       </Section>
 
       <BookingBand service={info.name} />

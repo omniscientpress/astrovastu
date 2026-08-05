@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { en } from '@/locales/en'
+import { BrandText } from '@/components/BrandText'
 import { HeroVisual } from '@/components/graphics/HeroVisual'
 import { YantraWatermark } from '@/components/graphics/YantraWatermark'
 import { WhatsAppButton } from './WhatsAppButton'
@@ -109,7 +110,7 @@ export function HeroCarousel() {
                     {slide.title}
                   </h1>
                   <p className="mt-5 text-lg leading-relaxed text-cream-200/90">
-                    {slide.subtitle}
+                    <BrandText>{slide.subtitle}</BrandText>
                   </p>
                   <p className="mt-3 leading-relaxed text-cream-300/80">{slide.body}</p>
 

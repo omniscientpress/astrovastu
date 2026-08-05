@@ -8,33 +8,30 @@ type LogoTheme = 'light' | 'dark'
 
 interface LogoProps {
   variant?: LogoVariant
-  /** 'dark' = placed on a dark (navy) surface. */
+  /** Reserved for future theme variants; logo image is used as supplied. */
   theme?: LogoTheme
   /**
-   * Mark height. Sizing flows from the `--logo-size` CSS variable so a single
+   * Logo height. Sizing flows from the `--logo-size` CSS variable so a single
    * instance can be responsive, e.g. className="[--logo-size:40px] lg:[--logo-size:44px]".
    */
   size?: number
   href?: string
-  /** Show the "KP Astrology · Vastu · Numerology" caption under the wordmark. */
+  /** @deprecated Tagline is part of the supplied text logo image. */
   showPillars?: boolean
   className?: string
   priority?: boolean
 }
 
-const MARK_RATIO = 440 / 375 // intrinsic w/h of logo-mark
+const MARK_RATIO = 440 / 375
+const TEXT_LOGO_RATIO = 2.75
 
 export function Logo({
   variant = 'full',
-  theme = 'light',
   size,
   href,
-  showPillars = false,
   className,
   priority = false,
 }: LogoProps) {
-  // Inline var only when an explicit size is passed; otherwise the caller sets
-  // --logo-size via className (responsive).
   const style = size ? ({ '--logo-size': `${size}px` } as React.CSSProperties) : undefined
 
   const mark = (
@@ -55,36 +52,19 @@ export function Logo({
     </span>
   )
 
-  const content =
-    variant === 'mark' ? (
-      mark
-    ) : (
-      <>
-        {mark}
-        <span className="ml-3 flex flex-col justify-center leading-none">
-          <span
-            className={cn(
-              'font-semibold tracking-wide',
-              theme === 'dark' ? 'text-cream-100' : 'text-navy-700'
-            )}
-            style={{ fontSize: 'calc(var(--logo-size, 44px) * 0.46)' }}
-          >
-            {en.brand.name}
-          </span>
-          {showPillars && (
-            <span
-              className={cn(
-                'mt-1 tracking-wide',
-                theme === 'dark' ? 'text-cream-300/80' : 'text-navy-500'
-              )}
-              style={{ fontSize: 'max(9px, calc(var(--logo-size, 44px) * 0.2))' }}
-            >
-              {en.brand.pillars}
-            </span>
-          )}
-        </span>
-      </>
-    )
+  const textLogo = (
+    <Image
+      src="/brand/divine-jyothi-text-logo.png"
+      alt={en.brand.logoAlt}
+      width={Math.round(48 * TEXT_LOGO_RATIO)}
+      height={48}
+      priority={priority}
+      sizes="(max-width: 640px) 200px, 280px"
+      className="h-[var(--logo-size,48px)] w-auto select-none"
+    />
+  )
+
+  const content = variant === 'mark' ? mark : textLogo
 
   if (href) {
     return (
