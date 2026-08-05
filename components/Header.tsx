@@ -21,13 +21,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-cream-300 bg-cream-50/95 backdrop-blur">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-content items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8">
         {/* Logo stays generous; nav shrinks instead (spec §4) */}
         <Logo
           href="/"
           variant="full"
           priority
-          className="[--logo-size:40px] sm:[--logo-size:44px] lg:[--logo-size:52px]"
+          className="[--logo-size:80px] sm:[--logo-size:88px] lg:[--logo-size:104px]"
         />
 
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">

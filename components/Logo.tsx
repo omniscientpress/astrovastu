@@ -23,7 +23,7 @@ interface LogoProps {
 }
 
 const MARK_RATIO = 440 / 375
-const TEXT_LOGO_RATIO = 2.75
+const FULL_LOGO_RATIO = 4 / 3
 
 export function Logo({
   variant = 'full',
@@ -52,19 +52,20 @@ export function Logo({
     </span>
   )
 
-  const textLogo = (
+  const fullLogo = (
     <Image
-      src="/brand/divine-jyothi-text-logo.png"
+      src="/brand/divine-jyothi-full-logo.png"
       alt={en.brand.logoAlt}
-      width={Math.round(48 * TEXT_LOGO_RATIO)}
-      height={48}
+      width={Math.round(96 * FULL_LOGO_RATIO)}
+      height={96}
       priority={priority}
-      sizes="(max-width: 640px) 200px, 280px"
-      className="h-[var(--logo-size,48px)] w-auto select-none"
+      sizes="(max-width: 640px) 107px, 139px"
+      unoptimized
+      className="h-[var(--logo-size,96px)] w-auto select-none"
     />
   )
 
-  const content = variant === 'mark' ? mark : textLogo
+  const content = variant === 'mark' ? mark : fullLogo
 
   if (href) {
     return (

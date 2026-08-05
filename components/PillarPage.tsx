@@ -3,6 +3,7 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
 import { ServiceCard } from './ServiceCard'
 import { BookingBand } from './BookingBand'
+import { PillarVisual } from './graphics/PillarVisual'
 import { servicesByPillar } from '@/data/services'
 import { getPillarHistory } from '@/data/pillar-history'
 import type { PillarInfo } from '@/data/pillars'
@@ -16,12 +17,17 @@ export function PillarPage({ info }: { info: PillarInfo }) {
     <>
       {/* Navy hero: what this discipline answers, one sentence */}
       <Section tone="navy">
-        <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
-          {info.name}
-        </p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
-          {info.heroLine}
-        </h1>
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
+          <div>
+            <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
+              {info.name}
+            </p>
+            <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
+              {info.heroLine}
+            </h1>
+          </div>
+          <PillarVisual pillar={info.path} className="justify-self-center lg:justify-self-end" />
+        </div>
       </Section>
 
       {/* Best for */}
