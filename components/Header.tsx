@@ -27,7 +27,7 @@ export function Header() {
           href="/"
           variant="full"
           priority
-          className="[--logo-size:80px] sm:[--logo-size:88px] lg:[--logo-size:104px]"
+          className="[--logo-size:72px] sm:[--logo-size:80px] lg:[--logo-size:88px]"
         />
 
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">

@@ -27,12 +27,14 @@ const TEXT_LOGO_RATIO = 1024 / 682
 
 export function Logo({
   variant = 'full',
+  theme = 'light',
   size,
   href,
   className,
   priority = false,
 }: LogoProps) {
   const style = size ? ({ '--logo-size': `${size}px` } as React.CSSProperties) : undefined
+  const onDark = theme === 'dark'
 
   const mark = (
     <span
@@ -52,7 +54,7 @@ export function Logo({
     </span>
   )
 
-  const textLogo = (
+  const logoImage = (
     <Image
       src="/brand/text-logo.png"
       alt={en.brand.logoAlt}
@@ -61,8 +63,19 @@ export function Logo({
       priority={priority}
       sizes="(max-width: 640px) 120px, 156px"
       unoptimized
-      className="h-[var(--logo-size,96px)] w-auto select-none"
+      className={cn(
+        'h-[var(--logo-size,96px)] w-auto select-none',
+        onDark ? 'brightness-105' : 'brightness-105 contrast-110'
+      )}
     />
+  )
+
+  const textLogo = onDark ? (
+    logoImage
+  ) : (
+    <span className="inline-flex rounded-xl bg-navy-900/90 px-3 py-1.5 shadow-[0_4px_24px_rgba(30,27,75,0.18)] ring-1 ring-gold-400/25">
+      {logoImage}
+    </span>
   )
 
   const content = variant === 'mark' ? mark : textLogo

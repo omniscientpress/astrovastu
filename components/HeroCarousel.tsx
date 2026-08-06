@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils'
 import { en } from '@/locales/en'
 import { BrandText } from '@/components/BrandText'
 import { HeroVisual } from '@/components/graphics/HeroVisual'
-import { YantraWatermark } from '@/components/graphics/YantraWatermark'
 import { WhatsAppButton } from './WhatsAppButton'
 
 const SLIDES = en.home.slides
@@ -32,7 +31,6 @@ export function HeroCarousel() {
     setActive((next + SLIDES.length) % SLIDES.length)
   }, [])
 
-  // No auto-advance when reduced motion is requested, or while hovered/focused.
   useEffect(() => {
     if (reducedMotion || paused) return
     const timer = window.setInterval(
@@ -72,13 +70,28 @@ export function HeroCarousel() {
         if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1))
         touchStartX.current = null
       }}
-      className="on-navy relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_#2e2871_0%,_#1e1b4b_70%)] px-4 py-14 text-cream-100 sm:px-6 lg:px-8 lg:py-20"
+      className="on-navy relative min-h-[32rem] overflow-hidden text-cream-100 sm:min-h-[36rem] lg:min-h-[40rem]"
     >
-      <YantraWatermark />
+      {/* Full-bleed background images — one per slide */}
+      {SLIDES.map((slide, i) => (
+        <div
+          key={slide.id}
+          className={cn(
+            'absolute inset-0 transition-opacity duration-700 motion-reduce:transition-none',
+            i === active ? 'opacity-100' : 'pointer-events-none opacity-0'
+          )}
+          aria-hidden={i !== active}
+        >
+          <HeroVisual
+            slideId={slide.id}
+            visualAlt={slide.visualAlt}
+            priority={i === 0}
+          />
+        </div>
+      ))}
 
-      {/* Slides share one grid cell, so the container is as tall as the tallest
-          slide and rotation never shifts layout. */}
-      <div className="relative mx-auto grid max-w-content">
+      {/* Slides share one grid cell so height stays stable */}
+      <div className="relative z-10 mx-auto grid min-h-[32rem] max-w-content px-4 py-14 sm:min-h-[36rem] sm:px-6 lg:min-h-[40rem] lg:px-8 lg:py-20">
         {SLIDES.map((slide, i) => {
           const isActive = i === active
           return (
@@ -89,51 +102,39 @@ export function HeroCarousel() {
               aria-label={`${i + 1} of ${SLIDES.length}`}
               aria-hidden={!isActive}
               className={cn(
-                // `invisible` keeps the slide in the grid (so height never shifts)
-                // while removing it from the tab order and the accessibility tree.
-                'col-start-1 row-start-1 transition-opacity duration-500 motion-reduce:transition-none',
-                isActive ? 'visible opacity-100' : 'invisible opacity-0'
+                'col-start-1 row-start-1 flex items-center transition-opacity duration-500 motion-reduce:transition-none',
+                isActive ? 'opacity-100' : 'pointer-events-none opacity-0'
               )}
             >
-              <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(23rem,31rem)] lg:gap-12">
-                <div
-                  className={cn(
-                    'max-w-2xl transition-transform duration-500 motion-reduce:transition-none',
-                    isActive && !reducedMotion && 'translate-y-0',
-                    !isActive && !reducedMotion && 'translate-y-2'
-                  )}
-                >
-                  <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
-                    {slide.badge}
-                  </p>
-                  <h1 className="mt-5 text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
-                    {slide.title}
-                  </h1>
-                  <p className="mt-5 text-lg leading-relaxed text-cream-200/90">
-                    <BrandText>{slide.subtitle}</BrandText>
-                  </p>
-                  <p className="mt-3 leading-relaxed text-cream-300/80">
-                    <BrandText brandClassName="text-gold-200">{slide.body}</BrandText>
-                  </p>
+              <div
+                className={cn(
+                  'max-w-2xl transition-transform duration-500 motion-reduce:transition-none',
+                  isActive && !reducedMotion && 'translate-y-0',
+                  !isActive && !reducedMotion && 'translate-y-2'
+                )}
+              >
+                <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300 backdrop-blur-sm">
+                  {slide.badge}
+                </p>
+                <h1 className="mt-5 text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
+                  {slide.title}
+                </h1>
+                <p className="mt-5 text-lg leading-relaxed text-cream-200/90">
+                  <BrandText brandClassName="text-gold-200">{slide.subtitle}</BrandText>
+                </p>
+                <p className="mt-3 leading-relaxed text-cream-300/80">
+                  <BrandText brandClassName="text-gold-200">{slide.body}</BrandText>
+                </p>
 
-                  {/* Exactly two actions: one WhatsApp green, one gold. */}
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <WhatsAppButton service={slide.whatsappService || undefined} />
-                    <Link
-                      href={slide.secondary.href}
-                      className="inline-flex items-center justify-center rounded-lg bg-gold-400 px-6 py-3 text-base font-semibold text-navy-800 transition-colors hover:bg-gold-300"
-                    >
-                      {slide.secondary.label}
-                    </Link>
-                  </div>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <WhatsAppButton service={slide.whatsappService || undefined} />
+                  <Link
+                    href={slide.secondary.href}
+                    className="inline-flex items-center justify-center rounded-lg bg-gold-400 px-6 py-3 text-base font-semibold text-navy-800 transition-colors hover:bg-gold-300"
+                  >
+                    {slide.secondary.label}
+                  </Link>
                 </div>
-
-                <HeroVisual
-                  slideId={slide.id}
-                  visualAlt={slide.visualAlt}
-                  priority={i === 0}
-                  className="order-first justify-self-center lg:order-none"
-                />
               </div>
             </div>
           )
@@ -141,12 +142,12 @@ export function HeroCarousel() {
       </div>
 
       {/* Controls */}
-      <div className="relative mx-auto mt-10 flex max-w-content items-center gap-4">
+      <div className="relative z-10 mx-auto flex max-w-content items-center gap-4 px-4 pb-8 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={() => go(active - 1)}
           aria-label={en.home.carousel.previous}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-500 text-cream-200 transition-colors hover:bg-navy-600"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-500/80 bg-navy-900/40 text-cream-200 backdrop-blur-sm transition-colors hover:bg-navy-600/60"
         >
           <ChevronLeft className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -154,7 +155,7 @@ export function HeroCarousel() {
           type="button"
           onClick={() => go(active + 1)}
           aria-label={en.home.carousel.next}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-500 text-cream-200 transition-colors hover:bg-navy-600"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy-500/80 bg-navy-900/40 text-cream-200 backdrop-blur-sm transition-colors hover:bg-navy-600/60"
         >
           <ChevronRight className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -169,7 +170,7 @@ export function HeroCarousel() {
                 aria-current={i === active ? 'true' : undefined}
                 className={cn(
                   'block h-2.5 rounded-full transition-all',
-                  i === active ? 'w-8 bg-gold-400' : 'w-2.5 bg-navy-500 hover:bg-navy-400'
+                  i === active ? 'w-8 bg-gold-400' : 'w-2.5 bg-navy-500/80 hover:bg-navy-400'
                 )}
               />
             </li>
