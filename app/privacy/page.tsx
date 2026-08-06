@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Section } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { SITE } from '@/lib/config'
 
 export const metadata: Metadata = {
@@ -18,9 +19,11 @@ export default function PrivacyPage() {
       <Section tone="white">
         <div className="mx-auto max-w-3xl space-y-8">
           <p className="text-lg leading-relaxed text-navy-600">
-            Divine Jyothi ("we", "us") respects your privacy. This policy explains what
-            information we collect when you use this website or book a consultation, and
-            how we use it.
+            <BrandText>
+              Divine Jyothi ("we", "us") respects your privacy. This policy explains what
+              information we collect when you use this website or book a consultation, and
+              how we use it.
+            </BrandText>
           </p>
 
           <div>

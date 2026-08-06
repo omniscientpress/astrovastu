@@ -11,6 +11,7 @@ import { TestimonialCard } from '@/components/TestimonialCard'
 import { FaqAccordion } from '@/components/FaqAccordion'
 import { PriceChip } from '@/components/PriceChip'
 import { BookingBand } from '@/components/BookingBand'
+import { BrandText } from '@/components/BrandText'
 import { OrnamentDivider, PillarIcon, StepIcon } from '@/components/graphics'
 import type { PillarKey, StepKey } from '@/components/graphics/types'
 import { testimonials } from '@/data/testimonials'
@@ -178,13 +179,13 @@ export default function HomePage() {
             </h2>
             <p className="mt-1 text-navy-500">{en.home.founder.role}</p>
             <p className="mt-5 text-lg leading-relaxed text-navy-600">
-              {en.home.founder.body}
+              <BrandText>{en.home.founder.body}</BrandText>
             </p>
             <Link
               href={en.home.founder.cta.href}
               className="group mt-6 inline-flex items-center gap-2 font-semibold text-gold-700 hover:text-gold-800"
             >
-              {en.home.founder.cta.label}
+              <BrandText>{en.home.founder.cta.label}</BrandText>
               <ArrowRight
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 aria-hidden="true"
@@ -233,7 +234,9 @@ export default function HomePage() {
               key={pkg.id}
               className="flex h-full flex-col rounded-2xl border border-cream-300 bg-cream-50 p-6"
             >
-              <h3 className="text-lg font-semibold text-navy-700">{pkg.name}</h3>
+              <h3 className="text-lg font-semibold text-navy-700">
+                <BrandText>{pkg.name}</BrandText>
+              </h3>
               <p className="mt-2 flex-1 leading-relaxed text-navy-600">{pkg.scope}</p>
               <div className="mt-5">
                 <PriceChip price={pkg.price} duration={pkg.duration} />

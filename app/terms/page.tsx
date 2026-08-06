@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Section } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { SITE } from '@/lib/config'
 
 export const metadata: Metadata = {
@@ -27,13 +28,15 @@ export default function TermsPage() {
               Nature of our services
             </h2>
             <p className="mt-3 leading-relaxed text-navy-600">
-              Divine Jyothi provides KP Astrology, Vastu, and Numerology consultations
-              for guidance and informational purposes. These are belief-based and
-              assessment-based practices, not exact sciences — we do not promise
-              specific outcomes, timing, or results. Our consultations are not a
-              substitute for professional medical, legal, financial, or structural
-              engineering advice, and important decisions should not be based solely on
-              a consultation with us.
+              <BrandText>
+                Divine Jyothi provides KP Astrology, Vastu, and Numerology consultations
+                for guidance and informational purposes. These are belief-based and
+                assessment-based practices, not exact sciences — we do not promise
+                specific outcomes, timing, or results. Our consultations are not a
+                substitute for professional medical, legal, financial, or structural
+                engineering advice, and important decisions should not be based solely on
+                a consultation with us.
+              </BrandText>
             </p>
           </div>
 
@@ -72,9 +75,11 @@ export default function TermsPage() {
               Limitation of liability
             </h2>
             <p className="mt-3 leading-relaxed text-navy-600">
-              Divine Jyothi is not liable for any decisions made, or losses incurred,
-              based on guidance provided during a consultation. Our services are offered
-              in good faith based on genuine professional analysis.
+              <BrandText>
+                Divine Jyothi is not liable for any decisions made, or losses incurred,
+                based on guidance provided during a consultation. Our services are offered
+                in good faith based on genuine professional analysis.
+              </BrandText>
             </p>
           </div>
 

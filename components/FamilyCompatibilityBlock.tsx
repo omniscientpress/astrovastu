@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { withBrand } from './Copy'
 import { en } from '@/locales/en'
 
 /**
@@ -19,11 +20,11 @@ export function FamilyCompatibilityBlock({ className }: { className?: string }) 
         <h2 className="mt-3 text-3xl font-semibold text-navy-700 sm:text-4xl">
           {fc.heading}
         </h2>
-        <p className="mt-5 text-lg leading-relaxed text-navy-600">{fc.lead}</p>
+        <p className="mt-5 text-lg leading-relaxed text-navy-600">{withBrand(fc.lead)}</p>
 
         <p className="mt-6 flex gap-3 rounded-2xl border border-gold-200 bg-gold-50 p-5 text-navy-700">
           <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold-600" aria-hidden="true" />
-          <span>{fc.honestyNote}</span>
+          <span>{withBrand(fc.honestyNote)}</span>
         </p>
 
         <Link

@@ -112,7 +112,9 @@ export function HeroCarousel() {
                   <p className="mt-5 text-lg leading-relaxed text-cream-200/90">
                     <BrandText>{slide.subtitle}</BrandText>
                   </p>
-                  <p className="mt-3 leading-relaxed text-cream-300/80">{slide.body}</p>
+                  <p className="mt-3 leading-relaxed text-cream-300/80">
+                    <BrandText brandClassName="text-gold-200">{slide.body}</BrandText>
+                  </p>
 
                   {/* Exactly two actions: one WhatsApp green, one gold. */}
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">

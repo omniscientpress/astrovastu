@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { withBrand } from './Copy'
 import { en } from '@/locales/en'
 import { SituationIcon, pillarAccentClass, pillarIconClass } from '@/components/graphics'
 import type { Pillar } from '@/data/types'
@@ -35,7 +36,7 @@ export function SituationCards({ className }: { className?: string }) {
             </span>
             <h3 className="mt-2 font-semibold text-navy-700">{item.title}</h3>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-600">
-              {item.description}
+              {withBrand(item.description)}
             </p>
             <ArrowRight
               className="mt-4 h-4 w-4 text-gold-700 transition-transform group-hover:translate-x-0.5"

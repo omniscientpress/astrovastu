@@ -1,9 +1,5 @@
 import { cn } from '@/lib/utils'
-import { BrandText } from './BrandText'
-
-function withBrand(node: React.ReactNode): React.ReactNode {
-  return typeof node === 'string' ? <BrandText>{node}</BrandText> : node
-}
+import { withBrand } from './Copy'
 
 type Tone = 'navy' | 'cream' | 'white'
 
@@ -85,7 +81,7 @@ export function SectionHeading({
             onNavy ? 'text-gold-300' : 'text-gold-600'
           )}
         >
-          {eyebrow}
+          {withBrand(eyebrow)}
         </p>
       )}
       <h2

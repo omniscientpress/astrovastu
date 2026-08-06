@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
 import { Section } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { BookingBand } from '@/components/BookingBand'
 import { blogPosts, getBlogPost } from '@/data/blog'
 
@@ -48,7 +49,9 @@ export default async function BlogPostPage({
       <Section tone="white">
         <div className="prose prose-lg mx-auto max-w-3xl text-navy-700">
           {post.paragraphs.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
+            <p key={p.slice(0, 24)}>
+              <BrandText>{p}</BrandText>
+            </p>
           ))}
         </div>
       </Section>

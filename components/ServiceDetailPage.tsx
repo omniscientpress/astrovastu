@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { ArrowLeft, Check, ShieldCheck, Stethoscope } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
+import { BrandText } from './BrandText'
+import { withBrand } from './Copy'
 import { WhatsAppButton } from './WhatsAppButton'
 import { PriceChip } from './PriceChip'
 import { DeliverablesList } from './DeliverablesList'
@@ -39,9 +41,11 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
           {service.title}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-cream-200/90">{service.subtitle}</p>
+        <p className="mt-4 max-w-2xl text-lg text-cream-200/90">
+          {withBrand(service.subtitle)}
+        </p>
         <p className="mt-4 max-w-2xl leading-relaxed text-cream-300/85">
-          {service.description}
+          {withBrand(service.description)}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <WhatsAppButton
@@ -84,7 +88,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                   key={item}
                   className="rounded-2xl border border-cream-300 bg-cream-50 p-5 leading-relaxed text-navy-700"
                 >
-                  {item}
+                  {withBrand(item)}
                 </li>
               ))}
             </ul>
@@ -100,7 +104,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                     className="mt-1 h-5 w-5 shrink-0 text-gold-600"
                     aria-hidden="true"
                   />
-                  <span className="leading-relaxed text-navy-700">{item}</span>
+                  <span className="leading-relaxed text-navy-700">{withBrand(item)}</span>
                 </li>
               ))}
             </ul>
@@ -124,7 +128,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                     <span aria-hidden="true" className="text-gold-500">
                       —
                     </span>
-                    {point}
+                    {withBrand(point)}
                   </li>
                 ))}
               </ul>
@@ -155,7 +159,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             ))}
           </ul>
           <p className="mt-8 max-w-3xl rounded-2xl border border-navy-500 bg-navy-600/40 p-5 text-cream-200">
-            {marriageHonestyNote}
+            {withBrand(marriageHonestyNote)}
           </p>
         </Section>
       )}
@@ -187,7 +191,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
               className="mt-0.5 h-5 w-5 shrink-0 text-gold-600"
               aria-hidden="true"
             />
-            <span>{familyConsentNote}</span>
+            <span>{withBrand(familyConsentNote)}</span>
           </p>
         </Section>
       )}
@@ -214,7 +218,9 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                     {en.labels.mostPopular}
                   </span>
                 )}
-                <h3 className="text-xl font-semibold text-navy-700">{tier.name}</h3>
+                <h3 className="text-xl font-semibold text-navy-700">
+                  <BrandText>{tier.name}</BrandText>
+                </h3>
                 <p className="mt-3 flex-1 leading-relaxed text-navy-600">{tier.scope}</p>
                 <p className="mt-6 text-3xl font-semibold text-navy-700">
                   {formatPrice(tier.price)}

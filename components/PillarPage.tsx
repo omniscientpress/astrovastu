@@ -3,6 +3,7 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
 import { ServiceCard } from './ServiceCard'
 import { BookingBand } from './BookingBand'
+import { withBrand } from './Copy'
 import { PillarVisual } from './graphics/PillarVisual'
 import { servicesByPillar } from '@/data/services'
 import { getPillarHistory } from '@/data/pillar-history'
@@ -67,7 +68,7 @@ export function PillarPage({ info }: { info: PillarInfo }) {
         <div className="mt-6 max-w-3xl space-y-4">
           {info.explainer.paragraphs.map((p) => (
             <p key={p.slice(0, 32)} className="text-lg leading-relaxed text-navy-600">
-              {p}
+              {withBrand(p)}
             </p>
           ))}
         </div>
@@ -77,7 +78,7 @@ export function PillarPage({ info }: { info: PillarInfo }) {
               href={`/services/${info.path}/history`}
               className="group inline-flex items-center gap-2 text-sm font-semibold text-gold-700 hover:text-gold-800"
             >
-              {history.linkLabel}
+              {withBrand(history.linkLabel)}
               <ArrowRight
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                 aria-hidden="true"

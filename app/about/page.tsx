@@ -36,7 +36,9 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-semibold text-navy-700">{a.meetHeading}</h2>
             <p className="mt-1 text-navy-500">{a.meetRole}</p>
-            <p className="mt-5 text-lg leading-relaxed text-navy-600">{a.meetBody}</p>
+            <p className="mt-5 text-lg leading-relaxed text-navy-600">
+              <BrandText>{a.meetBody}</BrandText>
+            </p>
           </div>
         </div>
 
@@ -47,7 +49,9 @@ export default function AboutPage() {
           {a.credentials.map((c) => (
             <li key={c.title} className="border-l-2 border-gold-400 py-1 pl-4">
               <p className="font-semibold text-navy-700">{c.title}</p>
-              <p className="mt-1 text-sm leading-relaxed text-navy-600">{c.detail}</p>
+              <p className="mt-1 text-sm leading-relaxed text-navy-600">
+                <BrandText>{c.detail}</BrandText>
+              </p>
             </li>
           ))}
         </ul>
@@ -75,7 +79,9 @@ export default function AboutPage() {
               className="rounded-2xl border border-navy-500 bg-navy-600/40 p-6"
             >
               <h3 className="font-semibold text-cream-50">{item.title}</h3>
-              <p className="mt-2 leading-relaxed text-cream-200/85">{item.description}</p>
+              <p className="mt-2 leading-relaxed text-cream-200/85">
+                <BrandText brandClassName="text-gold-200">{item.description}</BrandText>
+              </p>
             </li>
           ))}
         </ul>
@@ -87,7 +93,7 @@ export default function AboutPage() {
         <div className="mt-6 max-w-3xl space-y-4">
           {a.kpBody.map((p) => (
             <p key={p.slice(0, 24)} className="text-lg leading-relaxed text-navy-600">
-              {p}
+              <BrandText>{p}</BrandText>
             </p>
           ))}
         </div>
@@ -102,7 +108,9 @@ export default function AboutPage() {
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-400 text-sm font-semibold text-navy-800">
                 {i + 1}
               </span>
-              <span className="leading-relaxed text-navy-700">{step}</span>
+              <span className="leading-relaxed text-navy-700">
+                <BrandText>{step}</BrandText>
+              </span>
             </li>
           ))}
         </ol>
@@ -115,7 +123,9 @@ export default function AboutPage() {
           {a.wont.map((item) => (
             <li key={item} className="flex gap-3">
               <XIcon className="mt-0.5 h-5 w-5 shrink-0 text-navy-400" aria-hidden="true" />
-              <span className="leading-relaxed text-navy-700">{item}</span>
+              <span className="leading-relaxed text-navy-700">
+                <BrandText>{item}</BrandText>
+              </span>
             </li>
           ))}
         </ul>

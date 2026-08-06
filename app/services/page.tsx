@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { SituationCards } from '@/components/SituationCards'
 import { ServiceCard } from '@/components/ServiceCard'
 import { BookingBand } from '@/components/BookingBand'
@@ -22,7 +23,7 @@ export default function ServicesPage() {
           {en.servicesHub.title}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-200/90">
-          {en.servicesHub.intro}
+          <BrandText brandClassName="text-gold-200">{en.servicesHub.intro}</BrandText>
         </p>
       </Section>
 

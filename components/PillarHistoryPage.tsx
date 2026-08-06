@@ -8,9 +8,17 @@ import type { HistoryBlock, PillarHistory } from '@/data/pillar-history'
 function HistoryBlockView({ block }: { block: HistoryBlock }) {
   switch (block.type) {
     case 'h2':
-      return <h2 className="mt-12 text-2xl font-semibold text-navy-700 first:mt-0">{block.text}</h2>
+      return (
+        <h2 className="mt-12 text-2xl font-semibold text-navy-700 first:mt-0">
+          <BrandText>{block.text!}</BrandText>
+        </h2>
+      )
     case 'h3':
-      return <h3 className="mt-8 text-xl font-semibold text-navy-700">{block.text}</h3>
+      return (
+        <h3 className="mt-8 text-xl font-semibold text-navy-700">
+          <BrandText>{block.text!}</BrandText>
+        </h3>
+      )
     case 'p':
       return (
         <p className="mt-4 leading-relaxed text-navy-600">
@@ -45,7 +53,7 @@ function HistoryBlockView({ block }: { block: HistoryBlock }) {
               <tr className="border-b-2 border-cream-300">
                 {block.headers!.map((h) => (
                   <th key={h} className="px-4 py-3 font-semibold text-navy-700">
-                    {h}
+                    <BrandText>{h}</BrandText>
                   </th>
                 ))}
               </tr>
@@ -55,7 +63,7 @@ function HistoryBlockView({ block }: { block: HistoryBlock }) {
                 <tr key={row[0]} className="border-b border-cream-300">
                   {row.map((cell) => (
                     <td key={cell.slice(0, 24)} className="px-4 py-3 text-navy-600">
-                      {cell}
+                      <BrandText>{cell}</BrandText>
                     </td>
                   ))}
                 </tr>

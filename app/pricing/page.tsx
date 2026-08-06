@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Section, SectionHeading } from '@/components/Section'
+import { BrandText } from '@/components/BrandText'
 import { PriceChip } from '@/components/PriceChip'
 import { BookingBand } from '@/components/BookingBand'
 import { services } from '@/data/services'
@@ -29,7 +30,7 @@ export default function PricingPage() {
           {en.pricing.heading}
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-200/90">
-          {en.pricing.lead}
+          <BrandText brandClassName="text-gold-200">{en.pricing.lead}</BrandText>
         </p>
       </Section>
 
@@ -71,7 +72,9 @@ export default function PricingPage() {
                     {en.labels.mostPopular}
                   </span>
                 )}
-                <h3 className="text-xl font-semibold text-navy-700">{tier.name}</h3>
+                <h3 className="text-xl font-semibold text-navy-700">
+                  <BrandText>{tier.name}</BrandText>
+                </h3>
                 <p className="mt-3 flex-1 leading-relaxed text-navy-600">{tier.scope}</p>
                 <div className="mt-6">
                   <PriceChip price={tier.price} duration={tier.duration} />
@@ -90,7 +93,9 @@ export default function PricingPage() {
               key={pkg.id}
               className="flex h-full flex-col rounded-2xl border border-cream-300 bg-cream-50 p-6"
             >
-              <h3 className="font-semibold text-navy-700">{pkg.name}</h3>
+              <h3 className="font-semibold text-navy-700">
+                <BrandText>{pkg.name}</BrandText>
+              </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-600">{pkg.scope}</p>
               <div className="mt-5">
                 <PriceChip price={pkg.price} duration={pkg.duration} />

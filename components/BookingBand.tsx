@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { en } from '@/locales/en'
 import { WhatsAppButton } from './WhatsAppButton'
 import { Section } from './Section'
+import { withBrand } from './Copy'
 
 interface BookingBandProps {
   title?: string
@@ -39,11 +40,11 @@ export function BookingBand({
             onNavy ? 'text-cream-50' : 'text-navy-700'
           )}
         >
-          {title}
+          {withBrand(title)}
         </h2>
         {lead && (
           <p className={cn('mt-4 text-lg', onNavy ? 'text-cream-200/90' : 'text-navy-600')}>
-            {lead}
+            {withBrand(lead)}
           </p>
         )}
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

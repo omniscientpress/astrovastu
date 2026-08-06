@@ -37,9 +37,9 @@ export function Footer() {
     <footer className="on-navy bg-navy-700 px-4 py-14 text-cream-200 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-content gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo variant="full" theme="dark" size={52} />
+          <Logo variant="full" theme="dark" size={72} />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-300/80">
-            {en.footer.blurb}
+            <BrandText brandClassName="text-cream-100">{en.footer.blurb}</BrandText>
           </p>
           {socials.length > 0 && (
             <ul className="mt-5 flex gap-4">
