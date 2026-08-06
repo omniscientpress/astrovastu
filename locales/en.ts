@@ -14,7 +14,7 @@ export const en = {
     home: 'Home',
     services: 'Services',
     pricing: 'Pricing',
-    about: 'About',
+    about: 'Profile',
     faq: 'FAQ',
     contact: 'Contact',
     testimonials: 'Testimonials',
@@ -379,82 +379,46 @@ export const en = {
   },
 
   about: {
-    title: 'About',
+    title: 'Profile',
     metaDescription:
-      'Meet Siva Kola, founder of Divine Jyothi — a Hyderabad-based KP Astrology, Vastu, and Numerology practice built on practical guidance over fear-based prediction.',
-    heading: 'About Divine Jyothi',
-    meetHeading: 'Siva Kola',
-    meetRole: 'Founder & Consultant, Hyderabad',
-    meetBody:
-      'Siva Kola came to this work from software engineering, and it shows in how he practises: Krishnamurti Paddhati appealed to him precisely because it makes specific, checkable claims rather than vague ones. He is certified in KP Astrology, Numerology, and Vastu, and beyond the consulting room he is a Reiki Grand Master and a certified trainer of Kundalini and Kayakalpa yoga. He is currently building KP astrology software — the calculations behind this practice are ones he has implemented himself. Consultations run in English, Telugu, and Hindi, online worldwide or in person in Hyderabad by appointment.',
-    credentialsHeading: 'Background & training',
+      'Meet Siva Kola — KP Astrology, Vastu, Numerology, and Lo Shu Grid consultant at Divine Jyothi. Software engineer, Reiki Grand Master, and certified yoga trainer based in Hyderabad.',
+    heading: 'Your Guide & Consultant',
+    subtitle: 'The Expert Behind Divine Jyothi',
+    name: 'Siva Kola',
+    paragraphs: [
+      'Hello, and welcome to Divine Jyothi. My journey into the world of astrology began from a very different background—software engineering. As a tech professional, I was always driven by logic, data, and mathematical precision. That is exactly why I was drawn to Krishnamurti Paddhati (KP Astrology). Unlike systems that sometimes rely on vague predictions, KP Astrology appeals to me precisely because it is based on complex mathematics and makes specific, checkable claims.',
+      "I don't just practice this science; as a software engineer, I am currently building my own custom KP astrology software, implementing these exact calculations by hand to ensure absolute accuracy for my clients.",
+      'Beyond the mathematical charts, I believe in a holistic approach to guiding people. I am professionally certified in KP Astrology, Numerology, Vastu, and Lo Shu Grid analysis. To balance the logical with the spiritual, I am also a Reiki Grand Master and a certified trainer in Kundalini and Kayakalpa yoga. My goal is to use these diverse sciences to provide genuine, practical solutions to your career, financial, and life challenges. I offer consultations in English, Telugu, and Hindi. We can connect online from anywhere in the world, or in person by appointment here in Hyderabad.',
+    ],
+    credentialsHeading: 'Background & Training',
     credentials: [
       {
-        title: 'KP Astrology · Numerology · Vastu',
-        detail: 'Certified across all three disciplines of the practice',
+        title: 'KP Astrology, Numerology, Vastu & Lo Shu Grid',
+        detail:
+          'Certified across all four disciplines to provide comprehensive, multi-dimensional life predictions and remedies.',
+      },
+      {
+        title: 'Software Engineer by Training',
+        detail:
+          'Now building custom KP astrology software — ensuring the calculations behind this practice are executed with pin-point accuracy.',
       },
       {
         title: 'Reiki Grand Master',
-        detail: 'Advanced certification in the Reiki lineage',
+        detail:
+          'Advanced certification in the Reiki lineage to help clients with energetic healing and mental peace.',
       },
       {
-        title: 'Kundalini & Kayakalpa yoga',
-        detail: 'Certified trainer in both traditions',
-      },
-      {
-        title: 'Software engineer by training',
-        detail: 'Now building KP astrology software — the calculations of this practice, implemented by hand',
+        title: 'Kundalini & Kayakalpa Yoga',
+        detail:
+          'Certified trainer in both ancient traditions, guiding individuals towards spiritual and physical well-being.',
       },
     ],
-    whyHeading: 'Why Divine Jyothi exists',
-    whyBody: [
-      'Clients kept arriving having already spoken to an astrologer, a Vastu consultant, and a numerologist separately — and coming away with three sets of advice that quietly contradicted each other. A name changed to suit one reading sat against the timing recommended by another.',
-      'Divine Jyothi exists to review Timing, Space, and Name together when a decision genuinely touches all three, so the guidance you leave with is coherent rather than three unrelated opinions.',
-    ],
-    approachHeading: 'Our approach',
-    approach: [
-      {
-        title: 'Practical over theatrical',
-        description:
-          'Recommendations you can act on this week, stated in plain language — not vague forecasts or dramatic framing.',
-      },
-      {
-        title: 'No promised outcomes',
-        description:
-          'A chart or assessment indicates tendencies and favourable windows. It does not promise results, and we say so plainly.',
-      },
-      {
-        title: 'Integrated when it matters',
-        description:
-          'Single-pillar sessions when one question is enough. The combined Audit only when timing, space, and name genuinely affect the same decision.',
-      },
-      {
-        title: 'Confidential by default',
-        description:
-          'Birth details and floor plans stay private. Recordings only on request.',
-      },
-    ],
-    kpHeading: 'What is the KP System?',
-    kpBody: [
-      'Krishnamurti Paddhati was developed by the astrologer K.S. Krishnamurti. Its central idea is Sub-Lord theory: instead of reading a birth chart through broad planetary periods that can run for years, KP subdivides each period into much finer segments.',
-      'That precision is the whole point. A finer segment gives a window you can actually plan around, and it can be checked against what happened — a specific window either holds or it does not.',
-    ],
-    howHeading: 'How we work',
-    how: [
-      'You share your question and, where relevant, birth details or a floor plan.',
-      'We review the chart, plan, or name against that specific question — not a generic reading.',
-      'You receive a plain-language answer, a written summary, and — where useful — proportionate remedies.',
-      'Nothing is sold beyond the consultation itself.',
-    ],
-    wontHeading: "What we won't do",
-    wont: [
-      'Frame a period as dangerous to sell a remedy for it',
-      'Promise a specific outcome or result',
-      'Predict death or catastrophic events',
-      'Push remedies you do not need',
-      'Deliver a verdict about a person who is not in the room',
-    ],
-    cta: { label: 'Message Siva Kola', },
+    cta: {
+      whatsapp: 'Book a Consultation via WhatsApp',
+      chart: 'Generate Your Free Basic KP Chart',
+      chartMessage:
+        "Hi Divine Jyothi, I'd like to generate my free basic KP chart. My birth details are:",
+    },
   },
 
   faqPage: {

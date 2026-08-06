@@ -9,9 +9,9 @@ import { Logo } from './Logo'
 
 const NAV = [
   { href: '/', label: en.nav.home },
+  { href: '/about', label: en.nav.about },
   { href: '/services', label: en.nav.services },
   { href: '/pricing', label: en.nav.pricing },
-  { href: '/about', label: en.nav.about },
   { href: '/faq', label: en.nav.faq },
   { href: '/contact', label: en.nav.contact },
 ]
