@@ -28,6 +28,7 @@ export const PRICES = {
   babyName: 1500,
   businessName: 1500,
   mobileNumber: 1500,
+  vehicleNumber: 1500,
   loShuGrid: 2500,
 
   // Online packages (pricing page)

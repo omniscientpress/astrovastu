@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 })
   }
 
-  if (!body.name?.trim() || !body.phone?.trim() || !body.serviceTitle?.trim()) {
+  if (!body.name?.trim() || !body.email?.trim() || !body.phone?.trim() || !body.serviceTitle?.trim()) {
     return NextResponse.json({ ok: false, error: 'missing_required_fields' }, { status: 400 })
   }
 

@@ -2,6 +2,7 @@
 
 export type IntakeFormData = {
   name: string
+  email: string
   phone: string
   service: string
   serviceTitle: string
@@ -45,6 +46,7 @@ export function buildIntakePayload(data: IntakeFormData): IntakePayload {
 
   const payload: IntakePayload = {
     name: data.name.trim(),
+    email: data.email.trim(),
     phone: data.phone.trim().replace(/\s+/g, ''),
     service: data.serviceTitle,
     preferred_time: data.preferredTime?.trim() || undefined,

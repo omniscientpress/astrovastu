@@ -101,6 +101,7 @@ export const en = {
 
   form: {
     name: 'Your name',
+    email: 'Email address',
     whatsapp: 'WhatsApp number',
     service: 'Service',
     tier: 'Package tier',

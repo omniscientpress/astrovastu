@@ -895,47 +895,103 @@ export const services: Service[] = [
   {
     slug: 'mobile-number',
     pillar: 'numerology',
-    title: 'Mobile Number',
-    subtitle: 'A method-first read on the number you will give out for years.',
+    title: 'Mobile & Email IDs',
+    subtitle:
+      'A method-first read to ensure the numbers and digital addresses you use daily attract the right energy and opportunities.',
     description:
-      'A mobile number is the number strangers, clients, and family use to reach you daily — worth ten minutes of method before you commit to it. We reduce and read candidate numbers against your chart, and rank the options you actually have available, not a fantasy number you cannot buy.',
+      'Your mobile number and primary email are contact points you use every day — worth a method-first read before you commit. We reduce and read candidate numbers and email handles against your chart, and rank the options you can actually register, not fantasy combinations you cannot use.',
     metaDescription:
-      'Mobile number numerology checked against your birth chart: candidate numbers ranked with reasons — practical selection, not superstition about single digits.',
+      'Mobile number and email numerology checked against your birth chart: candidate numbers and addresses ranked with reasons — practical selection, not superstition about single digits.',
     isThisForYou: [
-      'You are taking a new number and the operator offered you a list to choose from.',
-      'You use one number for business and want it aligned with that purpose.',
-      'You are sceptical of number-picking mysticism but curious what a method-first read says.',
+      'You are taking a new mobile number and the operator offered you a list to choose from.',
+      'You are setting up a business email or personal address and want it checked against your chart.',
+      'You use one number or inbox for business and want it aligned with that purpose.',
     ],
     included: [
-      'Reduction and reading of each candidate number',
+      'Reduction and reading of each candidate mobile number',
+      'Numerological read of primary email address options',
       'Cross-check against your birth chart',
       'Purpose fit — personal, business, or both',
       'Ranking of your available candidates with reasons',
-      'A straight answer when your current number is fine',
+      'A straight answer when your current number or email is fine',
     ],
     covered: [
       {
-        title: 'How a number is read',
+        title: 'How numbers are read',
         points: [
           'Full-number reduction, not just the last digit',
           'Repeating patterns and what they emphasise',
         ],
       },
       {
+        title: 'Email addresses',
+        points: [
+          'How the handle reads numerologically',
+          'Fit with your chart’s communication factors',
+        ],
+      },
+      {
         title: 'Fit with you',
         points: [
-          'Your chart’s communication and business factors',
-          'Personal vs business number division',
+          'Personal vs business division',
+          'When a small spelling change improves alignment',
         ],
       },
     ],
     deliverables: [
-      'A ranked list of your candidate numbers with plain-language reasons',
-      'A keep-or-change verdict on your existing number',
+      'A ranked list of your candidate numbers and email options with plain-language reasons',
+      'A keep-or-change verdict on your existing number and primary email',
     ],
     price: PRICES.mobileNumber,
     duration: '20–30 min',
-    related: ['name-analysis', 'business-name', 'career'],
+    related: ['vehicle-number', 'name-analysis', 'business-name'],
+  },
+
+  {
+    slug: 'vehicle-number',
+    pillar: 'numerology',
+    title: 'Vehicle Number',
+    subtitle:
+      "Align your vehicle's registration total with your lucky elements for safety, smooth travels, and positive momentum.",
+    description:
+      'A vehicle registration number travels with you for years. We read the registration total against your birth chart and Lo Shu elements, then rank the plates you can actually choose from at the RTO — not numbers that look good in theory but are unavailable.',
+    metaDescription:
+      'Vehicle number numerology checked against your birth chart: registration totals ranked for fit — practical plate selection for cars and two-wheelers.',
+    isThisForYou: [
+      'You are registering a new car or two-wheeler and can choose from available plate options.',
+      'You want your existing vehicle number checked before a long trip or relocation.',
+      'You are sceptical of number mysticism but want a method-first read on what you drive.',
+    ],
+    included: [
+      'Reduction and reading of each candidate registration number',
+      'Cross-check against your birth chart and elemental balance',
+      'Safety and travel-purpose fit where relevant',
+      'Ranking of your available plate options with reasons',
+      'A straight answer when your current number is fine',
+    ],
+    covered: [
+      {
+        title: 'How a plate is read',
+        points: [
+          'Full registration total, not isolated digits',
+          'State series and what changes vs what stays fixed',
+        ],
+      },
+      {
+        title: 'Fit with you',
+        points: [
+          'Your chart’s travel and vehicle significators',
+          'Elemental balance from your Lo Shu grid where applicable',
+        ],
+      },
+    ],
+    deliverables: [
+      'A ranked list of your candidate plate numbers with plain-language reasons',
+      'A keep-or-change verdict on your existing registration',
+    ],
+    price: PRICES.vehicleNumber,
+    duration: '20–30 min',
+    related: ['mobile-number', 'muhurtham', 'lo-shu-grid'],
   },
 ]
 

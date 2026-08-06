@@ -23,6 +23,7 @@ const PILLARS = ['astrology', 'vastu', 'numerology'] as const
 export function BookForm() {
   const [slug, setSlug] = useState(services[0].slug)
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [tier, setTier] = useState('')
   const [preferredTime, setPreferredTime] = useState('')
@@ -49,6 +50,7 @@ export function BookForm() {
       if (t) lines.push(`Package: ${t.name}`)
     }
     if (name) lines.push(`Name: ${name}`)
+    if (email) lines.push(`Email: ${email}`)
     if (phone) lines.push(`WhatsApp: ${phone}`)
     if (preferredTime) lines.push(`Preferred time (IST): ${preferredTime}`)
     if (pillar === 'astrology') {
@@ -60,7 +62,7 @@ export function BookForm() {
     if (pillar === 'numerology' && namesToCheck) lines.push(`Name(s) to check: ${namesToCheck}`)
     if (question) lines.push(``, `Question: ${question}`)
     return lines.join('\n')
-  }, [service, tier, name, phone, preferredTime, pillar, birthDate, birthTime, birthPlace, propertyType, namesToCheck, question])
+  }, [service, tier, name, email, phone, preferredTime, pillar, birthDate, birthTime, birthPlace, propertyType, namesToCheck, question])
 
   const whatsAppHref = buildWhatsAppLink(message)
 
@@ -71,6 +73,7 @@ export function BookForm() {
 
     const formData: IntakeFormData = {
       name,
+      email,
       phone,
       service: slug,
       serviceTitle: service.title,
@@ -127,6 +130,22 @@ export function BookForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="mt-1 w-full rounded-lg border border-cream-300 bg-white px-4 py-2.5 text-navy-800 focus:border-gold-400"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-navy-700">
+          {en.form.email} <span className="text-navy-400">({en.form.required})</span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="mt-1 w-full rounded-lg border border-cream-300 bg-white px-4 py-2.5 text-navy-800 focus:border-gold-400"
         />
       </div>
