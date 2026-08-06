@@ -40,6 +40,8 @@ export interface Service {
   related: string[]
   /** Rendered verbatim where legally required (e.g. Health). */
   disclaimer?: string
+  /** Optional uppercase hero tag, e.g. "NUMEROLOGY & LO SHU". */
+  categoryTag?: string
 }
 
 export interface Package {

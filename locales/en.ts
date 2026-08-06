@@ -185,6 +185,15 @@ export const en = {
       lead: 'Pick the decision in front of you — career, marriage, property, naming, or timing — and we will point you to the consultation that fits.',
       items: [
         {
+          id: 'lo-shu',
+          title: 'Lo Shu Grid Analysis',
+          description:
+            'Unlock missing numbers, elemental balance, and practical remedies from your date of birth — our most recommended starting point.',
+          pillar: 'numerology' as const,
+          href: '/services/numerology/lo-shu-grid',
+          featured: true,
+        },
+        {
           id: 'career',
           title: 'Career & education',
           description: 'Course choice, job timing, promotions, or a move between government and private roles.',
@@ -369,13 +378,11 @@ export const en = {
   pricing: {
     title: 'Pricing',
     metaDescription:
-      'Fixed prices for every Divine Jyothi consultation — KP Astrology, Vastu, and Numerology sessions, marriage tiers, and packages. No ranges, no hidden fees.',
-    heading: 'Pricing',
-    lead: 'Every price on this page is a single fixed figure. No ranges, no quotes, no surprises at the end of a call.',
-    perSessionHeading: 'Per-session pricing',
-    marriageHeading: 'Marriage tiers',
-    marriageLead: 'Choose the scope that matches your situation.',
-    packagesHeading: 'Packages',
+      'Transparent Divine Jyothi pricing — Single Area Focus, Destiny Combo, 360° Life Blueprint, and VIP on-site Vastu audits. Fixed online packages, no hidden fees.',
+    heading: 'Transparent Pricing, Priceless Guidance.',
+    lead: 'Backed by custom-built KP astrology software and complex mathematical precision.',
+    onlineHeading: 'Online consultation packages',
+    onlineLead: 'Fixed prices for our integrated KP, Lo Shu Grid, and Vastu packages.',
   },
 
   about: {
@@ -472,9 +479,13 @@ export const en = {
   servicesHub: {
     title: 'Services',
     metaDescription:
-      'All Divine Jyothi services across KP Astrology, Vastu, and Numerology — fixed prices, session durations, and what each consultation covers.',
+      'Divine Jyothi combo packages — KP Astrology + Lo Shu Grid, and full 360° Life Blueprint. Plus on-site Vastu visits, individual sessions, and fixed pricing.',
     intro:
-      "Start from your situation. We'll recommend KP Astrology, Vastu, Numerology, or the Divine Jyothi Audit when all three matter together.",
+      'Our strength is integrating KP Astrology, Lo Shu Grid numerology, and Vastu — combo packages below combine what matters for your decision.',
+    combosHeading: 'Flagship combo packages',
+    combosLead:
+      'Cross-discipline offers that sync timing, numbers, and space — our recommended starting points when more than one pillar applies.',
+    onSiteHeading: 'Premium on-site Vastu',
     pillarsHeading: 'Three disciplines, one method',
     closing: {
       title: 'Not sure which service fits?',

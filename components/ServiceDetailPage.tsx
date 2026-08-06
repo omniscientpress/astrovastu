@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Check, ShieldCheck, Stethoscope } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
-import { BrandText } from './BrandText'
 import { withBrand } from './Copy'
 import { WhatsAppButton } from './WhatsAppButton'
 import { PriceChip } from './PriceChip'
@@ -20,9 +19,9 @@ import { formatPrice } from '@/lib/utils'
 import { en } from '@/locales/en'
 
 /**
- * Template for all 15 service pages (spec §8.4), with the flagship marriage
- * extensions (§8.5) rendered only for that slug. Booking actions never exceed
- * two per section: one WhatsApp green, one gold/neutral.
+ * Reusable template for all service pages. Hero + audience cards + included
+ * list are data-driven from `Service`; marriage flagship extensions render
+ * only for that slug. Booking actions never exceed two per section.
  */
 export function ServiceDetailPage({ service }: { service: Service }) {
   const pillar = getPillar(service.pillar)
@@ -30,21 +29,19 @@ export function ServiceDetailPage({ service }: { service: Service }) {
     .map((slug) => getService(slug))
     .filter((s): s is Service => Boolean(s))
   const isMarriage = service.slug === 'marriage'
+  const categoryLabel = service.categoryTag ?? pillar?.name ?? ''
 
   return (
     <>
-      {/* 1 — Navy hero */}
+      {/* Hero */}
       <Section tone="navy">
         <p className="inline-flex rounded-full bg-navy-600/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-300">
-          {pillar?.name}
+          {categoryLabel}
         </p>
         <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
           {service.title}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-cream-200/90">
-          {withBrand(service.subtitle)}
-        </p>
-        <p className="mt-4 max-w-2xl leading-relaxed text-cream-300/85">
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-200/90">
           {withBrand(service.description)}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -61,7 +58,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </div>
       </Section>
 
-      {/* 2 — Breadcrumb + chips */}
+      {/* Breadcrumb + price */}
       <Section tone="white" className="py-8 lg:py-10">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
@@ -75,44 +72,42 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </div>
       </Section>
 
-      {/* 3 — Is this for you? | What's included */}
-      <Section deferOffscreen tone="cream">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="text-2xl font-semibold text-navy-700">
-              {en.sections.isThisForYou}
-            </h2>
-            <ul className="mt-6 space-y-4">
-              {service.isThisForYou.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-2xl border border-cream-300 bg-cream-50 p-5 leading-relaxed text-navy-700"
-                >
-                  {withBrand(item)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold text-navy-700">
-              {en.sections.whatsIncluded}
-            </h2>
-            <ul className="mt-6 space-y-3">
-              {service.included.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <Check
-                    className="mt-1 h-5 w-5 shrink-0 text-gold-600"
-                    aria-hidden="true"
-                  />
-                  <span className="leading-relaxed text-navy-700">{withBrand(item)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      {/* Is this for you? */}
+      <Section deferOffscreen tone="white">
+        <h2 className="text-2xl font-semibold text-navy-700 sm:text-3xl">
+          {en.sections.isThisForYou}
+        </h2>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          {service.isThisForYou.map((item) => (
+            <li
+              key={item}
+              className="rounded-2xl border border-cream-200 bg-white p-6 leading-relaxed text-navy-700 shadow-sm"
+            >
+              {withBrand(item)}
+            </li>
+          ))}
+        </ul>
       </Section>
 
-      {/* 4 — What we cover */}
+      {/* What's included */}
+      <Section deferOffscreen tone="cream">
+        <h2 className="text-2xl font-semibold text-navy-700 sm:text-3xl">
+          {en.sections.whatsIncluded}
+        </h2>
+        <ul className="mt-8 max-w-3xl space-y-4">
+          {service.included.map((item) => (
+            <li key={item} className="flex gap-3">
+              <Check
+                className="mt-0.5 h-5 w-5 shrink-0 text-gold-500"
+                aria-hidden="true"
+              />
+              <span className="leading-relaxed text-navy-700">{withBrand(item)}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* What we cover */}
       <Section deferOffscreen tone="white">
         <SectionHeading title={en.sections.whatWeCover} />
         <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -137,7 +132,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </ul>
       </Section>
 
-      {/* Marriage flagship: what we analyse (§8.5) */}
       {isMarriage && (
         <Section deferOffscreen tone="navy">
           <SectionHeading
@@ -164,7 +158,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </Section>
       )}
 
-      {/* Marriage flagship: Family Compatibility (§6) */}
       {isMarriage && (
         <Section deferOffscreen tone="cream">
           <SectionHeading
@@ -196,7 +189,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </Section>
       )}
 
-      {/* Marriage flagship: tier table (§9) */}
       {isMarriage && service.tiers && (
         <Section deferOffscreen tone="white">
           <SectionHeading
@@ -218,9 +210,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                     {en.labels.mostPopular}
                   </span>
                 )}
-                <h3 className="text-xl font-semibold text-navy-700">
-                  <BrandText>{tier.name}</BrandText>
-                </h3>
+                <h3 className="text-xl font-semibold text-navy-700">{tier.name}</h3>
                 <p className="mt-3 flex-1 leading-relaxed text-navy-600">{tier.scope}</p>
                 <p className="mt-6 text-3xl font-semibold text-navy-700">
                   {formatPrice(tier.price)}
@@ -232,7 +222,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </Section>
       )}
 
-      {/* Health disclaimer, rendered verbatim where required */}
       {service.disclaimer && (
         <Section deferOffscreen tone="white" className="py-8 lg:py-10">
           <p className="flex gap-3 rounded-2xl border border-navy-200 bg-cream-100 p-5 text-navy-700">
@@ -248,12 +237,10 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </Section>
       )}
 
-      {/* 5 — Deliverables (required on every page) */}
       <Section deferOffscreen tone="cream">
         <DeliverablesList items={service.deliverables} className="mx-auto max-w-3xl" />
       </Section>
 
-      {/* 6 — Booking card: exactly one green + one secondary */}
       <Section deferOffscreen tone="navy">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold text-cream-50 sm:text-4xl">
@@ -275,7 +262,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         </div>
       </Section>
 
-      {/* 7 — Related services */}
       {related.length > 0 && (
         <Section deferOffscreen tone="white">
           <SectionHeading title={en.sections.related} />

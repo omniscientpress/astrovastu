@@ -28,6 +28,14 @@ export const PRICES = {
   babyName: 1500,
   businessName: 1500,
   mobileNumber: 1500,
+  loShuGrid: 2500,
+
+  // Online packages (pricing page)
+  singleAreaFocus: 1499,
+  destinyCombo: 2499,
+  destinyComboCompareAt: 3000,
+  lifeBlueprint: 4999,
+  onSiteVastuFrom: 15000,
 
   // Packages
   kpFocusedQuestion: 2000,

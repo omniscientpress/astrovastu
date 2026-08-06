@@ -673,6 +673,62 @@ export const services: Service[] = [
 
   // ─── Numerology ──────────────────────────────────────────────────
   {
+    slug: 'lo-shu-grid',
+    pillar: 'numerology',
+    categoryTag: 'Numerology & Lo Shu',
+    title: 'Lo Shu Grid Analysis',
+    subtitle: 'Your birth-date grid — missing numbers, elemental balance, and remedies you can act on.',
+    description:
+      'Unlock the hidden potential in your date of birth. Discover missing numbers, elemental imbalances, and simple, practical remedies to attract wealth, health, and harmony.',
+    metaDescription:
+      'Lo Shu Grid analysis from your date of birth: missing numbers, elemental imbalances, and practical remedies for wealth, health, and harmony. Hyderabad & online.',
+    isThisForYou: [
+      'You feel stuck in your career despite hard work and want to know if missing numbers are blocking your growth.',
+      'You want to synchronize your mobile number, bank accounts, and house number with your lucky elements.',
+      'You are facing continuous financial drains and need simple, non-destructive remedies.',
+      'You want a clear roadmap of your life’s peaks and valleys based on your birth grid.',
+    ],
+    included: [
+      'Complete charting of your personalized Lo Shu Grid.',
+      'Identification of missing numbers and their life impacts.',
+      'Practical remedies (colors, crystals, or habits) to balance elements.',
+      'Name spelling compatibility check.',
+      'Q&A session for your specific doubts.',
+    ],
+    covered: [
+      {
+        title: 'Your birth grid',
+        points: [
+          'Lo Shu Grid plotted from your date of birth',
+          'Present, missing, and repeating numbers mapped to life areas',
+        ],
+      },
+      {
+        title: 'Elemental balance',
+        points: [
+          'Which elements are over- or under-represented',
+          'How imbalances show up in career, money, and relationships',
+        ],
+      },
+      {
+        title: 'Practical remedies',
+        points: [
+          'Colors, directions, and habits that support weak planes',
+          'Number alignment for mobile, accounts, and property where relevant',
+        ],
+      },
+    ],
+    deliverables: [
+      'Your completed Lo Shu Grid with missing-number analysis explained in plain language',
+      'A prioritized remedy list you can start this week — nothing sold, nothing pushed',
+      'Written summary (PDF) within 24 hours of the session',
+    ],
+    price: PRICES.loShuGrid,
+    duration: '45–60 min',
+    related: ['name-analysis', 'mobile-number', 'finance'],
+  },
+
+  {
     slug: 'name-analysis',
     pillar: 'numerology',
     title: 'Name Analysis',

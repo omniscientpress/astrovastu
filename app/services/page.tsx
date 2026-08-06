@@ -4,10 +4,11 @@ import { ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/Section'
 import { BrandText } from '@/components/BrandText'
 import { SituationCards } from '@/components/SituationCards'
-import { ServiceCard } from '@/components/ServiceCard'
+import { ComboPackageCard } from '@/components/ComboPackageCard'
+import { OnSiteVastuBanner } from '@/components/OnSiteVastuBanner'
 import { BookingBand } from '@/components/BookingBand'
 import { pillars } from '@/data/pillars'
-import { servicesByPillar } from '@/data/services'
+import { comboPackages } from '@/data/combo-packages'
 import { en } from '@/locales/en'
 
 export const metadata: Metadata = {
@@ -27,13 +28,32 @@ export default function ServicesPage() {
         </p>
       </Section>
 
-      {/* Situation cards (shared component with Home) */}
+      <Section tone="cream">
+        <SectionHeading
+          title={en.servicesHub.combosHeading}
+          lead={en.servicesHub.combosLead}
+        />
+        <ul className="mt-10 grid gap-6 lg:grid-cols-2">
+          {comboPackages.map((combo) => (
+            <li key={combo.id}>
+              <ComboPackageCard combo={combo} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section tone="navy">
+        <SectionHeading tone="navy" title={en.servicesHub.onSiteHeading} />
+        <div className="mt-10">
+          <OnSiteVastuBanner />
+        </div>
+      </Section>
+
       <Section tone="white">
         <SectionHeading title={en.sections.situations} />
         <SituationCards className="mt-10" />
       </Section>
 
-      {/* Three pillar cards */}
       <Section tone="cream">
         <SectionHeading title={en.servicesHub.pillarsHeading} />
         <ul className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -57,26 +77,6 @@ export default function ServicesPage() {
           ))}
         </ul>
       </Section>
-
-      {/* Specialty grids per pillar */}
-      {pillars.map((p, i) => (
-        <Section key={p.pillar} tone={i % 2 === 0 ? 'white' : 'cream'}>
-          <SectionHeading title={p.name} lead={p.tagline} />
-          <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {servicesByPillar(p.pillar).map((s) => (
-              <li key={s.slug}>
-                <ServiceCard
-                  title={s.title}
-                  description={s.subtitle}
-                  href={`/services/${s.pillar}/${s.slug}`}
-                  price={s.price}
-                  duration={s.duration}
-                />
-              </li>
-            ))}
-          </ul>
-        </Section>
-      ))}
 
       <BookingBand
         title={en.servicesHub.closing.title}

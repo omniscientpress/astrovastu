@@ -1,4 +1,5 @@
 export type SituationKey =
+  | 'lo-shu'
   | 'career'
   | 'marriage'
   | 'childbirth'

@@ -36,6 +36,20 @@ function IconFrame({
 
 export function SituationArt({ id, className, theme = 'light' }: { id: SituationKey } & SvgProps) {
   switch (id) {
+    case 'lo-shu':
+      return (
+        <IconFrame className={className} theme={theme}>
+          <rect x="12" y="12" width="8" height="8" rx="1" />
+          <rect x="20" y="12" width="8" height="8" rx="1" />
+          <rect x="28" y="12" width="8" height="8" rx="1" />
+          <rect x="12" y="20" width="8" height="8" rx="1" />
+          <rect x="20" y="20" width="8" height="8" rx="1" />
+          <rect x="28" y="20" width="8" height="8" rx="1" />
+          <rect x="12" y="28" width="8" height="8" rx="1" />
+          <rect x="20" y="28" width="8" height="8" rx="1" />
+          <rect x="28" y="28" width="8" height="8" rx="1" />
+        </IconFrame>
+      )
     case 'career':
       return (
         <IconFrame className={className} theme={theme}>
