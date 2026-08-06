@@ -3,10 +3,12 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from './Section'
 import { ServiceCard } from './ServiceCard'
 import { BookingBand } from './BookingBand'
+import { LoShuCalculatorSection } from './LoShuCalculatorSection'
 import { withBrand } from './Copy'
 import { PillarVisual } from './graphics/PillarVisual'
 import { servicesByPillar } from '@/data/services'
 import { getPillarHistory } from '@/data/pillar-history'
+import { en } from '@/locales/en'
 import type { PillarInfo } from '@/data/pillars'
 
 /** Template for the three pillar pages (spec §8.3). */
@@ -30,6 +32,15 @@ export function PillarPage({ info }: { info: PillarInfo }) {
           <PillarVisual pillar={info.path} className="justify-self-center lg:justify-self-end" />
         </div>
       </Section>
+
+      {info.pillar === 'numerology' && (
+        <LoShuCalculatorSection
+          tone="cream"
+          title={en.loShuCalculator.numerology.title}
+          lead={en.loShuCalculator.numerology.lead}
+          source={en.loShuCalculator.numerology.source}
+        />
+      )}
 
       {/* Best for */}
       <Section tone="cream">

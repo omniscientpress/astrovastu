@@ -99,6 +99,19 @@ export const en = {
       'Every consultation includes: a written summary (PDF) · specific recommendations · session recording on request',
   },
 
+  loShuCalculator: {
+    home: {
+      title: 'Are missing numbers blocking your success?',
+      lead: "Check your birth grid instantly and discover your hidden potential. It's free!",
+      source: 'divinejyothi.com/home',
+    },
+    numerology: {
+      title: 'Experience the Power of Numbers',
+      lead: 'Generate your personalized Lo Shu Grid right here before booking a deep-dive consultation.',
+      source: 'divinejyothi.com/services/numerology',
+    },
+  },
+
   form: {
     name: 'Your name',
     email: 'Email address',

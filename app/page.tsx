@@ -12,6 +12,7 @@ import { FaqAccordion } from '@/components/FaqAccordion'
 import { PriceChip } from '@/components/PriceChip'
 import { BookingBand } from '@/components/BookingBand'
 import { BrandText } from '@/components/BrandText'
+import { LoShuCalculatorSection } from '@/components/LoShuCalculatorSection'
 import { OrnamentDivider, PillarIcon, StepIcon } from '@/components/graphics'
 import type { PillarKey, StepKey } from '@/components/graphics/types'
 import { testimonials } from '@/data/testimonials'
@@ -61,6 +62,14 @@ export default function HomePage() {
         />
         <SituationCards className="mt-10" />
       </Section>
+
+      {/* Free Lo Shu Grid calculator */}
+      <LoShuCalculatorSection
+        tone="navy"
+        title={en.loShuCalculator.home.title}
+        lead={en.loShuCalculator.home.lead}
+        source={en.loShuCalculator.home.source}
+      />
 
       {/* The Divine Jyothi method — the only pillar presentation on this page */}
       <Section deferOffscreen tone="navy">
