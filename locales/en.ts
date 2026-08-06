@@ -479,13 +479,12 @@ export const en = {
   servicesHub: {
     title: 'Services',
     metaDescription:
-      'Divine Jyothi combo packages — KP Astrology + Lo Shu Grid, and full 360° Life Blueprint. Plus on-site Vastu visits, individual sessions, and fixed pricing.',
+      'Premium Divine Jyothi services — Marriage & Family Compatibility, KP + Lo Shu Grid blueprint, and VIP on-site Vastu audits across Hyderabad and Vijayawada.',
     intro:
-      'Our strength is integrating KP Astrology, Lo Shu Grid numerology, and Vastu — combo packages below combine what matters for your decision.',
-    combosHeading: 'Flagship combo packages',
-    combosLead:
-      'Cross-discipline offers that sync timing, numbers, and space — our recommended starting points when more than one pillar applies.',
-    onSiteHeading: 'Premium on-site Vastu',
+      'Practical guidance across KP Astrology, Lo Shu Grid, and Vastu — preparation and clarity, not fear-based prediction.',
+    flagshipHeading: 'Premium flagship services',
+    flagshipLead:
+      'Three focused paths when timing, numbers, and space matter — ethical chart reading, mathematical KP analysis, and proportionate remedies.',
     pillarsHeading: 'Three disciplines, one method',
     closing: {
       title: 'Not sure which service fits?',

@@ -4,11 +4,10 @@ import { ArrowRight } from 'lucide-react'
 import { Section, SectionHeading } from '@/components/Section'
 import { BrandText } from '@/components/BrandText'
 import { SituationCards } from '@/components/SituationCards'
-import { ComboPackageCard } from '@/components/ComboPackageCard'
-import { OnSiteVastuBanner } from '@/components/OnSiteVastuBanner'
+import { FlagshipServiceCard } from '@/components/FlagshipServiceCard'
 import { BookingBand } from '@/components/BookingBand'
 import { pillars } from '@/data/pillars'
-import { comboPackages } from '@/data/combo-packages'
+import { flagshipServices } from '@/data/flagship-services'
 import { en } from '@/locales/en'
 
 export const metadata: Metadata = {
@@ -30,23 +29,16 @@ export default function ServicesPage() {
 
       <Section tone="cream">
         <SectionHeading
-          title={en.servicesHub.combosHeading}
-          lead={en.servicesHub.combosLead}
+          title={en.servicesHub.flagshipHeading}
+          lead={en.servicesHub.flagshipLead}
         />
-        <ul className="mt-10 grid gap-6 lg:grid-cols-2">
-          {comboPackages.map((combo) => (
-            <li key={combo.id}>
-              <ComboPackageCard combo={combo} />
+        <ul className="mt-10 grid gap-6 lg:grid-cols-3 lg:items-stretch">
+          {flagshipServices.map((service) => (
+            <li key={service.id}>
+              <FlagshipServiceCard service={service} />
             </li>
           ))}
         </ul>
-      </Section>
-
-      <Section tone="navy">
-        <SectionHeading tone="navy" title={en.servicesHub.onSiteHeading} />
-        <div className="mt-10">
-          <OnSiteVastuBanner />
-        </div>
       </Section>
 
       <Section tone="white">
