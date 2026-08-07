@@ -206,8 +206,8 @@ export function RelationshipBlueprint({ source, className }: RelationshipBluepri
     setError('')
 
     try {
-      const a = parsePerson(person1, 'Person 1')
-      const b = parsePerson(person2, 'Person 2')
+      const a = parsePerson(person1, copy.person1Label)
+      const b = parsePerson(person2, copy.person2Label)
       const compatibility = getCompatibility(a.grid.kuaNumber, b.grid.kuaNumber)
 
       setSnapshots({ a: a.snapshot, b: b.snapshot })
@@ -279,7 +279,22 @@ export function RelationshipBlueprint({ source, className }: RelationshipBluepri
       >
         {phase === 'form' && (
           <form onSubmit={handleSubmit}>
-            <div className="grid gap-10 lg:grid-cols-2">
+            <div className="rounded-xl border border-gold-200 bg-white p-5 sm:p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-gold-700">
+                {copy.useCasesHeading}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-navy-600">{copy.useCasesBrief}</p>
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                {copy.useCases.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-navy-700">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 grid gap-10 lg:grid-cols-2">
               <div>
                 <h3 className="text-lg font-semibold text-navy-700">{copy.person1Label}</h3>
                 <div className="mt-4">
@@ -379,25 +394,18 @@ export function RelationshipBlueprint({ source, className }: RelationshipBluepri
                 aria-hidden={!unlocked}
               >
                 <div>
-                  <h4 className="text-lg font-semibold text-navy-700">Bridging Remedies</h4>
+                  <h4 className="text-lg font-semibold text-navy-700">{copy.paywallRemediesTitle}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                    {result.remedies?.en ??
-                      'Shared-space remedies aligned to your elemental pairing — colours, objects, and placement tips for harmony at home.'}
+                    {result.remedies?.en ?? copy.paywallRemediesFallback}
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-navy-700">Lucky Colors for Couple</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                    A personalised palette drawn from both Kua numbers — which tones to favour in
-                    the bedroom, living room, and entrance for balanced energy together.
-                  </p>
+                  <h4 className="text-lg font-semibold text-navy-700">{copy.paywallColorsTitle}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-600">{copy.paywallColorsBody}</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-navy-700">Action Plan</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                    A 30-day practical checklist: directional habits, auspicious dates, and simple
-                    home adjustments you can start this week — no fear-based fixes.
-                  </p>
+                  <h4 className="text-lg font-semibold text-navy-700">{copy.paywallActionTitle}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-600">{copy.paywallActionBody}</p>
                 </div>
               </div>
 

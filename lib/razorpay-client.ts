@@ -94,7 +94,7 @@ export async function triggerRazorpayPayment(
       amount: order.amount,
       currency: order.currency,
       name: 'Divine Jyothi',
-      description: 'Relationship Blueprint PDF',
+      description: 'Compatibility Blueprint PDF',
       order_id: order.orderId,
       prefill: {
         name: params.name,

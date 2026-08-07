@@ -15,7 +15,7 @@ export function RelationshipBlueprintSection({
   source,
 }: RelationshipBlueprintSectionProps) {
   return (
-    <Section tone={tone}>
+    <Section tone={tone} id="relationship-blueprint">
       <SectionHeading tone={tone} title={title} lead={lead} />
       <RelationshipBlueprint source={source} className="mt-10" />
     </Section>

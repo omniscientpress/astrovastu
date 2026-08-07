@@ -114,25 +114,43 @@ export const en = {
 
   relationshipBlueprint: {
     marriage: {
-      title: 'Relationship Blueprint — free compatibility score',
-      lead: 'Enter both birth details to see your elemental match instantly. Unlock the full PDF with bridging remedies, lucky colours, and a practical action plan.',
+      title: 'Compatibility Blueprint — free elemental score',
+      lead: 'Compare any two people’s birth energy — not only couples. See elemental fit, friction points, and practical harmonizing steps before you book a full consultation.',
       source: 'divinejyothi.com/services/astrology/marriage',
     },
     numerology: {
-      title: 'Check your couple compatibility',
-      lead: 'A quick Lo Shu elemental read for two people — free score, full blueprint available as a PDF.',
+      title: 'Compatibility Blueprint — free elemental score',
+      lead: 'A quick Lo Shu read for any two people — partners, business associates, siblings, friends, or in-laws. Free score; full blueprint available as a PDF.',
       source: 'divinejyothi.com/services/numerology',
     },
-    person1Label: 'Person 1',
-    person2Label: 'Person 2',
+    useCasesHeading: 'Who is this for?',
+    useCasesBrief:
+      'Enter birth details for any two people you want clarity on. The score reflects Lo Shu elemental tendencies (Kua numbers) — practical guidance for harmony, not a verdict on the relationship.',
+    useCases: [
+      'Couples — marriage, dating, or considering a match',
+      'Business partners and co-founders',
+      'Siblings or close friends in friction',
+      'In-laws and extended family dynamics',
+    ],
+    person1Label: 'Person A',
+    person2Label: 'Person B',
     contactHeading: 'Your contact details',
     contactLead: 'Used to deliver your PDF after purchase. Kept strictly confidential.',
     submitLabel: 'Check Compatibility Score',
-    loadingLabel: 'Reading your elemental pairing…',
-    loadingSubtext: 'Mapping Kua numbers to the five elements.',
+    loadingLabel: 'Reading this elemental pairing…',
+    loadingSubtext: 'Mapping both Kua numbers to the five elements.',
     honestyNote:
-      'This score reflects elemental tendencies from your Kua numbers — guidance for harmony, not a verdict on your relationship.',
-    unlockCta: (price: number) => `Unlock Full Relationship Blueprint PDF for ₹${price}`,
+      'Elemental tendencies from Kua numbers — guidance for working together more smoothly, not a prediction of success or failure.',
+    paywallRemediesTitle: 'Bridging Remedies',
+    paywallRemediesFallback:
+      'Shared-space remedies for this pairing — colours, objects, and placement tips for harmony where you live or work together.',
+    paywallColorsTitle: 'Lucky colours for this pairing',
+    paywallColorsBody:
+      'A palette drawn from both Kua numbers — which tones to favour in shared rooms, workspaces, or meeting areas for balanced energy.',
+    paywallActionTitle: 'Action Plan',
+    paywallActionBody:
+      'A practical checklist: directional habits, auspicious timing, and simple environment adjustments you can start this week — no fear-based fixes.',
+    unlockCta: (price: number) => `Unlock Full Compatibility Blueprint PDF for ₹${price}`,
     unlockNote: 'Secure payment via Razorpay · Instant digital delivery',
     unlockedTitle: 'Blueprint unlocked!',
     unlockedLead: 'Your full PDF is being prepared and will arrive at your email within a few minutes.',
