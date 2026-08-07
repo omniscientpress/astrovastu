@@ -42,12 +42,28 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">
+              Digital reports & instant PDFs
+            </h2>
+            <p className="mt-3 leading-relaxed text-navy-600">
+              Some tools on this website offer instantly generated digital PDF reports
+              (such as the Relationship Blueprint). These astrology and numerology reports
+              are provided for guidance and informational purposes only — they are
+              belief-based assessments, not exact sciences, and do not guarantee specific
+              outcomes. By purchasing a digital report, you agree that it is for personal
+              guidance and that important life decisions should not be based solely on the
+              report content.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold text-navy-700">
               Bookings & payment
             </h2>
             <p className="mt-3 leading-relaxed text-navy-600">
               Consultations are booked through our website or WhatsApp, and confirmed via
-              WhatsApp. Payment is collected directly via UPI after your slot is
-              confirmed. Please see our Refund Policy for cancellation terms.
+              WhatsApp. Consultation payment is collected directly via UPI after your slot is
+              confirmed. Digital PDF reports are paid securely through Razorpay at checkout.
+              Please see our Refund Policy for cancellation and refund terms.
             </p>
           </div>
 

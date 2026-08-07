@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { Section } from '@/components/Section'
-import { SITE } from '@/lib/config'
-import { whatsAppEnquiry } from '@/lib/config'
+import { SITE, whatsAppEnquiry } from '@/lib/config'
 import { en } from '@/locales/en'
 
 export const metadata: Metadata = {
@@ -53,6 +52,21 @@ export default function ContactPage() {
               <a href={`mailto:${SITE.email}`} className="text-navy-600 hover:text-gold-700">
                 {SITE.email}
               </a>
+            </div>
+          </li>
+          <li className="flex gap-4 rounded-2xl border border-gold-200 bg-gold-50 p-6 sm:col-span-2">
+            <Mail className="h-6 w-6 shrink-0 text-gold-600" aria-hidden="true" />
+            <div>
+              <h2 className="font-semibold text-navy-700">Support (digital reports)</h2>
+              <a
+                href={`mailto:${SITE.supportEmail}`}
+                className="text-navy-600 hover:text-gold-700"
+              >
+                {SITE.supportEmail}
+              </a>
+              <p className="mt-1 text-sm text-navy-500">
+                For PDF delivery, payment issues, or report questions.
+              </p>
             </div>
           </li>
           <li className="flex gap-4 rounded-2xl border border-cream-300 bg-cream-50 p-6">

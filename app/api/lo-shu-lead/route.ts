@@ -34,7 +34,9 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         name: body.name.trim(),
         whatsappNumber: body.whatsappNumber.trim().replace(/\s+/g, ''),
+        gender: body.gender,
         dob: body.dob.trim(),
+        kuaNumber: body.kuaNumber,
         source: body.source.trim(),
       }),
     })

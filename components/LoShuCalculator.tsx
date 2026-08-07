@@ -1,6 +1,7 @@
 'use client'
 
-import { useId, useState } from 'react'
+import { useId, useState, type ReactNode } from 'react'
+import { Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import {
@@ -8,6 +9,7 @@ import {
   calculateLoShuGrid,
   formatDob,
   parseDobString,
+  type Gender,
   type LoShuGridResult,
 } from '@/lib/lo-shu-grid'
 import { normalizeWhatsAppNumber } from '@/lib/lo-shu-lead'
@@ -15,9 +17,49 @@ import { normalizeWhatsAppNumber } from '@/lib/lo-shu-lead'
 const INPUT_CLASS =
   'mt-1 w-full rounded-lg border border-cream-300 bg-white px-4 py-2.5 text-navy-800 focus:border-gold-400'
 
+function FieldLabel({
+  htmlFor,
+  label,
+  tooltip,
+  children,
+}: {
+  htmlFor: string
+  label: ReactNode
+  tooltip: string
+  children: ReactNode
+}) {
+  return (
+    <div>
+      <div className="flex items-center gap-1.5">
+        <label htmlFor={htmlFor} className="text-sm font-medium text-navy-700">
+          {label}
+        </label>
+        <span className="group relative inline-flex">
+          <button
+            type="button"
+            tabIndex={0}
+            className="inline-flex rounded-full text-gold-600 hover:text-gold-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
+            aria-label={tooltip}
+          >
+            <Info className="h-4 w-4" aria-hidden="true" />
+          </button>
+          <span
+            role="tooltip"
+            className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-56 -translate-x-1/2 rounded-lg bg-navy-700 px-3 py-2 text-xs leading-relaxed text-cream-100 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+          >
+            {tooltip}
+          </span>
+        </span>
+      </div>
+      {children}
+    </div>
+  )
+}
+
 function buildWhatsAppMessage(
   name: string,
   phone: string,
+  gender: Gender,
   dob: string,
   result: LoShuGridResult
 ) {
@@ -25,9 +67,11 @@ function buildWhatsAppMessage(
     "Hi Divine Jyothi, I'd like my full Lo Shu Grid analysis and practical remedies.",
     `Name: ${name.trim()}`,
     `WhatsApp: ${normalizeWhatsAppNumber(phone)}`,
+    `Gender: ${gender === 'male' ? 'Male' : 'Female'}`,
     `Date of birth: ${dob}`,
     `Driver number: ${result.driverNumber}`,
     `Conductor number: ${result.conductorNumber}`,
+    `Kua number: ${result.kuaNumber}`,
     'Please share missing-number insights and proportionate remedies.',
   ]
   return lines.join('\n')
@@ -36,7 +80,9 @@ function buildWhatsAppMessage(
 function submitLoShuLead(payload: {
   name: string
   whatsappNumber: string
+  gender: Gender
   dob: string
+  kuaNumber: number
   source: string
 }) {
   void fetch('/api/lo-shu-lead', {
@@ -57,9 +103,11 @@ export interface LoShuCalculatorProps {
 export function LoShuCalculator({ source, className }: LoShuCalculatorProps) {
   const nameId = useId()
   const phoneId = useId()
+  const genderId = useId()
   const dobId = useId()
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [gender, setGender] = useState<Gender | ''>('')
   const [dobInput, setDobInput] = useState('')
   const [result, setResult] = useState<LoShuGridResult | null>(null)
   const [error, setError] = useState('')
@@ -72,15 +120,22 @@ export function LoShuCalculator({ source, className }: LoShuCalculatorProps) {
       setResult(null)
       return
     }
+    if (gender !== 'male' && gender !== 'female') {
+      setError('Please select your gender.')
+      setResult(null)
+      return
+    }
     setError('')
-    const grid = calculateLoShuGrid(parsed)
+    const grid = calculateLoShuGrid(parsed, gender)
     const formattedDob = formatDob(parsed)
     setResult(grid)
 
     submitLoShuLead({
       name,
       whatsappNumber: phone,
+      gender,
       dob: formattedDob,
+      kuaNumber: grid.kuaNumber,
       source,
     })
   }
@@ -99,60 +154,92 @@ export function LoShuCalculator({ source, className }: LoShuCalculatorProps) {
           Discover Your Life&apos;s Blueprint
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-navy-600">
-          Enter your details to generate a free basic Lo Shu Grid — driver number, conductor
-          number, and your personal 3×3 grid.
+          Enter your details to generate a free basic Lo Shu Grid — driver, conductor, and
+          Kua numbers plus your personal 3×3 grid.
         </p>
 
         <div className="mt-6">
-          <label htmlFor={nameId} className="block text-sm font-medium text-navy-700">
-            Name
-          </label>
-          <input
-            id={nameId}
-            name="name"
-            type="text"
-            required
-            autoComplete="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className={INPUT_CLASS}
-          />
+          <FieldLabel htmlFor={nameId} label="Name" tooltip="Used to personalize your reading.">
+            <input
+              id={nameId}
+              name="name"
+              type="text"
+              required
+              autoComplete="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className={INPUT_CLASS}
+            />
+          </FieldLabel>
         </div>
 
         <div className="mt-4">
-          <label htmlFor={phoneId} className="block text-sm font-medium text-navy-700">
-            WhatsApp number
-          </label>
-          <input
-            id={phoneId}
-            name="phone"
-            type="tel"
-            required
-            autoComplete="tel"
-            placeholder="+91 9XXXXXXXXX"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className={INPUT_CLASS}
-          />
+          <FieldLabel
+            htmlFor={phoneId}
+            label="WhatsApp number"
+            tooltip="We will send your detailed Lo Shu Grid report here."
+          >
+            <input
+              id={phoneId}
+              name="phone"
+              type="tel"
+              required
+              autoComplete="tel"
+              placeholder="+91 9XXXXXXXXX"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className={INPUT_CLASS}
+            />
+          </FieldLabel>
         </div>
 
         <div className="mt-4">
-          <label htmlFor={dobId} className="block text-sm font-medium text-navy-700">
-            Date of birth <span className="text-navy-400">(DD-MM-YYYY)</span>
-          </label>
-          <input
-            id={dobId}
-            name="dob"
-            type="text"
-            inputMode="numeric"
-            required
-            placeholder="28-05-1971"
-            pattern="\d{2}-\d{2}-\d{4}"
-            title="Use DD-MM-YYYY format"
-            value={dobInput}
-            onChange={(e) => setDobInput(e.target.value)}
-            className={INPUT_CLASS}
-          />
+          <FieldLabel
+            htmlFor={genderId}
+            label="Gender"
+            tooltip="Crucial for calculating your accurate Kua Number (hidden energy)."
+          >
+            <select
+              id={genderId}
+              name="gender"
+              required
+              value={gender}
+              onChange={(e) => setGender(e.target.value as Gender)}
+              className={INPUT_CLASS}
+            >
+              <option value="" disabled>
+                Select gender
+              </option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </FieldLabel>
+        </div>
+
+        <div className="mt-4">
+          <FieldLabel
+            htmlFor={dobId}
+            label={
+              <>
+                Date of birth <span className="text-navy-400">(DD-MM-YYYY)</span>
+              </>
+            }
+            tooltip="Used to extract your core elemental numbers."
+          >
+            <input
+              id={dobId}
+              name="dob"
+              type="text"
+              inputMode="numeric"
+              required
+              placeholder="28-05-1971"
+              pattern="\d{2}-\d{2}-\d{4}"
+              title="Use DD-MM-YYYY format"
+              value={dobInput}
+              onChange={(e) => setDobInput(e.target.value)}
+              className={INPUT_CLASS}
+            />
+          </FieldLabel>
         </div>
 
         {error && (
@@ -185,6 +272,13 @@ export function LoShuCalculator({ source, className }: LoShuCalculatorProps) {
               </p>
               <p className="mt-1 text-3xl font-semibold text-navy-700">{result.conductorNumber}</p>
               <p className="mt-1 text-xs text-navy-500">Bhagyank · from full DOB</p>
+            </div>
+            <div className="rounded-xl border border-gold-200 bg-white px-5 py-4 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">
+                Kua number
+              </p>
+              <p className="mt-1 text-3xl font-semibold text-navy-700">{result.kuaNumber}</p>
+              <p className="mt-1 text-xs text-navy-500">Hidden energy / directions</p>
             </div>
           </div>
 
@@ -226,7 +320,13 @@ export function LoShuCalculator({ source, className }: LoShuCalculatorProps) {
             <div className="mt-6">
               <WhatsAppButton
                 label="Get Full Analysis & Remedies"
-                message={buildWhatsAppMessage(name, phone, formattedDob, result)}
+                message={buildWhatsAppMessage(
+                  name,
+                  phone,
+                  gender as Gender,
+                  formattedDob,
+                  result
+                )}
                 className="w-full sm:w-auto"
               />
             </div>

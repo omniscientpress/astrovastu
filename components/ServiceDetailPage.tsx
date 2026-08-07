@@ -16,6 +16,7 @@ import {
 } from '@/data/marriage'
 import type { Service } from '@/data/types'
 import { formatPrice } from '@/lib/utils'
+import { RelationshipBlueprintSection } from '@/components/RelationshipBlueprintSection'
 import { en } from '@/locales/en'
 
 /**
@@ -57,6 +58,15 @@ export function ServiceDetailPage({ service }: { service: Service }) {
           </Link>
         </div>
       </Section>
+
+      {isMarriage && (
+        <RelationshipBlueprintSection
+          tone="cream"
+          title={en.relationshipBlueprint.marriage.title}
+          lead={en.relationshipBlueprint.marriage.lead}
+          source={en.relationshipBlueprint.marriage.source}
+        />
+      )}
 
       {/* Breadcrumb + price */}
       <Section tone="white" className="py-8 lg:py-10">

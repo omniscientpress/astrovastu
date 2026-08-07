@@ -4,6 +4,7 @@ import { Section, SectionHeading } from './Section'
 import { ServiceCard } from './ServiceCard'
 import { BookingBand } from './BookingBand'
 import { LoShuCalculatorSection } from './LoShuCalculatorSection'
+import { RelationshipBlueprintSection } from './RelationshipBlueprintSection'
 import { withBrand } from './Copy'
 import { PillarVisual } from './graphics/PillarVisual'
 import { servicesByPillar } from '@/data/services'
@@ -39,6 +40,15 @@ export function PillarPage({ info }: { info: PillarInfo }) {
           title={en.loShuCalculator.numerology.title}
           lead={en.loShuCalculator.numerology.lead}
           source={en.loShuCalculator.numerology.source}
+        />
+      )}
+
+      {info.pillar === 'numerology' && (
+        <RelationshipBlueprintSection
+          tone="white"
+          title={en.relationshipBlueprint.numerology.title}
+          lead={en.relationshipBlueprint.numerology.lead}
+          source={en.relationshipBlueprint.numerology.source}
         />
       )}
 

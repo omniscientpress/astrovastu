@@ -3,11 +3,13 @@ import {
   allDobDigits,
   calculateConductorNumber,
   calculateDriverNumber,
+  calculateKuaNumber,
   calculateLoShuGrid,
   formatCellDigits,
   nonZeroDobDigits,
   parseDobString,
   reduceToSingleDigit,
+  reduceYearToSingleDigit,
   sumDigitsOfInteger,
 } from './lo-shu-grid.ts'
 
@@ -73,7 +75,7 @@ test('conductor for 10-01-2000 is 4', () => {
 })
 
 test('full grid for 28-05-1971 matches spec', () => {
-  const result = calculateLoShuGrid({ day: 28, month: 5, year: 1971 })
+  const result = calculateLoShuGrid({ day: 28, month: 5, year: 1971 }, 'male')
   assert.equal(result.driverNumber, 1)
   assert.equal(result.conductorNumber, 6)
   assert.deepEqual(result.finalDigits, [2, 8, 5, 1, 9, 7, 1, 1, 6])
@@ -94,6 +96,25 @@ test('formatCellDigits spaces repeated digits', () => {
 test('day 09 reduces driver correctly', () => {
   assert.equal(calculateDriverNumber(9), 9)
   assert.equal(calculateDriverNumber(18), 9)
+})
+
+test('kua for male born 1981 is 1', () => {
+  assert.equal(reduceYearToSingleDigit(1981), 1)
+  assert.equal(calculateKuaNumber(1981, 'male'), 1)
+})
+
+test('kua for female born 1981 is 8', () => {
+  assert.equal(calculateKuaNumber(1981, 'female'), 8)
+})
+
+test('kua male exception converts 5 to 2', () => {
+  assert.equal(reduceYearToSingleDigit(2004), 6)
+  assert.equal(calculateKuaNumber(2004, 'male'), 2)
+})
+
+test('kua female exception converts 5 to 8', () => {
+  assert.equal(reduceYearToSingleDigit(1990), 1)
+  assert.equal(calculateKuaNumber(1990, 'female'), 8)
 })
 
 console.log('\nAll Lo Shu grid tests passed.')

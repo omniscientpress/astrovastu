@@ -8,6 +8,7 @@ export const SITE = {
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919885099448',
   phoneDisplay: '+91 98850 99448',
   email: 'consult@divinejyothi.com',
+  supportEmail: 'support@divinejyothi.com',
   hours: 'Mon–Sat, 9:00 AM – 9:00 PM IST',
   location: 'Hyderabad — in-person by appointment · Online consultations worldwide',
 

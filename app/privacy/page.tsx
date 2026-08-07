@@ -29,30 +29,33 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">Information we collect</h2>
             <p className="mt-3 leading-relaxed text-navy-600">
-              Depending on the service you book, we may ask for your name, phone number,
-              email, and birth details (date, time, and place of birth) for astrology
-              consultations; floor plans or property photographs for Vastu assessments;
-              or names and numbers you would like reviewed for numerology. We do not
-              collect payment card details — payments are made directly via UPI to our
-              published payment address, after your slot is confirmed.
+              Depending on the service you book or tool you use, we may ask for your name,
+              phone number, email, and birth details (date of birth, and for astrology also
+              time and place of birth); floor plans or property photographs for Vastu
+              assessments; or names and numbers you would like reviewed for numerology.
+              Your name, date of birth, and phone number are kept strictly confidential and
+              used only to prepare your consultation or deliver your report. We do not sell
+              or rent your personal information to third parties.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">How we use it</h2>
             <p className="mt-3 leading-relaxed text-navy-600">
-              Your details are used solely to prepare your consultation, schedule your
-              appointment, and communicate with you about your booking — typically via
-              WhatsApp. We do not sell or rent your personal information to third parties.
+              Your details are used solely to prepare your consultation, generate digital
+              reports, schedule your appointment, and communicate with you about your
+              booking — typically via email or WhatsApp.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">Third-party services</h2>
             <p className="mt-3 leading-relaxed text-navy-600">
-              We use WhatsApp for booking and confirmations, and UPI apps for receiving
-              payment. Any information you share through those services is also subject
-              to their own privacy policies.
+              We use WhatsApp for booking and confirmations, UPI apps for consultation
+              payments, and Razorpay for secure digital report purchases. Payment card
+              details are processed directly by Razorpay and are not stored on our servers.
+              Any information you share through those services is also subject to their own
+              privacy policies.
             </p>
           </div>
 

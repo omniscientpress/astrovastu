@@ -27,6 +27,7 @@ const LEGAL_LINKS = [
   { href: '/privacy', label: en.footer.privacy },
   { href: '/terms', label: en.footer.terms },
   { href: '/refund', label: en.footer.refund },
+  { href: '/contact', label: en.nav.contact },
 ]
 
 export function Footer() {

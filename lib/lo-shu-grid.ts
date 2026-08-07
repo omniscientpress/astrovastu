@@ -7,10 +7,14 @@ export const LO_SHU_LAYOUT: readonly (readonly number[])[] = [
 
 export type DobParts = { day: number; month: number; year: number }
 
+export type Gender = 'male' | 'female'
+
 export type LoShuGridResult = {
   dob: DobParts
   driverNumber: number
   conductorNumber: number
+  /** Directional / elemental Kua — not placed in the 3×3 grid. */
+  kuaNumber: number
   /** Digits from DOB with zeros removed. */
   dobDigits: number[]
   /** DOB digits (no zeros) + driver + conductor. */
@@ -94,6 +98,29 @@ export function calculateConductorNumber(dob: DobParts): number {
   return reduceToSingleDigit(total)
 }
 
+/** Reduce the four digits of a birth year to a single digit (1–9). */
+export function reduceYearToSingleDigit(year: number): number {
+  return reduceToSingleDigit(sumDigitsOfInteger(year))
+}
+
+/**
+ * Kua number from birth year and gender — used for directions / hidden energy,
+ * not placed inside the Lo Shu grid cells.
+ */
+export function calculateKuaNumber(year: number, gender: Gender): number {
+  const yearDigit = reduceYearToSingleDigit(year)
+  let kua =
+    gender === 'male'
+      ? reduceToSingleDigit(11 - yearDigit)
+      : reduceToSingleDigit(4 + yearDigit)
+
+  if (kua === 5) {
+    kua = gender === 'male' ? 2 : 8
+  }
+
+  return kua
+}
+
 /** Format repeated digits for a grid cell, e.g. three 1s → "1 1 1". */
 export function formatCellDigits(digit: number, count: number): string {
   if (count <= 0) return ''
@@ -110,11 +137,12 @@ export function buildDigitCounts(digits: number[]): Record<number, number> {
   return counts
 }
 
-/** Full Lo Shu grid calculation from parsed DOB parts. */
-export function calculateLoShuGrid(dob: DobParts): LoShuGridResult {
+/** Full Lo Shu grid calculation from parsed DOB parts and gender. */
+export function calculateLoShuGrid(dob: DobParts, gender: Gender): LoShuGridResult {
   const dobDigits = nonZeroDobDigits(dob)
   const driverNumber = calculateDriverNumber(dob.day)
   const conductorNumber = calculateConductorNumber(dob)
+  const kuaNumber = calculateKuaNumber(dob.year, gender)
   const finalDigits = [...dobDigits, driverNumber, conductorNumber]
   const counts = buildDigitCounts(finalDigits)
 
@@ -129,6 +157,7 @@ export function calculateLoShuGrid(dob: DobParts): LoShuGridResult {
     dob,
     driverNumber,
     conductorNumber,
+    kuaNumber,
     dobDigits,
     finalDigits,
     counts,

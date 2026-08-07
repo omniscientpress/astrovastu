@@ -17,6 +17,19 @@ export default function RefundPage() {
 
       <Section tone="white">
         <div className="mx-auto max-w-3xl space-y-8">
+          <div className="rounded-2xl border border-gold-200 bg-gold-50 p-6">
+            <h2 className="text-2xl font-semibold text-navy-700">
+              Digital PDF reports
+            </h2>
+            <p className="mt-3 leading-relaxed text-navy-600">
+              Relationship Blueprint and other instantly generated digital PDF reports are
+              delivered immediately after successful payment. As these are digital products
+              generated on purchase, <strong>all sales are final and strictly
+              non-refundable</strong>. Please double-check names and birth dates before
+              completing payment.
+            </p>
+          </div>
+
           <div>
             <h2 className="text-2xl font-semibold text-navy-700">
               Before your consultation
