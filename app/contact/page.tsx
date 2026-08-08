@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { Section } from '@/components/Section'
+import { Logo } from '@/components/Logo'
 import { SITE, whatsAppEnquiry } from '@/lib/config'
 import { en } from '@/locales/en'
 
@@ -14,10 +15,13 @@ export default function ContactPage() {
   return (
     <>
       <Section tone="navy">
-        <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
-          {c.heading}
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-200/90">{c.lead}</p>
+        <div className="flex flex-col items-center text-center">
+          <Logo variant="full" theme="dark" className="[--logo-size:140px] sm:[--logo-size:180px]" />
+          <h1 className="mt-8 max-w-2xl text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl lg:text-5xl">
+            {c.heading}
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-200/90">{c.lead}</p>
+        </div>
       </Section>
 
       <Section tone="white">

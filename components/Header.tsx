@@ -25,9 +25,9 @@ export function Header() {
         {/* Logo stays generous; nav shrinks instead (spec §4) */}
         <Logo
           href="/"
-          variant="full"
+          variant="text"
           priority
-          className="[--logo-size:72px] sm:[--logo-size:80px] lg:[--logo-size:88px]"
+          className="[--logo-size:52px] sm:[--logo-size:56px] lg:[--logo-size:60px]"
         />
 
         <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Section } from '@/components/Section'
 import { BrandText } from '@/components/BrandText'
+import { Logo } from '@/components/Logo'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { en } from '@/locales/en'
 
@@ -16,6 +17,9 @@ export default function ProfilePage() {
   return (
     <>
       <Section tone="white">
+        <div className="mb-10 flex justify-center lg:mb-12">
+          <Logo variant="full" theme="light" className="[--logo-size:160px] sm:[--logo-size:200px]" />
+        </div>
         <div className="grid items-start gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
           <Image
             src="/photos/siva-kola.webp"
